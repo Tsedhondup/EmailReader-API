@@ -1,0 +1,15 @@
+{
+  "name": "job-application-tracker-api",
+  "version": "1.0.0",
+  "description": "\"\"\u001b[",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "job-application-tracker-api"
+  },
+  "author": "Tsering Dhondup",
+  "license": "ISC"
+}
