@@ -4,10 +4,13 @@ const simpleParser = require("mailparser").simpleParser;
 const app = express();
 // 'dotenv'
 require("dotenv").config();
+// JSON PARSER
+app.use(express.json());
+
 // PORT
 const port = process.env.PORT || 8000;
 // ROUTES
-const profileRoute = require("./routes/profiles_routes")
+const profileRoute = require("./routes/profiles_routes");
 // Configure IMAP connection
 // const imap = new Imap({
 //   user: process.env.USER_EMAIL,
@@ -78,6 +81,7 @@ const profileRoute = require("./routes/profiles_routes")
 
 // test route
 app.get("/profile", profileRoute);
+app.post("/profile", profileRoute);
 // start Express server
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
