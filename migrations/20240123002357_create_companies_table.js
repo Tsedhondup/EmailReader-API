@@ -4,9 +4,9 @@
  */
 exports.up = function (knex) {
   return knex.schema.createTable("companies", (table) => {
-    table.increments("company_id").primary();
+    table.increments("id").primary();
     table
-      .integer("user_id")
+      .integer("profile_id")
       .unsigned()
       .references("profiles.id")
       .onUpdate("CASCADE")
