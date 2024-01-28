@@ -13,7 +13,7 @@ const addEmails = async (emailObject) => {
     });
 };
 
-const getEmails = async (companyEmail, companyId) => {
+const fetchEmails = async (companyEmail, companyId) => {
   // config IMAP
   const imap = new Imap({
     user: process.env.USER_EMAIL,
@@ -107,5 +107,5 @@ const getEmails = async (companyEmail, companyId) => {
 };
 
 module.exports = {
-  getEmails,
+  fetchEmails,
 };

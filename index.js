@@ -11,8 +11,11 @@ const port = process.env.PORT || 8000;
 // ROUTES
 const profileRoute = require("./routes/profiles_routes");
 const companyRoute = require("./routes/companies_routes");
+const emailRoute = require("./routes/emails_routes");
 
 app.get("/profile", profileRoute);
+app.get("/emails", emailRoute);
+
 app.post("/profile", profileRoute);
 app.post("/addCompany", companyRoute);
 // start Express server

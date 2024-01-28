@@ -10,7 +10,10 @@ const addCompany = (req, res) => {
     })
     .then((newCompany) => {
       // invoke addEmails function
-      emailController.getEmails(newCompany[0].company_email, newCompany[0].id);
+      emailController.fetchEmails(
+        newCompany[0].company_email,
+        newCompany[0].id
+      );
       return newCompany;
     })
     .then((newCompany) => {
