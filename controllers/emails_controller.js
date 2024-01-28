@@ -106,6 +106,25 @@ const fetchEmails = async (companyEmail, companyId) => {
   imap.connect();
 };
 
+const getEmails = (req, res) => {
+  knex("emails")
+    .where({ id_of_company: req.params.companyId })
+    .then((itemsFound) => {
+      if (itemsFound.length === 0) {
+        return res
+          .status(404)
+          .json({ message: `Item with ID: ${req.params.companyId} not found` });
+      }
+
+      res.status(200).json(itemsFound);
+    })
+    .catch(() => {
+      res.status(500).json({
+        message: `Unable to retrieve emails: ${req.params.companyId}`,
+      });
+    });
+};
 module.exports = {
   fetchEmails,
+  getEmails,
 };

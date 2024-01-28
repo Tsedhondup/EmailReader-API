@@ -14,7 +14,7 @@ const companyRoute = require("./routes/companies_routes");
 const emailRoute = require("./routes/emails_routes");
 
 app.get("/profile", profileRoute);
-app.get("/emails", emailRoute);
+app.get("/allEmails/:companyId", emailRoute);
 
 app.post("/profile", profileRoute);
 app.post("/addCompany", companyRoute);
