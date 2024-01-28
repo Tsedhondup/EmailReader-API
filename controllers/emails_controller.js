@@ -106,7 +106,6 @@ const fetchEmails = async (companyEmail, companyId) => {
   imap.connect();
 };
 
-
 const getAllEmails = (req, res) => {
   knex("emails")
     .where({ id_of_company: req.params.companyId })
@@ -125,7 +124,18 @@ const getAllEmails = (req, res) => {
       });
     });
 };
+
+const getEmailDetail = (req, res) => {
+  // get email from the data base
+  // use IMAP to fetch particular email using the email id and message id form the data base
+  // send to the client
+  //*** info needed
+  // company email: from database
+  // message-id of email : from database
+  // email id: from client side
+};
 module.exports = {
   fetchEmails,
   getAllEmails,
+  getEmailDetail,
 };
