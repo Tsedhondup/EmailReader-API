@@ -20,6 +20,7 @@ app.get("/allInterviews", interviewRoute);
 
 app.post("/profile", profileRoute);
 app.post("/addCompany", companyRoute);
+app.post("/addInterviews", interviewRoute)
 // start Express server
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
