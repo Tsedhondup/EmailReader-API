@@ -1,9 +1,9 @@
 const fs = require("fs");
 
-const creatEmailPage = (htmldata) => {
-  fs.writeFile("../public/email/email.html", htmldata, (err) => {
+const creatEmailPage = (data) => {
+  fs.writeFile("./public/email/email.html", data, (err) => {
     if (err) {
-      console.log("Cannot write into file");
+      console.log(err);
     }
   });
 };

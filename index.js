@@ -6,6 +6,8 @@ const app = express();
 require("dotenv").config();
 // JSON PARSER
 app.use(express.json());
+// STATIC FILE
+app.use(express.static("public"));
 // PORT
 const port = process.env.PORT || 8000;
 // ROUTES

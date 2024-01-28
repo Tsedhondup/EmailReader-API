@@ -1,6 +1,7 @@
 const knex = require("knex")(require("../knexfile"));
 const simpleParser = require("mailparser").simpleParser;
 const Imap = require("imap");
+const creatEmailPage = require("../utilities/create_email_page");
 
 const addEmails = async (emailObject) => {
   knex("emails")
@@ -126,7 +127,7 @@ const getAllEmails = (req, res) => {
     });
 };
 
-const fetchEmailDetail = (req, res, from, message_id) => {
+const fetchEmailDetail = async (req, res, from, message_id) => {
   // get email from the data base
   // use IMAP to fetch particular email using the email id and message id form the data base
   // send to the client
@@ -134,8 +135,15 @@ const fetchEmailDetail = (req, res, from, message_id) => {
   // company email: from database
   // message-id of email : from database
   // email id: from client side
-  console.log(from);
-  console.log(message_id);
+
+  await creatEmailPage.creatEmailPage("<p>this is email page</p>");
+  const email = {
+    company_name,
+    subject,
+    date,
+    position,
+    link_to_email_page,
+  };
   res.status(200).json({ message: "Ok" });
 };
 
