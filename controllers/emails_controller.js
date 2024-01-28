@@ -130,14 +130,6 @@ const getAllEmails = (req, res) => {
 };
 
 const fetchEmailDetail = async (req, res, from, message_id) => {
-  // get email from the data base
-  // use IMAP to fetch particular email using the email id and message id form the data base
-  // send to the client
-  //*** info needed
-  // company email: from database
-  // message-id of email : from database
-  // email id: from client side
-  // config IMAP
   const imap = new Imap({
     user: process.env.USER_EMAIL,
     password: process.env.APP_PASSWORD, // my app
@@ -199,16 +191,15 @@ const fetchEmailDetail = async (req, res, from, message_id) => {
                     }
                   }
                 );
+                // const emailObject = {
+                //   company_name,
+                //   subject,
+                //   date,
+                //   position,
+                //   link_to_email_page: "http://localhost:8080/email/email.html",
+                // };
                 res.status(200).json({ message: "ok" });
               }
-
-              // const emailObject = {
-              //   company_name,
-              //   subject,
-              //   date,
-              //   position,
-              //   link_to_email_page: "http://localhost:8080/email/email.html",
-              // };
             });
           });
 
