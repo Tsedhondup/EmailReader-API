@@ -14,6 +14,7 @@ exports.up = function (knex) {
     table.string("date").notNullable();
     table.string("message_id").notNullable();
     table.string("subject").notNullable();
+    table.string("from").notNullable();
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table
       .timestamp("updated_at")
