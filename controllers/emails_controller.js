@@ -106,7 +106,8 @@ const fetchEmails = async (companyEmail, companyId) => {
   imap.connect();
 };
 
-const getEmails = (req, res) => {
+
+const getAllEmails = (req, res) => {
   knex("emails")
     .where({ id_of_company: req.params.companyId })
     .then((itemsFound) => {
@@ -126,5 +127,5 @@ const getEmails = (req, res) => {
 };
 module.exports = {
   fetchEmails,
-  getEmails,
+  getAllEmails,
 };
