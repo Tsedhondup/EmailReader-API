@@ -11,7 +11,6 @@ const addEmails = async (emailObject) => {
     })
     .catch((err) => {
       console.log(err);
-      //   res.status(500).json({ message: "Cannot add job application!" });
     });
 };
 
@@ -53,6 +52,7 @@ const getEmails = async (companyEmail, companyId) => {
             msg.on("body", async function (stream, info) {
               // parse messsage data using Nodemailer simple parser
               let parsed = await simpleParser(stream);
+
               // Creating email object
               const emailObject = {
                 id_of_company: companyId,
