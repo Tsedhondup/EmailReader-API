@@ -1,7 +1,9 @@
 const knex = require("knex")(require("../knexfile"));
 const simpleParser = require("mailparser").simpleParser;
 const Imap = require("imap");
-const creatEmailPage = require("../utilities/create_email_page");
+const fs = require("fs");
+// 'dotenv'
+require("dotenv").config();
 
 const addEmails = async (emailObject) => {
   knex("emails")
@@ -135,16 +137,108 @@ const fetchEmailDetail = async (req, res, from, message_id) => {
   // company email: from database
   // message-id of email : from database
   // email id: from client side
+  // config IMAP
+  const imap = new Imap({
+    user: process.env.USER_EMAIL,
+    password: process.env.APP_PASSWORD, // my app
+    host: "imap.gmail.com",
+    port: 993,
+    authTimeout: 10000,
+    tls: true,
+    tlsOptions: { rejectUnauthorized: false },
+  });
 
-  await creatEmailPage.creatEmailPage("<p>this is email page</p>");
-  const email = {
-    company_name,
-    subject,
-    date,
-    position,
-    link_to_email_page,
-  };
-  res.status(200).json({ message: "Ok" });
+  // when IMAP connection is ready
+  imap.once("ready", () => {
+    console.log("connection successful");
+
+    // open email-box
+    imap.openBox("INBOX", true, (err, box) => {
+      // error
+      if (err) throw err;
+
+      // search criteria
+      imap.search(
+        [
+          ["SINCE", "Jan 1, 2024"],
+          ["HEADER", "FROM", from],
+        ],
+        function (err, results) {
+          if (err) throw err;
+
+          // STORE MESSAGE BODY IN VARIABLE 'f'
+          let f;
+          // IF NO EMAIL IS RECIEVE THE ABORT THE CONNECTION AND EXIT FUNCTIONS
+          try {
+            f = imap.fetch(results, { bodies: "" });
+          } catch (err) {
+            if (err) {
+              console.log(err);
+              imap.end();
+              return;
+            }
+          }
+          // once app starts recieving email
+          f.on("message", function (msg, seqno) {
+            // once app have the message body
+            msg.on("body", async function (stream, info) {
+              // parse messsage data using Nodemailer simple parser
+              let parsed = await simpleParser(stream);
+
+              // MATCH EMAIL MESSAGE_ID
+              if (parsed.headers.get("message-id") === `${message_id}`) {
+                const htmldata = await parsed.html; // get html data
+                // update email.html file
+                await fs.writeFile(
+                  "./public/email/email.html",
+                  htmldata,
+                  (err) => {
+                    console.log("done");
+                    if (err) {
+                      console.log(err);
+                    }
+                  }
+                );
+                res.status(200).json({ message: "ok" });
+              }
+
+              // const emailObject = {
+              //   company_name,
+              //   subject,
+              //   date,
+              //   position,
+              //   link_to_email_page: "http://localhost:8080/email/email.html",
+              // };
+            });
+          });
+
+          // if there is error fetching message/email
+          f.once("error", function (err) {
+            console.log("Fetch error: " + err);
+          });
+
+          // once the fetching message/email is completed
+          f.once("end", function () {
+            console.log("Done fetching all messages!");
+            imap.end();
+          });
+        }
+      );
+    });
+  });
+
+  // when IMAP connection failed
+  imap.once("error", function (err) {
+    console.log(err);
+  });
+
+  // when IMAP connection was ended
+  imap.once("end", function () {
+    console.log("Connection ended");
+  });
+
+  // Establishing IMAP connection
+  imap.connect();
 };
 
 const getEmailDetail = (req, res) => {
