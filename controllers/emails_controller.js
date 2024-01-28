@@ -1,6 +1,5 @@
 const knex = require("knex")(require("../knexfile"));
 const simpleParser = require("mailparser").simpleParser;
-const { parse } = require("dotenv");
 const Imap = require("imap");
 
 const addEmails = async (emailObject) => {
@@ -44,8 +43,18 @@ const getEmails = async (companyEmail, companyId) => {
         function (err, results) {
           if (err) throw err;
 
-          // fetching results
-          var f = imap.fetch(results, { bodies: "" });
+          // STORE MESSAGE BODY IN VARIABLE 'f'
+          let f;
+          // IF NO EMAIL IS RECIEVE THE ABORT THE CONNECTION AND EXIT FUNCTIONS
+          try {
+            f = imap.fetch(results, { bodies: "" });
+          } catch (err) {
+            if (err) {
+              console.log(err);
+              imap.end();
+              return;
+            }
+          }
           // once app starts recieving email
           f.on("message", function (msg, seqno) {
             // once app have the message body
