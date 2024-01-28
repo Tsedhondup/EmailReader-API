@@ -70,6 +70,7 @@ const fetchEmails = async (companyEmail, companyId) => {
                 subject: parsed.headers.get("subject")
                   ? parsed.headers.get("subject")
                   : "No Subject",
+                from: parsed.from.value[0].address,
               };
 
               // INVOKE addEmails() to add email to database
@@ -125,7 +126,7 @@ const getAllEmails = (req, res) => {
     });
 };
 
-const getEmailDetail = (req, res) => {
+const fetchEmailDetail = (req, res, from, message_id) => {
   // get email from the data base
   // use IMAP to fetch particular email using the email id and message id form the data base
   // send to the client
@@ -133,6 +134,28 @@ const getEmailDetail = (req, res) => {
   // company email: from database
   // message-id of email : from database
   // email id: from client side
+  console.log(from);
+  console.log(message_id);
+  res.status(200).json({ message: "Ok" });
+};
+
+const getEmailDetail = (req, res) => {
+  knex("emails")
+    .where({ id: req.params.emailId })
+    .then((result) => {
+      if (result.length === 0) {
+        res.status(500).json({
+          message: `Cannot find email with id: ${req.params.emailId}`,
+        });
+      } else {
+        fetchEmailDetail(req, res, result[0].from, result[0].message_id);
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: `Unable to retrieve email with id: ${req.params.emailId}`,
+      });
+    });
 };
 module.exports = {
   fetchEmails,
