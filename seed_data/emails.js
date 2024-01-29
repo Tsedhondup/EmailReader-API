@@ -1,9 +1,10 @@
 module.exports = [
   {
-    email_id: 1,
+    id: 1,
     id_of_company: 1,
     date: "234234234",
-    email_body: "<p>this is email body</p>",
+    message_id: "12345678",
     subject: "Whiteboarding",
+    from: "job.application_tracker@gmail.com",
   },
 ];

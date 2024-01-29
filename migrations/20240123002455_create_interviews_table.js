@@ -4,11 +4,11 @@
  */
 exports.up = function (knex) {
   return knex.schema.createTable("interviews", (table) => {
-    table.increments("interview_id").primary();
+    table.increments("id").primary();
     table
       .integer("id_of_company")
       .unsigned()
-      .references("companies.company_id")
+      .references("companies.id")
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
     table.string("company_name").notNullable();
