@@ -129,7 +129,7 @@ const getAllEmails = (req, res) => {
     });
 };
 
-const fetchEmailDetail = async (req, res, from, message_id) => {
+const fetchEmailDetail = async (req, res, emailInfo) => {
   const imap = new Imap({
     user: process.env.USER_EMAIL,
     password: process.env.APP_PASSWORD, // my app
@@ -153,7 +153,7 @@ const fetchEmailDetail = async (req, res, from, message_id) => {
       imap.search(
         [
           ["SINCE", "Jan 1, 2024"],
-          ["HEADER", "FROM", from],
+          ["HEADER", "FROM", emailInfo.from],
         ],
         function (err, results) {
           if (err) throw err;
@@ -166,6 +166,11 @@ const fetchEmailDetail = async (req, res, from, message_id) => {
           } catch (err) {
             if (err) {
               console.log(err);
+              // send respond
+              res.status(500).json({
+                message: `Cannot find the email with id: ${emailInfo.id} `,
+              });
+              // end IMAP connection
               imap.end();
               return;
             }
@@ -178,7 +183,9 @@ const fetchEmailDetail = async (req, res, from, message_id) => {
               let parsed = await simpleParser(stream);
 
               // MATCH EMAIL MESSAGE_ID
-              if (parsed.headers.get("message-id") === `${message_id}`) {
+              if (
+                parsed.headers.get("message-id") === `${emailInfo.message_id}`
+              ) {
                 const htmldata = await parsed.html; // get html data
                 // update email.html file
                 await fs.writeFile(
@@ -191,14 +198,14 @@ const fetchEmailDetail = async (req, res, from, message_id) => {
                     }
                   }
                 );
-                // const emailObject = {
-                //   company_name,
-                //   subject,
-                //   date,
-                //   position,
-                //   link_to_email_page: "http://localhost:8080/email/email.html",
-                // };
-                res.status(200).json({ message: "ok" });
+
+                // to be send as a respond data
+                const emailObject = {
+                  subject: emailInfo.subject,
+                  date: emailInfo.date,
+                  link_to_email_page: "http://localhost:8080/email/email.html",
+                };
+                res.status(200).json(emailObject);
               }
             });
           });
@@ -241,7 +248,7 @@ const getEmailDetail = (req, res) => {
           message: `Cannot find email with id: ${req.params.emailId}`,
         });
       } else {
-        fetchEmailDetail(req, res, result[0].from, result[0].message_id);
+        fetchEmailDetail(req, res, result[0]);
       }
     })
     .catch((err) => {
