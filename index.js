@@ -10,6 +10,9 @@ app.use(express.json());
 app.use(express.static("public"));
 // PORT
 const port = process.env.PORT || 8000;
+// CORS
+app.use(cors({ origin: "3000" }));
+
 // ROUTES
 const profileRoute = require("./routes/profiles_routes");
 const companyRoute = require("./routes/companies_routes");
