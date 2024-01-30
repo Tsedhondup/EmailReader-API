@@ -11,7 +11,7 @@ exports.up = function (knex) {
       .references("companies.id")
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
-    table.string("date").notNullable();
+    table.string("email_date").notNullable();
     table.string("message_id").notNullable();
     table.string("subject").notNullable();
     table.string("from").notNullable();
