@@ -17,6 +17,7 @@ const emailRoute = require("./routes/emails_routes");
 const interviewRoute = require("./routes/interviews_routes");
 
 app.get("/profile", profileRoute);
+app.get("/allCompanies", companyRoute);
 app.get("/allEmails/:companyId", emailRoute);
 app.get("/allInterviews", interviewRoute);
 app.get("/emailDetail/:emailId", emailRoute);
