@@ -5,5 +5,6 @@ module.exports = [
     company_name: "YouTube",
     date: "234234324",
     subject: "whiteboarding",
+    status: "active",
   },
 ];

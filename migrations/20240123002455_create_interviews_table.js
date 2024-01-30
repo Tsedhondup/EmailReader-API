@@ -14,6 +14,7 @@ exports.up = function (knex) {
     table.string("company_name").notNullable();
     table.string("date").notNullable();
     table.string("subject").notNullable();
+    table.string("status").notNullable();
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table
       .timestamp("updated_at")
