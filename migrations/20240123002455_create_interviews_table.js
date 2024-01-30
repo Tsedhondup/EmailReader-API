@@ -12,8 +12,9 @@ exports.up = function (knex) {
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
     table.string("company_name").notNullable();
-    table.string("date").notNullable();
-    table.string("subject").notNullable();
+    table.string("interview_date").notNullable();
+    table.string("about").notNullable();
+    table.string("status").notNullable();
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table
       .timestamp("updated_at")

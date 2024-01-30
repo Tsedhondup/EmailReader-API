@@ -24,7 +24,16 @@ const addCompany = (req, res) => {
       res.status(500).json({ message: "Cannot add job application!" });
     });
 };
+const getAllCompanies = (req, res) => {
+  knex("companies").then((companiesData) => {
+    if (companiesData.length === 0) {
+      res.status(400).json({ message: "Cannot find interviews" });
+    }
+    res.status(200).json(companiesData);
+  });
+};
 
 module.exports = {
   addCompany,
+  getAllCompanies,
 };

@@ -1,6 +1,6 @@
 const express = require("express");
-const Imap = require("imap");
-const simpleParser = require("mailparser").simpleParser;
+const cors = require("cors");
+
 const app = express();
 // 'dotenv'
 require("dotenv").config();
@@ -10,6 +10,9 @@ app.use(express.json());
 app.use(express.static("public"));
 // PORT
 const port = process.env.PORT || 8000;
+// CORS
+app.use(cors({ origin: 3000 }));
+
 // ROUTES
 const profileRoute = require("./routes/profiles_routes");
 const companyRoute = require("./routes/companies_routes");
@@ -17,6 +20,7 @@ const emailRoute = require("./routes/emails_routes");
 const interviewRoute = require("./routes/interviews_routes");
 
 app.get("/profile", profileRoute);
+app.get("/allCompanies", companyRoute);
 app.get("/allEmails/:companyId", emailRoute);
 app.get("/allInterviews", interviewRoute);
 app.get("/emailDetail/:emailId", emailRoute);
