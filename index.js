@@ -1,6 +1,6 @@
 const express = require("express");
-const Imap = require("imap");
-const simpleParser = require("mailparser").simpleParser;
+const cors = require("cors");
+
 const app = express();
 // 'dotenv'
 require("dotenv").config();
