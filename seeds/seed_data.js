@@ -38,7 +38,7 @@ exports.seed = function (knex) {
       return knex("profiles").insert(profiles);
     })
     .then(() => {
-      return knex("applications").insert(companies);
+      return knex("applications").insert(applications);
     })
     .then(() => {
       return knex("emails").insert(emails);
