@@ -16,7 +16,7 @@ const addEmails = async (emailObject) => {
     });
 };
 
-const fetchEmails = async (companyEmail, companyId) => {
+const fetchEmails = async (companyEmail, applicationId) => {
   // config IMAP
   const imap = new Imap({
     user: process.env.USER_EMAIL,
@@ -67,8 +67,8 @@ const fetchEmails = async (companyEmail, companyId) => {
 
               // Creating email object
               const emailObject = {
-                id_of_company: companyId,
-                date: `${parsed.date}`,
+                id_of_company: applicationId,
+                email_date: `${parsed.date}`,
                 message_id: parsed.headers.get("message-id"),
                 subject: parsed.headers.get("subject")
                   ? parsed.headers.get("subject")
@@ -202,7 +202,7 @@ const fetchEmailDetail = async (req, res, emailInfo) => {
                 // to be send as a respond data
                 const emailObject = {
                   subject: emailInfo.subject,
-                  date: emailInfo.date,
+                  email_date: emailInfo.date,
                   link_to_email_page: "http://localhost:8080/email/email.html",
                 };
                 res.status(200).json(emailObject);
