@@ -8,7 +8,7 @@ exports.up = function (knex) {
     table
       .integer("id_of_company")
       .unsigned()
-      .references("companies.id")
+      .references("applications.id")
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
     table.string("company_name").notNullable();
