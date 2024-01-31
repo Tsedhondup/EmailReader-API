@@ -33,7 +33,30 @@ const getAllApplications = (req, res) => {
   });
 };
 
+const getApplicationDetails = (req, res) => {
+  knex
+    .select()
+    .from("emails")
+    .where({ id_of_company: req.params.id })
+    .then((foundEmails) => {
+      if (emailController.length === 0) {
+        res.status(500).json({
+          message: `Cannot find emails with application Id: ${req.params.id}`,
+        });
+      }
+      res.status(200).json(foundEmails);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .json({
+          message: `Cannot retrieve email with application id:${req.params.id}`,
+        });
+    });
+};
+
 module.exports = {
   addApplication,
   getAllApplications,
+  getApplicationDetails,
 };
