@@ -5,7 +5,7 @@
 
 // import seed data
 const profiles = require("../seed_data/profile");
-const companies = require("../seed_data/companies");
+const applications = require("../seed_data/applications");
 const emails = require("../seed_data/emails");
 const interviews = require("../seed_data/interviews");
 
@@ -27,7 +27,7 @@ exports.seed = function (knex) {
         .del();
     })
     .then(() => {
-      return knex("companies") // delete emails table
+      return knex("applications") // delete emails table
         .del();
     })
     .then(() => {
@@ -38,7 +38,7 @@ exports.seed = function (knex) {
       return knex("profiles").insert(profiles);
     })
     .then(() => {
-      return knex("companies").insert(companies);
+      return knex("applications").insert(companies);
     })
     .then(() => {
       return knex("emails").insert(emails);
