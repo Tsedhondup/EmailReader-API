@@ -115,11 +115,9 @@ const getAllEmails = (req, res) => {
     .where({ id_of_company: req.params.applicationId })
     .then((itemsFound) => {
       if (itemsFound.length === 0) {
-        return res
-          .status(404)
-          .json({
-            message: `Item with ID: ${req.params.applicationId} not found`,
-          });
+        return res.status(404).json({
+          message: `Item with ID: ${req.params.applicationId} not found`,
+        });
       }
 
       res.status(200).json(itemsFound);
@@ -137,7 +135,7 @@ const fetchEmailDetail = async (req, res, emailInfo) => {
     password: process.env.APP_PASSWORD, // my app
     host: "imap.gmail.com",
     port: 993,
-    authTimeout: 10000,
+    authTimeout: 150000,
     tls: true,
     tlsOptions: { rejectUnauthorized: false },
   });
@@ -201,13 +199,23 @@ const fetchEmailDetail = async (req, res, emailInfo) => {
                   }
                 );
 
+                knex("applications")
+                  .where({ id: emailInfo.application_id })
+                  .then((applicationData) => {
+                    const emailObject = {
+                      company_name: applicationData[0].company_name,
+                      position: applicationData[0].position,
+                      subject: emailInfo.subject,
+                      email_date: emailInfo.email_date,
+                      link_to_email_page:
+                        "http://localhost:8080/email/email.html",
+                    };
+                    res.status(200).json(emailObject);
+                  })
+                  .catch(() => {
+                    console.log("cannot find application");
+                  });
                 // to be send as a respond data
-                const emailObject = {
-                  subject: emailInfo.subject,
-                  email_date: emailInfo.date,
-                  link_to_email_page: "http://localhost:8080/email/email.html",
-                };
-                res.status(200).json(emailObject);
               }
             });
           });
