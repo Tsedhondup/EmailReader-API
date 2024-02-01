@@ -112,19 +112,19 @@ const fetchEmails = async (companyEmail, applicationId) => {
 
 const getAllEmails = (req, res) => {
   knex("emails")
-    .where({ id_of_company: req.params.companyId })
+    .where({ id_of_company: req.params.applicationId })
     .then((itemsFound) => {
       if (itemsFound.length === 0) {
         return res
           .status(404)
-          .json({ message: `Item with ID: ${req.params.companyId} not found` });
+          .json({ message: `Item with ID: ${req.params.applicationId} not found` });
       }
 
       res.status(200).json(itemsFound);
     })
     .catch(() => {
       res.status(500).json({
-        message: `Unable to retrieve emails: ${req.params.companyId}`,
+        message: `Unable to retrieve emails: ${req.params.applicationId}`,
       });
     });
 };
