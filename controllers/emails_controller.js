@@ -203,6 +203,7 @@ const fetchEmailDetail = async (req, res, emailInfo) => {
                   .where({ id: emailInfo.application_id })
                   .then((applicationData) => {
                     const emailObject = {
+                      application_id : applicationData[0].id,
                       company_name: applicationData[0].company_name,
                       position: applicationData[0].position,
                       subject: emailInfo.subject,
