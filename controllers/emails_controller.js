@@ -67,7 +67,7 @@ const fetchEmails = async (companyEmail, applicationId) => {
 
               // Creating email object
               const emailObject = {
-                id_of_company: applicationId,
+                application_id: applicationId,
                 email_date: `${parsed.date}`,
                 message_id: parsed.headers.get("message-id"),
                 subject: parsed.headers.get("subject")
@@ -117,7 +117,9 @@ const getAllEmails = (req, res) => {
       if (itemsFound.length === 0) {
         return res
           .status(404)
-          .json({ message: `Item with ID: ${req.params.applicationId} not found` });
+          .json({
+            message: `Item with ID: ${req.params.applicationId} not found`,
+          });
       }
 
       res.status(200).json(itemsFound);
