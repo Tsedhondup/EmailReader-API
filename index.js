@@ -20,6 +20,9 @@ const emailRoute = require("./routes/emails_routes");
 const interviewRoute = require("./routes/interviews_routes");
 const loginRoute = require("./routes/login_route");
 
+// THIS ROUTE DOES NOT AUTHENTICATION
+app.post("/login", loginRoute);
+
 // MIDDLEWARE
 app.use((req, res, next) => {
   console.log(req.headers);
@@ -39,7 +42,6 @@ app.get("/emailDetail/:emailId", emailRoute);
 app.post("/profile", profileRoute);
 app.post("/addApplication", applicationRoute);
 app.post("/addInterviews", interviewRoute);
-app.post("/login", loginRoute);
 // start Express server
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
