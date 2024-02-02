@@ -1,8 +1,8 @@
 module.exports = [
   {
     id: 1,
-    id_of_company: 1,
-    company_name: "YouTube",
+    application_id: 1,
+    company_name: "BrainStation Slack",
     interview_date: "234234324",
     about: "whiteboarding",
     status: "active",

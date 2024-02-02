@@ -67,7 +67,7 @@ const fetchEmails = async (companyEmail, applicationId) => {
 
               // Creating email object
               const emailObject = {
-                id_of_company: applicationId,
+                application_id: applicationId,
                 email_date: `${parsed.date}`,
                 message_id: parsed.headers.get("message-id"),
                 subject: parsed.headers.get("subject")
@@ -112,19 +112,19 @@ const fetchEmails = async (companyEmail, applicationId) => {
 
 const getAllEmails = (req, res) => {
   knex("emails")
-    .where({ id_of_company: req.params.companyId })
+    .where({ id_of_company: req.params.applicationId })
     .then((itemsFound) => {
       if (itemsFound.length === 0) {
-        return res
-          .status(404)
-          .json({ message: `Item with ID: ${req.params.companyId} not found` });
+        return res.status(404).json({
+          message: `Item with ID: ${req.params.applicationId} not found`,
+        });
       }
 
       res.status(200).json(itemsFound);
     })
     .catch(() => {
       res.status(500).json({
-        message: `Unable to retrieve emails: ${req.params.companyId}`,
+        message: `Unable to retrieve emails: ${req.params.applicationId}`,
       });
     });
 };
@@ -135,7 +135,7 @@ const fetchEmailDetail = async (req, res, emailInfo) => {
     password: process.env.APP_PASSWORD, // my app
     host: "imap.gmail.com",
     port: 993,
-    authTimeout: 10000,
+    authTimeout: 150000,
     tls: true,
     tlsOptions: { rejectUnauthorized: false },
   });
@@ -199,13 +199,24 @@ const fetchEmailDetail = async (req, res, emailInfo) => {
                   }
                 );
 
+                knex("applications")
+                  .where({ id: emailInfo.application_id })
+                  .then((applicationData) => {
+                    const emailObject = {
+                      application_id : applicationData[0].id,
+                      company_name: applicationData[0].company_name,
+                      position: applicationData[0].position,
+                      subject: emailInfo.subject,
+                      email_date: emailInfo.email_date,
+                      link_to_email_page:
+                        "http://localhost:8080/email/email.html",
+                    };
+                    res.status(200).json(emailObject);
+                  })
+                  .catch(() => {
+                    console.log("cannot find application");
+                  });
                 // to be send as a respond data
-                const emailObject = {
-                  subject: emailInfo.subject,
-                  email_date: emailInfo.date,
-                  link_to_email_page: "http://localhost:8080/email/email.html",
-                };
-                res.status(200).json(emailObject);
               }
             });
           });

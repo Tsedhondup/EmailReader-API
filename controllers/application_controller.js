@@ -40,9 +40,9 @@ const getApplicationDetails = (req, res) => {
   let interviews;
   knex
     .from("emails")
-    .where({ id_of_company: req.params.id })
+    .where({ application_id: req.params.id })
     .then((foundEmails) => {
-      if (emailController.length === 0) {
+      if (foundEmails.length === 0) {
         // O email is valid data for client request*****
         console.log(`Cannot find emails with application Id: ${req.params.id}`);
       }
@@ -52,7 +52,7 @@ const getApplicationDetails = (req, res) => {
     .then(() => {
       // GET ALL THE INTERVIEWS
       return knex("interviews").where({
-        id_of_company: req.params.id,
+        application_id: req.params.id,
       });
     })
     .then((foundInterviews) => {

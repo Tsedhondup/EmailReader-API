@@ -22,7 +22,7 @@ const interviewRoute = require("./routes/interviews_routes");
 app.get("/profile", profileRoute);
 app.get("/getAllApplications", applicationRoute);
 app.get("/getApplicationDetails/:id", applicationRoute);
-app.get("/allEmails/:companyId", emailRoute);
+app.get("/allEmails/:applicationId", emailRoute);
 app.get("/allInterviews", interviewRoute);
 app.get("/emailDetail/:emailId", emailRoute);
 
