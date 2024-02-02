@@ -20,6 +20,15 @@ const emailRoute = require("./routes/emails_routes");
 const interviewRoute = require("./routes/interviews_routes");
 const loginRoute = require("./routes/login_route");
 
+// MIDDLEWARE
+app.use((req, res, next) => {
+  console.log(req.headers);
+  if (req.headers.userid !== "1") {
+    res.status(500).json({ message: "Authentication error" });
+  } else {
+    next();
+  }
+});
 app.get("/profile", profileRoute);
 app.get("/getAllApplications", applicationRoute);
 app.get("/getApplicationDetails/:id", applicationRoute);
