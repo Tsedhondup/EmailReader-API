@@ -5,9 +5,9 @@ const authenticateUser = (req, res) => {
     .then((data) => {
       if (data.length === 0) {
         res.status(500).json({ message: "cannot find user" });
+      } else {
+        res.status(200).json({ userId: data[0].id });
       }
-
-      res.status(200).json({ userId: data[0].id });
     })
     .catch((err) => {
       console.log(err);
