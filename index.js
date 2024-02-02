@@ -18,6 +18,7 @@ const profileRoute = require("./routes/profiles_routes");
 const applicationRoute = require("./routes/application_routes");
 const emailRoute = require("./routes/emails_routes");
 const interviewRoute = require("./routes/interviews_routes");
+const loginRoute = require("./routes/login_route");
 
 app.get("/profile", profileRoute);
 app.get("/getAllApplications", applicationRoute);
@@ -29,6 +30,7 @@ app.get("/emailDetail/:emailId", emailRoute);
 app.post("/profile", profileRoute);
 app.post("/addApplication", applicationRoute);
 app.post("/addInterviews", interviewRoute);
+app.post("/login", loginRoute);
 // start Express server
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
