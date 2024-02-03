@@ -25,12 +25,13 @@ const addApplication = (req, res) => {
     });
 };
 const getAllApplications = (req, res) => {
-  knex("applications").then((applicationData) => {
-    if (applicationData.length === 0) {
-      res.status(400).json({ message: "Cannot find any job applications" });
-    }
-    res.status(200).json(applicationData);
-  });
+  knex("applications")
+    .then((applicationData) => {
+      res.status(200).json(applicationData);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 const getApplicationDetails = (req, res) => {

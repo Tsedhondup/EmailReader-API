@@ -9,7 +9,6 @@ const getProfile = (_req, res) => {
 };
 
 const createProfile = (req, res) => {
-  console.log(req.body);
   knex("profiles")
     .insert(req.body)
     .then((result) => {
