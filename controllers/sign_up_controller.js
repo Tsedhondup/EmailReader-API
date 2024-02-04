@@ -1,16 +1,15 @@
 const knex = require("knex")(require("../knexfile"));
 const signUp = (req, res) => {
   knex("profiles")
-    .where({ email: req.body.email })
-    .then((data) => {
-      if (data.length === 0) {
-        res.status(500).json({ message: "cannot find user" });
-      } else {
-        res.status(200).json({ userId: data[0].id });
-      }
+    .insert(req.body)
+    .then((result) => {
+      return knex("profiles").where({ id: result[0] });
+    })
+    .then((newUser) => {
+      res.status(201).json(newUser);
     })
     .catch((err) => {
-      console.log(err);
+      res.status(500).json({ message: "Sign Up failed" });
     });
 };
 module.exports = {

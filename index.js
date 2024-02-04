@@ -23,7 +23,7 @@ const signUpRoute = require("./routes/sign_up_routes");
 
 // THIS ROUTE DOES NOT AUTHENTICATION
 app.post("/login", loginRoute);
-app.post("/logUp", signUpRoute);
+app.post("/signUp", signUpRoute);
 
 // MIDDLEWARE
 app.use((req, res, next) => {
