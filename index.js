@@ -19,13 +19,14 @@ const applicationRoute = require("./routes/application_routes");
 const emailRoute = require("./routes/emails_routes");
 const interviewRoute = require("./routes/interviews_routes");
 const loginRoute = require("./routes/login_route");
+const signUpRoute = require("./routes/sign_up_routes");
 
 // THIS ROUTE DOES NOT AUTHENTICATION
 app.post("/login", loginRoute);
+app.post("/logUp", signUpRoute);
 
 // MIDDLEWARE
 app.use((req, res, next) => {
-  console.log(req.headers);
   if (req.headers.userid !== "1") {
     res.status(500).json({ message: "Authentication error" });
   } else {

@@ -1,1587 +1,834 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> <head> <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> <meta name="HandheldFriendly" content="true"> <meta name="viewport" content="width=device-width; initial-scale=0.666667; user-scalable=0"> <meta name="viewport" content="width=device-width"> <title></title> <style>
-          @media (max-width: 512px) { .mercado-container { width: 100% !important; } }
-        </style> <style>
-          @media (max-width: 480px) { .inline-button, .inline-button table { display: none !important; }
-          .full-width-button, .full-width-button table { display: table !important; } }
-        </style> <style>body {font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-          'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji',
-          'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;}</style> <!--[if mso]><style type="text/css"> </style><![endif]--> <!--[if IE]><style type="text/css"> </style><![endif]--> <style>
-@media (max-width: 480px) {
-  .inline-button,
-.inline-button table {
-    display: none !important;
-  }
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet"><title>You've got 5 unread messages</title><style type="text/css">/* Global Resets */
+	body, .background_main, p, table, td, div { font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
-  .full-width-button,
-.full-width-button table {
-    display: table !important;
-  }
+	img {
+		border: none;
+		-ms-interpolation-mode: bicubic;
+		max-width: 100%;
+	}
+
+	p {padding-bottom: 2px;}
+
+	body {
+		background: #fff;
+		font-size: 17px;
+		line-height: 24px;
+		margin: 0;
+		padding: 0;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	table {
+		border-collapse: collapse;
+		mso-table-lspace: 0pt;
+		mso-table-rspace: 0pt;
+		width: 100%;
+	}
+
+	td {
+		font-size: 17px;
+		line-height: 24px;
+		vertical-align: top;
+	}
+
+	/* Footer */
+	.email_footer td, .email_footer p, .email_footer span {
+		font-size: 15px;
+		text-align: center;
+		color: #1d1c1d;
+	}
+
+	.email_footer a {
+		text-decoration: underline;
+	}
+
+	.email_footer td {padding-top: 20px;}
+
+	.footer_logo {
+		width: 40px;
+		height: 40px;
+		padding-bottom: 20px;
+	}
+
+	.footer_title {
+		font-weight: 900;
+	}
+
+	.preheader {
+		display: none;
+		mso-hide: all;
+	}
+
+	/* Typography */
+	h1, h2, h3, h4 {
+		color: #1d1c1d;
+		font-weight: 700;
+		margin: 0;
+		margin-bottom: 12px;
+	}
+
+	h1 {
+		font-size: 36px;
+		line-height: 42px;
+		letter-spacing: -.25px;
+		margin-bottom: 28px;
+		text-align: left;
+		word-break: break-word;
+	}
+
+	h2 {
+		font-size: 24px;
+		line-height: 32px;
+		letter-spacing: -0.75px;
+		margin-bottom: 28px;
+		text-align: left;
+	}
+
+	h3 {
+		font-size: 18px;
+		line-height: 24px;
+		letter-spacing: 0px;
+		margin-bottom: 0px;
+	}
+
+	p, ul, ol {
+		font-size: 17px;
+		line-height: 24px;
+		font-weight: normal;
+		margin: 0;
+		margin-bottom: 15px;
+	}
+
+	ul, ol {
+		padding-left: 40px;
+	}
+
+	p li, ul li, ol li {
+		list-style-position: outside;
+		margin-left: 5px;
+	}
+
+	p {
+		font-size: 16px;
+		letter-spacing: -0.2px;
+	}
+
+	a {
+		color: #1264a3;
+		text-decoration: underline!important;
+	}
+
+	a:hover {text-decoration: underline;}
+
+	.button_link::after {
+		position: absolute;
+		content: '';
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border-radius: 4px;
+	}
+
+	.button_link:hover::after {
+		box-shadow: inset 0 -2px #237c4a;
+	}
+
+	.button_link.is_secondary:hover::after {
+		box-shadow: none;
+	}
+
+	.button_link.plum:hover {
+		background-color: #4a154b !important;
+		border-color: #4a154b !important;
+	}
+
+	.button_link_wrapper.plum:hover {
+		background-color: #4a154b !important;
+	}
+
+	.button_link.plum:hover::after {
+		box-shadow: none;
+	}
+
+	.preview_text {
+		color: transparent;
+		display: none;
+		height: 0;
+		max-height: 0;
+		max-width: 0;
+		opacity: 0;
+		overflow: hidden;
+		mso-hide: all;
+		visibility: hidden;
+		width: 0;
+		font-size: 1px;
+		line-height:1px;
+	}
+
+	.preview_text a {
+		color: #3AA3E3 !important;
+		font-weight: bold;
+	}
+
+	.sm_visible {
+		display: none;
+	}
+
+	.footer_padding {
+		padding: 0 50px;
+	}
+
+	table[class="background_main"] .social_icon_margin {
+		margin-left: 32px !important;
+	}
+
+	/* Responsive and Mobile Friendly Styles */
+	/* Yahoo Mail has a history of rendering all media query styles with class selectors unless class is used as an attribute */
+	@media only screen and (max-width: 600px) {
+		table[class="background_main"] .sm_full_width {
+			width: 100% !important;
+		}
+
+		table[class="background_main"] .sm_90_percent_width {
+			width: 90% !important;
+			padding: 16px !important;
+			text-align: center !important;
+			float: none !important;
+		}
+
+		table[class="background_main"] .sm_side_padding {
+			padding-right: 8px !important;
+			padding-left: 8px !important;
+			float: none !important;
+		}
+
+		table[class="background_main"] .sm_small_top_padding {
+			padding-top: 8px !important;
+		}
+
+		table[class="background_main"] .sm_top_padding {
+			padding-top: 16px !important;
+		}
+
+		table[class="background_main"] .sm_auto_width {
+			width: auto !important;
+		}
+
+		table[class="background_main"] .sm_auto_height {
+			height: auto !important;
+		}
+
+		table[class="background_main"] .sm_border_box {
+			box-sizing: border-box !important;
+		}
+
+		table[class="background_main"] .sm_block {
+			display: block !important;
+		}
+
+		table[class="background_main"] .sm_inline_block {
+			display: inline-block !important;
+		}
+
+		table[class="background_main"] .sm_table {
+			display: table !important;
+		}
+
+		table[class="background_main"] .sm_no_side_padding {
+			padding-right: 0 !important;
+			padding-left: 0 !important;
+		}
+
+		table[class="background_main"] .sm_no_border_radius {
+			border-radius: 0 !important;
+		}
+
+		table[class="background_main"] .sm_no_padding {
+			padding-right: 0 !important;
+			padding-left: 0 !important;
+		}
+
+		table[class="background_main"] .sm_os_icons_height {
+			/* this is to make the parent element the same height as the inline-block img inside */
+			height: 44px;
+		}
+
+		table[class="background_main"] .small_icon {
+			width: 20px !important;
+			height: 20px !important;
+		}
+
+		table[class="background_main"] .social_icon_margin {
+			margin-left: 20px !important;
+		}
+
+		table[class="background_main"] .slack_logo_small_icon {
+			width: 80px !important;
+		}
+
+		table[class="background_main"] .slack_logo_small_icon img {
+			 height: 24px !important;
+		}
+
+		.social_img_bottom_margin {
+			/*this class is for social_user_outreach email only*/
+			margin-bottom: 20px !important;
+		}
+
+		.social_p_bottom_margin {
+			/*this class is for social_user_outreach email only*/
+			margin-bottom: 40px !important;
+		}
+
+		/* Common responsive styles for new email design templates #feat-activation-email-audit */
+		.sm_hidden {
+			display: none!important;
+		}
+
+		.sm_visible {
+			display: inline-block!important;
+		}
+		h1 {
+			font-size: 24px!important;
+			line-height: 30px!important;
+			margin-bottom: 20px!important;
+			word-break: break-word;
+		}
+		h2 {
+			font-size: 16px!important;
+			line-height: 23px!important;
+			margin-bottom: 10px!important;
+		}
+		h3 {
+			font-size: 14px!important;
+			line-height: 20px!important;
+		}
+
+		.hero_paragraph, .bulleted_list {
+			font-size: 14px!important;
+			line-height: 19px!important;
+			margin-bottom: 20px!important;
+			word-break: break-word;
+		}
+
+		.status_paragraph {
+			font-size: 14px!important;
+			line-height: 19px!important;
+			word-break: break-word;
+		}
+		.content_paragraph {
+			font-size: 12px!important;
+			line-height: 18px!important;
+			margin-bottom: 10px!important;
+		}
+		.list_paragraph {
+			font-size: 12px!important;
+			line-height: 18px!important;
+		}
+
+		.restyle_button {
+			font-size: 12px!important;
+			border-top: 10px solid!important;
+			border-bottom: 10px solid!important;
+			border-color: #611f69!important;
+			line-height: 12px!important;
+		}
+
+		.margin_top {
+			margin-top: 20px!important;
+		}
+
+		.lg_margin_left_right {
+			margin-left: 26px!important;
+			margin-right: 26px!important;
+		}
+
+		.xl_margin_bottom {
+			margin-bottom: 30px!important;
+		}
+
+		.xl_margin_top {
+			margin-top: 30px!important;
+		}
+		.hero_block_container {
+			margin-left: 26px!important;
+		}
+
+		.hero_block_left {
+			width: 50%!important;
+		}
+
+		.slack_logo_style {
+			margin-top: -6px!important;
+			margin-bottom: -12px!important;
+		}
+
+		.larger_bottom_margin {
+			margin-bottom: 30px!important;
+		}
+
+		.list_header {
+			font-size: 16px!important;
+		}
+
+		.list_icon_wrapper {
+			width: 55px!important;
+		}
+
+		.list_icon_style {
+			width: 40px!important;
+			height: 40px!important;
+		}
+
+		.list_icon_style_large {
+			width: auto!important;
+			height: 50px!important;
+		}
+
+		.line_height_24 {
+			line-height: 24px!important;
+		}
+
+		.brand_logo_wrapper {
+			width: 78px!important;
+		}
+
+		.brand_logo_style {
+			width: 68px!important;
+			height: 68px!important;
+		}
+
+		.brand_heading {
+			font-size: 14px!important;
+			line-height: 20px!important;
+		}
+
+		.brand_link {
+			font-size: 13px!important;
+			line-height: 18px!important;
+		}
+
+		.grey_box_container {
+			padding: 20px 9px!important;
+		}
+
+		.account_info_wrapper {
+			margin-bottom: 18px!important;
+		}
+
+		.account_info_item {
+			padding: 0px 5px!important;
+		}
+
+		.account_info_avatar {
+			width: 55px!important;
+			height: 55px!important;
+			margin-bottom: 5px!important;
+		}
+		table[class="background_main"] .footer_padding {
+			padding: 0 26px!important;
+		}
+		.footer_padding {
+			padding: 0 26px !important;
+		}
+		.small_font {
+			font-size: 14px!important;
+		}
+
+	}
+
+	/* More client-specific styles */
+	@media all {
+		.ExternalClass {
+			width: 100%;
+		}
+
+		.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+			line-height: 100%;
+		}
+
+		.footer_link {
+			color: #1d1c1d !important;
+			font-family: inherit !important;
+			font-size: inherit !important;
+			font-weight: inherit !important;
+			line-height: inherit !important;
+		}
+	}
+	a:hover {
+		text-decoration: underline !important;
+	}
+
+	pre, code {
+		--saf-0: rgba(var(--sk_foreground_low, 29, 28, 29), 0.13);
+		border: 1px solid var(--saf-0);
+		background: rgba(var(--sk_foreground_min, 29, 28, 29), 0.04);
+		font-family: 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace !important;
+		font-size: 12px;
+		line-height: 1.50001;
+		font-variant-ligatures: none;
+		white-space: pre;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		word-break: normal;
+		-webkit-tab-size: 4;
+		-moz-tab-size: 4;
+		-o-tab-size: 4;
+		tab-size: 4;
+	}
+
+	code {
+		color: #e01e5a;
+		padding: 2px 3px 1px;
+		border-radius: 3px;
+	}
+
+	pre {
+		margin-bottom: 16px;
+		padding: 8px;
+		border-radius: 4px;
+	}
+
+	blockquote {
+		position: relative;
+		margin-bottom: 16px;
+		padding-left: 16px;
+		border-left: rgba(var(--sk_foreground_low_solid, 221, 221, 221), 1);
+		border-left-width: 4px;
+		border-left-style: solid;
+	}
+</style><style type="text/css">/* Recap Email Styles */
+body * {
+	font-family: Helvetica, 'Helvetica Neue', 'Lato', Arial, sans-serif;
 }
-@media (min-width: 576px) {
-  .container {
-    max-width: 576px;
-  }
 
-  .\!container {
-    max-width: 576px !important;
-  }
+h1 {
+	margin-bottom: 45px;
 }
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
 
-  .\!container {
-    max-width: 768px !important;
-  }
+span.para_break {
+	display: block;
+	height: 8px;
 }
-@media (min-width: 992px) {
-  .container {
-    max-width: 992px;
-  }
 
-  .\!container {
-    max-width: 992px !important;
-  }
+
+.digest_email__heading_wrapper {
+	padding: 0 50px;
 }
-@media (min-width: 1128px) {
-  .container {
-    max-width: 1128px;
-  }
 
-  .\!container {
-    max-width: 1128px !important;
-  }
+table.digest_email__card_wrapper {
+	border-collapse: collapse;
 }
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-  }
 
-  .\!container {
-    max-width: 1200px !important;
-  }
+table.digest_email__card_wrapper td {
+	padding: 0;
+	margin: 0;
 }
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-  }
 
-  .\!container {
-    max-width: 1440px !important;
-  }
+.digest_email__card_header {
+	padding: 20px !important;
 }
-@media (min-width: 1680px) {
-  .container {
-    max-width: 1680px;
-  }
 
-  .\!container {
-    max-width: 1680px !important;
-  }
+.digest_email__card_header h3 {
+	color: #FFFFFF;
 }
-@media (min-width: 1920px) {
-  .container {
-    max-width: 1920px;
-  }
 
-  .\!container {
-    max-width: 1920px !important;
-  }
+.digest_email__card_header .email_actions__icon {
+	padding-right: 16px !important;
 }
-@media (min-width: 992px) {
-  .base-detail-page__header .nav {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1128px;
-  }
+
+.digest_email__card_header .email_actions__icon a {
+	height: 58px;
 }
-@media (max-width: 767px) {
-  .embedded-social-share .modal__outlet {
-    flex-direction: row;
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.6);
-  }
+
+.digest_email__card_footer {
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
 }
-@media (max-width: 767px) {
-  .nav .search-bar {
-    order: 4;
-  }
+
+.digest_email__card_footer_spacer {
+	padding-right: 20px !important;
+	padding-left: 20px !important;
 }
-@media (max-width: 767px) {
-  .nav .sign-in-card {
-    display: none;
-  }
+
+.digest_email__logo_spacer {
+	width: 50px;
 }
-@media (max-width: 767px) {
-  .nav--minified-mobile .nav__cta-container > *:not(.nav__link-person) {
-    display: none;
-  }
+
+.digest_email__card_spacer {
+	width: 94px;
 }
-@media screen and (max-width: 767px) {
-  .nav .search-bar--minified-mobile {
-    margin-bottom: 0px;
-    height: 100%;
-    flex-grow: 1;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    order: initial;
-    width: initial;
-  }
 
-  .nav .search-bar--minified-mobile .search-bar__placeholder {
-    margin-top: 0px;
-  }
+.digest_email__card_header_text {
+	color: #FFFFFF !important;
 }
-@media (max-width: 767px) {
-  .tw-link-column-item {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+
+.digest_email__card_header_text p {
+	font-size: 15px !important;
 }
-@media (min-width: 992px) {
-  .tw-link-column-item {
-    margin-bottom: 8px;
-  }
 
-  .tw-linkster .tw-link-column-item {
-    margin-bottom: 0px;
-  }
+.digest_email__card_launch_cta {
+	font-size: 14px;
+	line-height: 14px;
+	padding: 19px 11px;
 }
-@media (max-width: 767px) {
-  .member-nav-menu .collapsible-dropdown__button {
-    margin-top: 24px;
-    margin-bottom: 24px;
-    margin-left: 16px;
-  }
+
+.digest_email__card_item {
+	font-size: 15px;
 }
-@media (max-width: 767px) {
-  .member-nav-menu .collapsible-dropdown__list {
-    right: 0px;
-    max-height: calc(100vh - 52px);
-    overflow-y: auto;
-  }
+
+.digest_email__item_spacer {
+	height: 8px;
 }
-@media (max-width: 767px) {
-  .recent-searches.recent-searches--show {
-    position: fixed;
-    top: 168px;
-    left: 0px;
-    width: 100vw;
-    min-width: 100vw;
-    border-width: 0;
-  }
+
+.digest_email__item_spacer_last {
+	height: 20px;
 }
-@media (max-width: 767px) {
-  .search-bar .dismissable-input {
-    background-color: rgba(0, 0, 0, 0);
-    border-color: rgba(0, 0, 0, 0.75);
-    color: rgba(0, 0, 0, 0.9);
-    border-radius: 4px;
-    border-width: 1px;
-    border-style: solid;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-  }
 
-  .search-bar .dismissable-input:hover {
-    background-color: rgba(0, 0, 0, 0.04);
-    border-color: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.9);
-    cursor: pointer;
-    border-width: 1px;
-  }
-
-  .search-bar .dismissable-input:active {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0.9);
-    cursor: pointer;
-    border-width: 1px;
-  }
-
-  .search-bar .dismissable-input:disabled {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0.3);
-    cursor: not-allowed;
-    border-width: 1px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
-
-  .search-bar .dismissable-input:disabled:hover {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0.3);
-    cursor: not-allowed;
-    border-width: 1px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
-
-  .search-bar .dismissable-input:disabled:focus {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0.3);
-    cursor: not-allowed;
-    border-width: 1px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
-
-  .search-bar .dismissable-input:disabled:active {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0.3);
-    cursor: not-allowed;
-    border-width: 1px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
-
-  .input-error .search-bar .dismissable-input {
-    background-color: rgba(0, 0, 0, 0);
-    border-color: #cf0007;
-    color: rgba(0, 0, 0, 0.9);
-    border-radius: 4px;
-    border-width: 1px;
-    border-style: solid;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-  }
-
-  .input-error .search-bar .dismissable-input:hover {
-    background-color: rgba(0, 0, 0, 0.04);
-    border-color: #8a0005;
-    box-shadow: 0 0 0 1px #8a0005;
-    cursor: pointer;
-    border-width: 1px;
-  }
-
-  .input-error .search-bar .dismissable-input:active {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: #8a0005;
-    cursor: pointer;
-    border-width: 1px;
-  }
-
-  .input-error .search-bar .dismissable-input:disabled {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0.3);
-    cursor: not-allowed;
-    border-width: 1px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
-
-  .input-error .search-bar .dismissable-input:disabled:hover {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0.3);
-    cursor: not-allowed;
-    border-width: 1px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
-
-  .input-error .search-bar .dismissable-input:disabled:focus {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0.3);
-    cursor: not-allowed;
-    border-width: 1px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
-
-  .input-error .search-bar .dismissable-input:disabled:active {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0.3);
-    cursor: not-allowed;
-    border-width: 1px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
-
-  .base-search-bar .input-error .search-bar .dismissable-input.typeahead-input {
-    border-style: solid;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
-
-  .base-search-bar .input-error .search-bar .dismissable-input.typeahead-input:active {
-    border-style: solid;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
-
-  .base-search-bar .input-error .search-bar .dismissable-input.typeahead-input:focus-within {
-    border-style: solid;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
+.digest_email__border_spacer {
+	height: 20px;
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  .search-bar .dismissable-input {
-    background-color: rgba(0, 0, 0, 0);
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
 
-  .search-bar .dismissable-input:hover {
-    border-right-color: rgba(0, 0, 0, 0.08);
-  }
+.digest_email__divider {
+	margin: 40px 0;
 }
-@media (min-width: 992px) {
-  .search-bar .dismissable-input {
-    width: 0px;
-    background-color: rgba(0, 0, 0, 0);
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
-  }
 
-  .search-bar .dismissable-input:hover {
-    border-right-color: rgba(0, 0, 0, 0.08);
-  }
+.digest_email__message_sections {
+	margin-bottom: 40px;
 }
-@media (max-width: 767px) {
-  .search-bar:not(.isExpanded) .base-search-bar__form {
-    display: none;
-  }
+
+.digest_email__padding {
+	padding-left: 50px;
+	padding-right: 50px;
 }
-@media screen and (max-width: 767px) {
-  @media (max-width: 767px) {
-    .search-bar.isExpanded .search-bar__placeholder {
-      display: none;
-    }
 
-    .search-bar.isExpanded .base-search-bar__form {
-      display: flex;
-    }
-
-    position: fixed;
-        top: 0px;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        z-index: 1000;
-        margin-bottom: 0px;
-        height: 100%;
-        background-color: #ffffff;
-    .search-bar.isExpanded .switcher-tabs__cancel-btn,
-.search-bar.isExpanded .switcher-tabs {
-      display: inherit;
-    }
-
-  }
+.digest_email__section_spacing {
+	padding-bottom: 16px;
 }
-@media screen and (max-width: 767px) {
-  .stuck .search-bar {
-    transition: height 0.4s, margin-bottom 0.4s ease-in-out;
-    margin-bottom: 0px;
-    height: 0px;
-  }
 
-  .stuck .search-bar--minified-mobile .search-bar__placeholder {
-    max-height: initial;
-    pointer-events: initial;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0.6);
-  }
+.digest_email__section_heading {
+	padding-bottom: 36px;
 }
-@media screen and (min-width: 767px) {
-  .switcher-tabs .switcher-tabs__button:after {
-    border-bottom: none;
-  }
+
+.digest_email__section_heading h2, h6 {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
 }
-@media (max-width: 767px) {
-  .tabs__list {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+
+.digest_email__section a {
+	text-decoration: none !important;
 }
-@media (max-width: 767px) {
-  .typeahead-input__dropdown.typeahead-input__dropdown--show {
-    position: fixed;
-    top: 158px;
-    left: 0px;
-    width: 100vw;
-    min-width: 100vw;
-  }
+
+.digest_email__section .tsf_output.emoji_replace_on_load .emoji {
+	vertical-align: bottom;
 }
-@media (max-width: 767px) {
-  .base-search-bar .dismissable-input {
-    max-height: 40px;
-  }
+
+.digest_email__section .tsf_output {
+	line-height: 22px;
 }
-@media (max-width: 767px) {
-  .base-main-card__media ~ .base-main-card__info {
-    margin-left: 0px;
-    margin-top: 16px;
-  }
+
+.digest_email__section .tsf_output .private_channel_replace_on_load {
+	background-color: #DDDDDD;
+	padding: 2px;
+	border-radius: 3px;
 }
-@media (max-width: 767px) {
-  .mx-main-feed-card-no-gutter {
-    margin-left: -16px;
-    margin-right: -16px;
-  }
+
+@media only screen and (max-width: 600px) {
+	h1 {
+		margin-bottom: 30px !important;
+	}
+
+	h3 {
+		font-size: 13px !important;
+	}
+
+	.email_actions__wrapper {
+		padding: 30px 25px !important;
+		padding-bottom: 0px !important;
+	}
+	.email_actions__icon {
+		width: 45px !important;
+		height: 45px !important;
+		min-width: 45px !important;
+		max-width: 45px !important;
+		line-height: 45px !important;
+	}
+
+	.email_actions__icon a, .email_actions__icon img {
+		width: inherit !important;
+		height: inherit !important;
+		min-width: inherit !important;
+		line-height: inherit !important;
+	}
+	.email_actions__icon_height_auto img {
+		height: auto !important;
+	}
+	.email_actions__text h3 {
+		font-size: 13px !important;
+	}
+	.email_actions__text p {
+		font-size: 12px !important;
+		line-height: 18px !important;
+	}
+
+	.digest_email__divider {
+		margin: 30px -26px;
+	}
+
+	.digest_email__message_sections {
+		margin-bottom: 30px;
+	}
+
+	.digest_email__message_sections .single_email_digest__sender,
+	.digest_email__message_sections .single_email_digest__message_text {
+		font-size: 13px !important;
+	}
+
+	.digest_email__message_sections .single_email_digest__timestamp {
+		font-size: 11px !important;
+	}
+
+	.digest_email__message_sections .single_email_digest__avatar {
+		margin-top: 3px;
+	}
+
+	.digest_email__padding {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.digest_email__section_heading {
+		padding-bottom: 30px !important;
+	}
+
+	.digest_email__section_heading h2 {
+		font-size: 20px !important;
+	}
+
+	.digest_email__section_spacing {
+		padding-bottom: 10px;
+	}
+
+	.digest_email__section .tsf_output {
+		line-height: 20px;
+	}
+
+	.digest_email__card_header {
+		padding: 16px !important;
+	}
+
+	.digest_email__logo_spacer {
+		width: 25px;
+	}
+
+	.digest_email__card_spacer {
+		width: 25px;
+	}
+
+	.digest_email__heading_wrapper {
+		padding: 0 25px;
+	}
+
+	.digest_email__card_footer {
+		padding-top: 16px !important;
+		padding-bottom: 16px !important;
+	}
+
+	.digest_email__card_footer_spacer {
+		padding-right: 16px !important;
+		padding-left: 16px !important;
+	}
+
+	.digest_email__card_header_text h3 {
+		font-size: 15px !important;
+	}
+
+	.digest_email__card_header_text p {
+		font-size: 13px !important;
+	}
+
+	.digest_email__card_launch_cta {
+		font-size: 12px;
+		line-height: 12px;
+		padding: 9px 11px;
+	}
+
+	.digest_email__card_item {
+		font-size: 13px;
+	}
+
+	.digest_email__item_spacer {
+		height: 6px;
+	}
+
+	.digest_email__item_spacer_last {
+		height: 16px;
+	}
+
+	.digest_email__border_spacer {
+		height: 16px;
+	}
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  .mx-main-feed-card-no-gutter {
-    margin-left: -16px;
-    margin-right: -16px;
-  }
-}
-@media (max-width: 767px) {
-  .px-main-feed-card-no-gutter {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .px-main-feed-card-no-gutter {
-    margin-left: -16px;
-    margin-right: -16px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-@media (min-width: 992px) {
-  .filter .collapsible-dropdown__list {
-    max-height: 400px;
-  }
-}
-@media (forced-colors: active) {
-  .filter-button--selected {
-    border-width: 4px;
-  }
-}
-@media (max-width: 767px) {
-  .base-card .duration {
-    font-size: 12px;
-    font-weight: 400;
-  }
-}
-@media (max-width: 767px) {
-  .hide-on-mobile {
-    display: none;
-  }
-}
-@media (max-width: 767px) {
-  .social-action-bar__button {
-    flex-direction: row;
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.6);
-  }
-}
-@media (max-width: 767px) {
-  .social-action-bar__icon--svg {
-    margin: 0px;
-    height: 24px;
-    width: 24px;
-  }
 
-  .social-action-bar__button-text {
-    padding-left: 4px;
-  }
-}
-@media only screen and (min-width: 30.06em) {
-  .card-cta-container-mobile {
-    display: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    overflow: hidden !important;
-    visibility: hidden !important;
-  }
-
-  .card-cta-container-desktop {
-    display: block !important;
-    width: auto !important;
-    height: auto !important;
-    visibility: visible !important;
-    overflow: visible !important;
-  }
-}
-@media (min-width: 992px) {
-  .md\:overflow-x-hidden {
-    overflow-x: hidden;
-  }
-}
-@media (max-width: 767px) {
-  .babybear\:invisible {
-    visibility: hidden;
-  }
-
-  .babybear\:static {
-    position: static;
-  }
-
-  .babybear\:right-4 {
-    right: 32px;
-  }
-
-  .babybear\:bottom-0 {
-    bottom: 0px;
-  }
-
-  .babybear\:\!-top-0\.5 {
-    top: -4px !important;
-  }
-
-  .babybear\:\!-top-0 {
-    top: -0px !important;
-  }
-
-  .babybear\:top-0\.5 {
-    top: 4px;
-  }
-
-  .babybear\:top-0 {
-    top: 0px;
-  }
-
-  .babybear\:bottom-\[120\%\] {
-    bottom: 120%;
-  }
-
-  .babybear\:left-3 {
-    left: 24px;
-  }
-
-  .babybear\:-top-1 {
-    top: -8px;
-  }
-
-  .babybear\:z-0 {
-    z-index: 0;
-  }
-
-  .babybear\:btn-sm {
-    height: min-content;
-    min-height: 32px;
-    border-radius: 24px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 16px;
-    padding-right: 16px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  .babybear\:btn-sm,
-.babybear\:btn-sm:visited,
-.babybear\:btn-sm:focus {
-    cursor: pointer;
-    text-decoration-line: none;
-  }
-
-  .babybear\:btn-sm:hover,
-.babybear\:btn-sm:visited:hover {
-    text-decoration-line: none;
-  }
-
-  .babybear\:btn-sm:disabled {
-    cursor: not-allowed;
-  }
-
-  .babybear\:m-0 {
-    margin: 0px;
-  }
-
-  .babybear\:my-2 {
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-
-  .babybear\:mx-0 {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .babybear\:mx-mobile-container-padding {
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-
-  .babybear\:ml-0 {
-    margin-left: 0px;
-  }
-
-  .babybear\:mr-0 {
-    margin-right: 0px;
-  }
-
-  .babybear\:mb-2 {
-    margin-bottom: 16px;
-  }
-
-  .babybear\:mt-0 {
-    margin-top: 0px;
-  }
-
-  .babybear\:mb-0\.5 {
-    margin-bottom: 4px;
-  }
-
-  .babybear\:mb-0 {
-    margin-bottom: 0px;
-  }
-
-  .babybear\:mt-0\.5 {
-    margin-top: 4px;
-  }
-
-  .babybear\:mb-1 {
-    margin-bottom: 8px;
-  }
-
-  .babybear\:mt-\[6px\] {
-    margin-top: 6px;
-  }
-
-  .babybear\:ml-\[-9999px\] {
-    margin-left: -9999px;
-  }
-
-  .babybear\:mb-1\.5 {
-    margin-bottom: 12px;
-  }
-
-  .babybear\:ml-1 {
-    margin-left: 8px;
-  }
-
-  .babybear\:btn-secondary-emphasis {
-    box-shadow: 0 0 0 1px #0a66c2;
-    background-color: rgba(0, 0, 0, 0);
-    color: #0a66c2;
-  }
-
-  .babybear\:btn-secondary-emphasis:visited {
-    box-shadow: 0 0 0 1px #0a66c2;
-    background-color: rgba(0, 0, 0, 0);
-    color: #0a66c2;
-  }
-
-  .babybear\:btn-secondary-emphasis:focus {
-    box-shadow: 0 0 0 1px #0a66c2;
-    background-color: rgba(0, 0, 0, 0);
-    color: #0a66c2;
-  }
-
-  .babybear\:flex {
-    display: flex;
-  }
-
-  .babybear\:btn-secondary-emphasis {
-    box-shadow: 0 0 0 1px #0a66c2;
-    background-color: rgba(0, 0, 0, 0);
-    color: #0a66c2;
-  }
-
-  .babybear\:btn-secondary-emphasis:visited {
-    box-shadow: 0 0 0 1px #0a66c2;
-    background-color: rgba(0, 0, 0, 0);
-    color: #0a66c2;
-  }
-
-  .babybear\:btn-secondary-emphasis:focus {
-    box-shadow: 0 0 0 1px #0a66c2;
-    background-color: rgba(0, 0, 0, 0);
-    color: #0a66c2;
-  }
-
-  .babybear\:btn-secondary-emphasis:hover {
-    box-shadow: 0 0 0 1px #0a66c2;
-    background-color: rgba(112, 181, 249, 0.1);
-    color: #004182;
-  }
-
-  .babybear\:btn-secondary-emphasis:visited:hover {
-    box-shadow: 0 0 0 1px #0a66c2;
-    background-color: rgba(112, 181, 249, 0.1);
-    color: #004182;
-  }
-
-  .babybear\:btn-secondary-emphasis:active {
-    box-shadow: 0 0 0 1px #004182;
-    background-color: rgba(112, 181, 249, 0.2);
-    color: #004182;
-  }
-
-  .babybear\:btn-secondary-emphasis:disabled {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.08);
-    color: rgba(0, 0, 0, 0.3);
-  }
-
-  .babybear\:hidden {
-    display: none;
-  }
-
-  .babybear\:h-\[360px\] {
-    height: 360px;
-  }
-
-  .babybear\:h-6 {
-    height: 48px;
-  }
-
-  .babybear\:h-\[72px\] {
-    height: 72px;
-  }
-
-  .babybear\:h-4 {
-    height: 32px;
-  }
-
-  .babybear\:h-\[27px\] {
-    height: 27px;
-  }
-
-  .babybear\:h-\[1px\] {
-    height: 1px;
-  }
-
-  .babybear\:h-\[48px\] {
-    height: 48px;
-  }
-
-  .babybear\:h-auto {
-    height: auto;
-  }
-
-  .babybear\:h-\[180px\] {
-    height: 180px;
-  }
-
-  .babybear\:max-h-\[225px\] {
-    max-height: 225px;
-  }
-
-  .babybear\:max-h-\[400px\] {
-    max-height: 400px;
-  }
-
-  .babybear\:max-h-4 {
-    max-height: 32px;
-  }
-
-  .babybear\:max-h-\[250px\] {
-    max-height: 250px;
-  }
-
-  .babybear\:min-h-\[134px\] {
-    min-height: 134px;
-  }
-
-  .babybear\:w-\[360px\] {
-    width: 360px;
-  }
-
-  .babybear\:w-full {
-    width: 100%;
-  }
-
-  .babybear\:w-11\/12 {
-    width: 91.666667%;
-  }
-
-  .babybear\:w-\[199px\] {
-    width: 199px;
-  }
-
-  .babybear\:w-6 {
-    width: 48px;
-  }
-
-  .babybear\:w-\[27px\] {
-    width: 27px;
-  }
-
-  .babybear\:w-\[1px\] {
-    width: 1px;
-  }
-
-  .babybear\:w-\[100vw\] {
-    width: 100vw;
-  }
-
-  .babybear\:w-\[calc\(100\%-68px\)\] {
-    width: calc(100% - 68px);
-  }
-
-  .babybear\:min-w-full {
-    min-width: 100%;
-  }
-
-  .babybear\:max-w-\[790px\] {
-    max-width: 790px;
-  }
-
-  .babybear\:max-w-\[32px\] {
-    max-width: 32px;
-  }
-
-  .babybear\:flex-none {
-    flex: none;
-  }
-
-  .babybear\:flex-auto {
-    flex: 1 1 auto;
-  }
-
-  .babybear\:flex-1 {
-    flex: 1 1 0%;
-  }
-
-  .babybear\:basis-0 {
-    flex-basis: 0px;
-  }
-
-  .babybear\:basis-1\/2 {
-    flex-basis: 50%;
-  }
-
-  .babybear\:-translate-x-50\% {
-    transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
-  }
-
-  @media (max-width: 767px) {
-    .babybear\:-translate-x-50\% {
-      transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-    }
-
-    @media (max-width: 767px) {
-      .babybear\:-translate-x-50\% {
-        transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-      }
-
-      @media (max-width: 767px) {
-        .babybear\:-translate-x-50\% {
-          transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-        }
-
-        @media (max-width: 767px) {
-          .babybear\:-translate-x-50\% {
-            transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-          }
-
-          @media (max-width: 767px) {
-            .babybear\:-translate-x-50\% {
-              transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-            }
-
-            @media (max-width: 767px) {
-              .babybear\:-translate-x-50\% {
-                transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-              }
-
-              @media (max-width: 767px) {
-                .babybear\:-translate-x-50\% {
-                  transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                }
-
-                @media (max-width: 767px) {
-                  .babybear\:-translate-x-50\% {
-                    transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                  }
-
-                  @media (max-width: 767px) {
-                    .babybear\:-translate-x-50\% {
-                      transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                    }
-
-                    @media (max-width: 767px) {
-                      .babybear\:-translate-x-50\% {
-                        transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                      }
-
-                      @media (max-width: 767px) {
-                        .babybear\:-translate-x-50\% {
-                          transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                        }
-
-                        @media (max-width: 767px) {
-                          .babybear\:-translate-x-50\% {
-                            transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                          }
-
-                          @media (max-width: 767px) {
-                            .babybear\:-translate-x-50\% {
-                              transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                            }
-
-                            @media (max-width: 767px) {
-                              .babybear\:-translate-x-50\% {
-                                transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                              }
-
-                              @media transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
-     (max-width: 767px) {
-                                .babybear\:rotate-90 {
-                                  transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                }
-
-                                @media (max-width: 767px) {
-                                  .babybear\:rotate-90 {
-                                    transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                  }
-
-                                  @media (max-width: 767px) {
-                                    .babybear\:rotate-90 {
-                                      transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                    }
-
-                                    @media (max-width: 767px) {
-                                      .babybear\:rotate-90 {
-                                        transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                      }
-
-                                      @media (max-width: 767px) {
-                                        .babybear\:rotate-90 {
-                                          transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                        }
-
-                                        @media (max-width: 767px) {
-                                          .babybear\:rotate-90 {
-                                            transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                          }
-
-                                          @media (max-width: 767px) {
-                                            .babybear\:rotate-90 {
-                                              transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                            }
-
-                                            @media (max-width: 767px) {
-                                              .babybear\:rotate-90 {
-                                                transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                              }
-
-                                              @media (max-width: 767px) {
-                                                .babybear\:rotate-90 {
-                                                  transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                                }
-
-                                                @media (max-width: 767px) {
-                                                  .babybear\:rotate-90 {
-                                                    transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                                  }
-
-                                                  @media (max-width: 767px) {
-                                                    .babybear\:rotate-90 {
-                                                      transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                                    }
-
-                                                    @media (max-width: 767px) {
-                                                      .babybear\:rotate-90 {
-                                                        transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                                      }
-
-                                                      @media (max-width: 767px) {
-                                                        .babybear\:rotate-90 {
-                                                          transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                                        }
-
-                                                        @media (max-width: 767px) {
-                                                          .babybear\:rotate-90 {
-                                                            transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-                                                          }
-
-                                                          border-radius: 8px;
-        border-width: 1px;
-        border-style: solid;
-        border-color: rgba(0,
-0,
-0,
-0.08);
-        background-color: #ffffff;
-    .babybear\:flex-row {
-                                                            flex-direction: row;
-                                                          }
-
-                                                          .babybear\:flex-col {
-                                                            flex-direction: column;
-                                                          }
-
-                                                          .babybear\:flex-wrap {
-                                                            flex-wrap: wrap;
-                                                          }
-
-                                                          .babybear\:items-start {
-                                                            align-items: flex-start;
-                                                          }
-
-                                                          .babybear\:items-center {
-                                                            align-items: center;
-                                                          }
-
-                                                          .babybear\:justify-start {
-                                                            justify-content: flex-start;
-                                                          }
-
-                                                          .babybear\:justify-end {
-                                                            justify-content: flex-end;
-                                                          }
-
-                                                          .babybear\:justify-center {
-                                                            justify-content: center;
-                                                          }
-
-                                                          .babybear\:justify-around {
-                                                            justify-content: space-around;
-                                                          }
-
-                                                          .babybear\:self-start {
-                                                            align-self: flex-start;
-                                                          }
-
-                                                          .babybear\:self-center {
-                                                            align-self: center;
-                                                          }
-
-                                                          .babybear\:overflow-y-auto {
-                                                            overflow-y: auto;
-                                                          }
-
-                                                          .babybear\:rounded-\[0px\] {
-                                                            border-radius: 0px;
-                                                          }
-
-                                                          .babybear\:border-b-1 {
-                                                            border-bottom-width: 1px;
-                                                          }
-
-                                                          .babybear\:border-solid {
-                                                            border-style: solid;
-                                                          }
-
-                                                          .babybear\:border-color-border-low-emphasis {
-                                                            border-color: rgba(0, 0, 0, 0.3);
-                                                          }
-
-                                                          .babybear\:bg-color-transparent {
-                                                            background-color: rgba(0, 0, 0, 0);
-                                                          }
-
-                                                          .babybear\:bg-color-brand {
-                                                            background-color: #0a66c2;
-                                                          }
-
-                                                          .babybear\:p-2 {
-                                                            padding: 16px;
-                                                          }
-
-                                                          .babybear\:p-0 {
-                                                            padding: 0px;
-                                                          }
-
-                                                          .babybear\:py-1 {
-                                                            padding-top: 8px;
-                                                            padding-bottom: 8px;
-                                                          }
-
-                                                          .babybear\:px-0 {
-                                                            padding-left: 0px;
-                                                            padding-right: 0px;
-                                                          }
-
-                                                          .babybear\:px-2 {
-                                                            padding-left: 16px;
-                                                            padding-right: 16px;
-                                                          }
-
-                                                          .babybear\:px-mobile-container-padding {
-                                                            padding-left: 16px;
-                                                            padding-right: 16px;
-                                                          }
-
-                                                          .babybear\:py-3 {
-                                                            padding-top: 24px;
-                                                            padding-bottom: 24px;
-                                                          }
-
-                                                          .babybear\:py-1\.5 {
-                                                            padding-top: 12px;
-                                                            padding-bottom: 12px;
-                                                          }
-
-                                                          .babybear\:pr-0\.5 {
-                                                            padding-right: 4px;
-                                                          }
-
-                                                          .babybear\:pr-0 {
-                                                            padding-right: 0px;
-                                                          }
-
-                                                          .babybear\:pl-0\.5 {
-                                                            padding-left: 4px;
-                                                          }
-
-                                                          .babybear\:pl-0 {
-                                                            padding-left: 0px;
-                                                          }
-
-                                                          .babybear\:pt-0\.5 {
-                                                            padding-top: 4px;
-                                                          }
-
-                                                          .babybear\:pb-0 {
-                                                            padding-bottom: 0px;
-                                                          }
-
-                                                          .babybear\:pt-0 {
-                                                            padding-top: 0px;
-                                                          }
-
-                                                          .babybear\:pb-2 {
-                                                            padding-bottom: 16px;
-                                                          }
-
-                                                          .babybear\:text-xs {
-                                                            font-size: 12px;
-                                                          }
-
-                                                          .babybear\:text-sm {
-                                                            font-size: 14px;
-                                                          }
-
-                                                          .babybear\:font-bold {
-                                                            font-weight: 600;
-                                                          }
-
-                                                          .babybear\:leading-\[150px\] {
-                                                            line-height: 150px;
-                                                          }
-
-                                                          .babybear\:last\:border-b-0:last-child {
-                                                            border-bottom-width: 0;
-                                                          }
-
-                                                        }
-
-                                                      }
-
-                                                    }
-
-                                                  }
-
-                                                }
-
-                                              }
-
-                                            }
-
-                                          }
-
-                                        }
-
-                                      }
-
-                                    }
-
-                                  }
-
-                                }
-
-                              }
-
-                            }
-
-                          }
-
-                        }
-
-                      }
-
-                    }
-
-                  }
-
-                }
-
-              }
-
-            }
-
-          }
-
-        }
-
-      }
-
-    }
-
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .mamabear\:absolute {
-    position: absolute;
-  }
-
-  .mamabear\:right-4 {
-    right: 32px;
-  }
-
-  .mamabear\:-top-0\.5 {
-    top: -4px;
-  }
-
-  .mamabear\:-top-0 {
-    top: -0px;
-  }
-
-  .mamabear\:top-\[58px\] {
-    top: 58px;
-  }
-
-  .mamabear\:-top-1 {
-    top: -8px;
-  }
-
-  .mamabear\:mr-3 {
-    margin-right: 24px;
-  }
-
-  .mamabear\:flex {
-    display: flex;
-  }
-
-  .mamabear\:hidden {
-    display: none;
-  }
-
-  .mamabear\:\!h-4 {
-    height: 32px !important;
-  }
-
-  .mamabear\:h-\[100\%\] {
-    height: 100%;
-  }
-
-  .mamabear\:\!min-h-\[32px\] {
-    min-height: 32px !important;
-  }
-
-  .mamabear\:w-\[744px\] {
-    width: 744px;
-  }
-
-  .mamabear\:w-full {
-    width: 100%;
-  }
-
-  .mamabear\:w-\[calc\(100\%-97px\)\] {
-    width: calc(100% - 97px);
-  }
-
-  .mamabear\:min-w-0 {
-    min-width: 0px;
-  }
-
-  .mamabear\:max-w-\[790px\] {
-    max-width: 790px;
-  }
-
-  .mamabear\:flex-shrink-0 {
-    flex-shrink: 0;
-  }
-
-  .mamabear\:container-lined {
-    border-radius: 8px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0.08);
-    background-color: #ffffff;
-  }
-
-  .mamabear\:container-raised {
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-  }
-
-  .mamabear\:flex-row {
-    flex-direction: row;
-  }
-
-  .mamabear\:flex-col {
-    flex-direction: column;
-  }
-
-  .mamabear\:flex-wrap {
-    flex-wrap: wrap;
-  }
-
-  .mamabear\:items-start {
-    align-items: flex-start;
-  }
-
-  .mamabear\:items-center {
-    align-items: center;
-  }
-
-  .mamabear\:justify-start {
-    justify-content: flex-start;
-  }
-
-  .mamabear\:gap-y-1 {
-    row-gap: 8px;
-  }
-
-  .mamabear\:self-center {
-    align-self: center;
-  }
-
-  .mamabear\:tab-vertical.tab-sm,
-.mamabear\:tab-vertical .tab-md,
-.mamabear\:tab-vertical .tab-lg {
-    justify-content: flex-start;
-  }
-
-  .mamabear\:tab-vertical.tab-selected {
-    box-shadow: inset 4px 0 rgba(0, 0, 0, 0.9);
-  }
-
-  .mamabear\:rounded-tr-none {
-    border-top-right-radius: 0px;
-  }
-
-  .mamabear\:px-3 {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .mamabear\:px-mobile-container-padding {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .mamabear\:py-3 {
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-
-  .mamabear\:px-2 {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .mamabear\:pt-desktop-content-top-margin {
-    padding-top: 16px;
-  }
-}
-@media (min-width: 992px) {
-  .papabear\:absolute {
-    position: absolute;
-  }
-
-  .papabear\:top-\[58px\] {
-    top: 58px;
-  }
-
-  .papabear\:-top-1 {
-    top: -8px;
-  }
-
-  .papabear\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .papabear\:\!mx-2 {
-    margin-left: 16px !important;
-    margin-right: 16px !important;
-  }
-
-  .papabear\:mt-\[-100px\] {
-    margin-top: -100px;
-  }
-
-  .papabear\:mb-\[18px\] {
-    margin-bottom: 18px;
-  }
-
-  .papabear\:mt-0 {
-    margin-top: 0px;
-  }
-
-  .papabear\:mt-0\.5 {
-    margin-top: 4px;
-  }
-
-  .papabear\:mr-2 {
-    margin-right: 16px;
-  }
-
-  .papabear\:mr-3 {
-    margin-right: 24px;
-  }
-
-  .papabear\:ml-column-gutter {
-    margin-left: 24px;
-  }
-
-  .papabear\:inline-block {
-    display: inline-block;
-  }
-
-  .papabear\:flex {
-    display: flex;
-  }
-
-  .papabear\:hidden {
-    display: none;
-  }
-
-  .papabear\:\!h-4 {
-    height: 32px !important;
-  }
-
-  .papabear\:h-6 {
-    height: 48px;
-  }
-
-  .papabear\:h-\[34px\] {
-    height: 34px;
-  }
-
-  .papabear\:h-\[100\%\] {
-    height: 100%;
-  }
-
-  .papabear\:min-h-\[96px\] {
-    min-height: 96px;
-  }
-
-  .papabear\:\!min-h-\[32px\] {
-    min-height: 32px !important;
-  }
-
-  .papabear\:w-\[400px\] {
-    width: 400px;
-  }
-
-  .papabear\:w-content-max-w {
-    width: 1128px;
-  }
-
-  .papabear\:w-core-rail-width {
-    width: 784px;
-  }
-
-  .papabear\:w-right-rail-width {
-    width: calc(1128px - 24px - 784px);
-  }
-
-  .papabear\:w-auto {
-    width: auto;
-  }
-
-  .papabear\:w-\[1128px\] {
-    width: 1128px;
-  }
-
-  .papabear\:w-\[135px\] {
-    width: 135px;
-  }
-
-  .papabear\:w-\[calc\(100\%-97px\)\] {
-    width: calc(100% - 97px);
-  }
-
-  .papabear\:min-w-0 {
-    min-width: 0px;
-  }
-
-  .papabear\:max-w-\[550px\] {
-    max-width: 550px;
-  }
-
-  .papabear\:flex-shrink-0 {
-    flex-shrink: 0;
-  }
-
-  .papabear\:container-lined {
-    border-radius: 8px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0.08);
-    background-color: #ffffff;
-  }
-
-  .papabear\:container-raised {
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-  }
-
-  .papabear\:flex-col {
-    flex-direction: column;
-  }
-
-  .papabear\:flex-nowrap {
-    flex-wrap: nowrap;
-  }
-
-  .papabear\:items-start {
-    align-items: flex-start;
-  }
-
-  .papabear\:justify-start {
-    justify-content: flex-start;
-  }
-
-  .papabear\:justify-center {
-    justify-content: center;
-  }
-
-  .papabear\:self-start {
-    align-self: flex-start;
-  }
-
-  .papabear\:tab-vertical.tab-sm,
-.papabear\:tab-vertical .tab-md,
-.papabear\:tab-vertical .tab-lg {
-    justify-content: flex-start;
-  }
-
-  .papabear\:tab-vertical.tab-selected {
-    box-shadow: inset 4px 0 rgba(0, 0, 0, 0.9);
-  }
-
-  .papabear\:rounded-tr-none {
-    border-top-right-radius: 0px;
-  }
-
-  .papabear\:border-4 {
-    border-width: 4px;
-  }
-
-  .papabear\:p-details-container-padding {
-    padding: 24px;
-  }
-
-  .papabear\:p-0 {
-    padding: 0px;
-  }
-
-  .papabear\:py-2 {
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-
-  .papabear\:pt-desktop-content-top-margin {
-    padding-top: 16px;
-  }
-
-  .papabear\:text-xl {
-    font-size: 24px;
-  }
-}
-</style></head> <body dir="ltr" class="font-sans bg-color-background-canvas w-full m-0 p-0 pt-1" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0px; width: 100%; background-color: #f3f2f0; padding: 0px; padding-top: 8px; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;"> <div class="h-0 opacity-0 text-transparent invisible overflow-hidden w-0 max-h-[0]" style="visibility: hidden; height: 0px; max-height: 0; width: 0px; overflow: hidden; opacity: 0; mso-hide: all;" data-email-preheader="true">Found People Inc. Senior Frontend Developer: 4x a week DOWNTOWN TORONTOONLY LOCAL CANDIDATES…</div> <div class="h-0 opacity-0 text-transparent invisible overflow-hidden w-0 max-h-[0]" style="visibility: hidden; height: 0px; max-height: 0; width: 0px; overflow: hidden; opacity: 0; mso-hide: all;"> ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏  </div> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="512" align="center" class="mercado-container w-[512px] max-w-[512px] mx-auto my-0 p-0 bg-color-background-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-left: auto; margin-right: auto; margin-top: 0px; margin-bottom: 0px; width: 512px; max-width: 512px; background-color: #ffffff; padding: 0px;"> <tbody> <tr> <td class="text-center p-3" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 24px; text-align: center;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" class="min-w-full" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%;"> <tbody> <tr> <td align="left" valign="middle" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://www.linkedin.com/comm/feed/?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-header-0-home_glimmer&amp;trkEmail=eml-email_job_alert_digest_01-header-0-home_glimmer-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" class="w-[84px]" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; width: 84px;"> <img class="block" alt="LinkedIn" src="https://www.linkedin.com/comm/dms/logo?badgeTheme=mercado&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midSig=38tl8PEO7EoX41&amp;midToken=AQHe7TET1XQSEA&amp;trkEmail=eml-email_job_alert_digest_01-null-0-comms%7Ebadging%7Edynamic%7Eglimmer-null-apvpek%7Elqvosdnv%7Ehm-null-null&amp;trk=eml-email_job_alert_digest_01-null-0-comms%7Ebadging%7Edynamic%7Eglimmer&amp;_sig=3npZA6pXbEoX41" data-test-header-dynamic-badging-img style="outline: none; text-decoration: none; -ms-interpolation-mode:bicubic; display: block;"> </a> </td> <td valign="middle" align="right" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" data-test-header-profile style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td align="right" valign="middle" class="w-[32px]" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 32px;" width="32"> <a href="https://ca.linkedin.com/comm/in/tseringdhondup?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-header-0-profile_glimmer&amp;trkEmail=eml-email_job_alert_digest_01-header-0-profile_glimmer-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <img alt="Tsering Dhondup" src="https://media.licdn.com/dms/image/D5603AQEpKdlTvN8ztQ/profile-displayphoto-shrink_200_200/0/1699407365174?e=2147483647&amp;v=beta&amp;t=aMPrd9W5PHvPLnMwGxnhkPs8US2gJb97j_YEfy2XAGE" class="rounded-[100%] w-[32px] h-[32px]" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; height: 32px; width: 32px; border-radius: 100%;" width="32" height="32"> </a> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </td> </tr> <tr> <td class="px-3 pb-3" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-left: 24px; padding-right: 24px; padding-bottom: 24px;"> <div> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" class="leading-regular" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; line-height: 1.25;"> <tbody> <tr> <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <h1 class="text-display-sm font-normal leading-regular" data-test-id="email-header" style="margin: 0; font-size: 24px; font-weight: 400; line-height: 1.25;"> <a href="https://www.linkedin.com/comm/jobs/search?geoId=100761630&amp;f_TPR=a1704073466-&amp;savedSearchId=1738293269&amp;origin=JOB_ALERT_EMAIL&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-email~job~alert~digest-0-header&amp;trkEmail=eml-email_job_alert_digest_01-email~job~alert~digest-0-header-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" class="text-system-gray-90" style="cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #282828;"> Your job alert for <strong class="font-bold" style="font-weight: 600;">frontend developer</strong> </a> </h1> </td> </tr> <tr> <td class="pt-1" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 8px;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <h2 class="text-md font-normal"data-test-id="email-subheader" style="margin: 0; font-size: 16px; font-weight: 400;"> 1 new job in Toronto matches your preferences. </h2> </td> </tr> </tbody> </table> </td> </tr> <tr> <td class="pt-3" data-test-id="job-card" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 24px;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class="pr-1 w-6" valign="top" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 48px; padding-right: 8px;" width="48"> <a href="https://www.linkedin.com/comm/jobs/view/3791724531/?trackingId=abVISBdcQqFl%2FSgXh87rAA%3D%3D&amp;refId=ByteString%28length%3D16%2Cbytes%3D05fddd33...e85c82d7%29&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-job_card-0-company_logo&amp;trkEmail=eml-email_job_alert_digest_01-job_card-0-company_logo-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <img class="inline-block relative bg-color-entity-ghost-background w-6 h-6 rounded-[2px]" src="https://media.licdn.com/dms/image/C560BAQEiHuvz1ONULw/company-logo_100_100/0/1631387413450?e=2147483647&amp;v=beta&amp;t=C0zvhXAgLS9I_mNayB2nlcisH8RfT-G4KEKLeipfEgQ" alt="Found People Inc." style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; position: relative; display: inline-block; height: 48px; width: 48px; border-radius: 2px; background-color: #eae6df;" width="48" height="48"> </a> </td> <td valign="top" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://www.linkedin.com/comm/jobs/view/3791724531/?trackingId=abVISBdcQqFl%2FSgXh87rAA%3D%3D&amp;refId=ByteString%28length%3D16%2Cbytes%3D05fddd33...e85c82d7%29&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-job_card-0-job_posting&amp;trkEmail=eml-email_job_alert_digest_01-job_card-0-job_posting-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class="pb-0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 0px;"> <a href="https://www.linkedin.com/comm/jobs/view/3791724531/?trackingId=abVISBdcQqFl%2FSgXh87rAA%3D%3D&amp;refId=ByteString%28length%3D16%2Cbytes%3D05fddd33...e85c82d7%29&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-job_card-0-jobcard_body&amp;trkEmail=eml-email_job_alert_digest_01-job_card-0-jobcard_body-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" class="font-bold text-md leading-regular text-system-blue-50" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 16px; font-weight: 600; line-height: 1.25;"> Senior Frontend Developer </a> </td> </tr> <tr> <td class="pb-0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 0px;"> <p class="text-system-gray-100 text-xs leading-regular mt-0.5 line-clamp-1 text-ellipsis" style="margin: 0; font-weight: 400; margin-top: 4px; text-overflow: ellipsis; font-size: 12px; line-height: 1.25; color: #1f1f1f; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1;"> Found People Inc. &middot; Toronto, ON (Hybrid) </p> </td> </tr> <tr> <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0;" align="left"> <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;"><![endif]--> <!--[if (gte mso 9)|(IE)]><tr> <td style="padding-top: 4px;"><![endif]--> <table class="inline-block" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;"> <tr> <td class="job-card-flavor__container_redesign_shaded_background" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-top: 4px; margin-right: 4px; display: inline-block; border-radius: 4px; background-color: #f5f7f9; padding: 4px;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class="pr-0.5 w-1" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 8px; padding-right: 4px;" width="8"> <img src="https://static.licdn.com/aero-v1/sc/h/3le24jev2hig88cuokev26ksm" alt="gray radar icon" class="w-2 h-2 block" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; height: 16px; width: 16px;" width="16" height="16"> </td> <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <p class="job-card-flavor__detail" style="margin: 0; font-weight: 400; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.25; color: #666666;"> Actively recruiting </p> </td> </tr> </tbody> </table> </td> </tr> </table> <!--[if (gte mso 9)|(IE)]></td> </tr><![endif]--> <!--[if (gte mso 9)|(IE)]><tr> <td style="padding-top: 4px;"><![endif]--> <table class="inline-block" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;"> <tr> <td class="job-card-flavor__container_redesign_shaded_background" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-top: 4px; margin-right: 4px; display: inline-block; border-radius: 4px; background-color: #f5f7f9; padding: 4px;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class="pr-0.5 w-1" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 8px; padding-right: 4px;" width="8"> <img src="https://static.licdn.com/aero-v1/sc/h/1sk0fbe9amaiat5elvybbtxsm" alt="Easy Apply" class="w-2 h-2 rounded-sm block" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; height: 16px; width: 16px; border-radius: 4px;" width="16" height="16"> </td> <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <p class="job-card-flavor__detail" style="margin: 0; font-weight: 400; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.25; color: #666666;"> Easy Apply </p> </td> </tr> </tbody> </table> </td> </tr> </table> <!--[if (gte mso 9)|(IE)]></td> </tr><![endif]--> <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;"><![endif]--> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </a> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </td> </tr> <tr> <td class="pt-3 text-left" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 24px; text-align: left;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" class="email-button " data-test-id="email-button" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td valign="middle" align="left" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://www.linkedin.com/comm/jobs/search?geoId=100761630&amp;f_TPR=a1704073466-&amp;savedSearchId=1738293269&amp;origin=JOB_ALERT_EMAIL&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-job~alert-0-see~all~jobs&amp;trkEmail=eml-email_job_alert_digest_01-job~alert-0-see~all~jobs-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" aria-label="See all jobs" class="align-top no-underline" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; vertical-align: top; text-decoration-line: none;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="auto" class="border-separate" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: separate;"> <tbody> <tr> <td class="btn-md btn-primary border-color-brand button-link leading-regular !min-h-[auto] !shadow-none border-1 border-solid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: min-content; border-radius: 24px; padding-top: 12px; padding-bottom: 12px; padding-left: 24px; padding-right: 24px; text-align: center; font-size: 16px; font-weight: 600; cursor: pointer; text-decoration-line: none; background-color: #0a66c2; color: #ffffff; border-width: 1px; border-style: solid; border-color: #0a66c2; line-height: 1.25; min-height: auto !important; box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000 !important;"> <a href="https://www.linkedin.com/comm/jobs/search?geoId=100761630&amp;f_TPR=a1704073466-&amp;savedSearchId=1738293269&amp;origin=JOB_ALERT_EMAIL&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-job~alert-0-see~all~jobs&amp;trkEmail=eml-email_job_alert_digest_01-job~alert-0-see~all~jobs-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" tabindex="-1" aria-hidden="true" class="no-underline" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-decoration-line: none;"> <span class="no-underline text-white" style="color: #ffffff; text-decoration-line: none;"> See all jobs </span> </a> </td> </tr> </tbody> </table> </a> </td> </tr> </tbody> </table> </td> </tr> <tr data-test-id="premium-upsell"> <td class="pt-3" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 24px;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td align="left" valign="top" class="w-0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 0px;" width="0"> <a href="https://ca.linkedin.com/comm/in/tseringdhondup?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-job~alert-0-premium~upsell&amp;trkEmail=eml-email_job_alert_digest_01-job~alert-0-premium~upsell-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <img class="w-[84px]" alt="Premium icon" src="https://static.licdn.com/aero-v1/sc/h/40p617it49hlmq3d88bf4wguy" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: 84px;" width="84"> </a> </td> </tr> <tr> <td class="text-center" align="center" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: center;"> <img class="inline-block relative bg-color-entity-ghost-background clip-path-circle-50 rounded-full w-16 h-16" src="https://media.licdn.com/dms/image/D5603AQEpKdlTvN8ztQ/profile-displayphoto-shrink_200_200/0/1699407365174?e=2147483647&amp;v=beta&amp;t=aMPrd9W5PHvPLnMwGxnhkPs8US2gJb97j_YEfy2XAGE" alt="Tsering Dhondup" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; position: relative; display: inline-block; height: 128px; width: 128px; border-radius: 9999px; background-color: #eae6df; clip-path: circle(50%);" width="128" height="128"> </td> </tr> </tbody> </table> </td> </tr> <tr> <td class="text-lg leading-regular text-center pt-2" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 16px; text-align: center; font-size: 20px; line-height: 1.25;"> See jobs where you’re a top applicant </td> </tr> <tr> <td class="pt-2" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 16px;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" class="email-button " data-test-id="email-button" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td valign="middle" align="middle" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href="https://www.linkedin.com/comm/premium/products/?utype=job&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-null-0-null&amp;trkEmail=eml-email_job_alert_digest_01-null-0-null-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" aria-label="Try Premium for free" class="align-top no-underline" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; vertical-align: top; text-decoration-line: none;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="auto" class="border-separate" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: separate;"> <tbody> <tr> <td class="btn-sm btn-secondary !border-[#424242] button-link leading-regular !min-h-[auto] !shadow-none border-1 border-solid" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: min-content; border-radius: 24px; padding-top: 7px; padding-bottom: 7px; padding-left: 16px; padding-right: 16px; text-align: center; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration-line: none; background-color: rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 0.75); border-width: 1px; border-style: solid; line-height: 1.25; min-height: auto !important; border-color: #424242 !important; box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000 !important;"> <a href="https://www.linkedin.com/comm/premium/products/?utype=job&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-null-0-null&amp;trkEmail=eml-email_job_alert_digest_01-null-0-null-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" tabindex="-1" aria-hidden="true" class="no-underline" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-decoration-line: none;"> <span class="no-underline !text-[#424242]" style="text-decoration-line: none; color: #424242 !important;"> Try Premium for free </span> </a> </td> </tr> </tbody> </table> </a> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </div> </td> </tr> <tr> <td class="bg-color-background-canvas p-3" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f3f2f0; padding: 24px;"> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class="text-center pb-2" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 16px; text-align: center;"> <h2 class="text-lg" style="margin: 0; font-weight: 500; font-size: 20px;"> Never miss an update with the LinkedIn app </h2> </td> </tr> <tr> <td class="text-center" data-test-id="footer-app-store-icon" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: center;"> <a href="https://itunes.apple.com/us/app/linkedin/id288429040?pt=10746&amp;ct=st_appsite_flagship&amp;mt=8" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <imgalt="Download on the App Store" src="https://static.licdn.com/aero-v1/sc/h/76yzkd0h5kiv27lrd4yaenylk" class="h-[40px] w-[120px] pr-1" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; height: 40px; width: 120px; padding-right: 8px;" width="120" height="40"> </a> <a href="https://play.google.com/store/apps/details?id=com.linkedin.android&amp;referrer=st_appsite_flagship" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <img alt="Get it on Google Play" src="https://static.licdn.com/aero-v1/sc/h/142qudwblp58zwmc9vkqfplug" class="h-[40px] w-[134px]" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; height: 40px; width: 134px;" width="134" height="40"> </a> </td> </tr> <tr> <td class="py-2" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 16px; padding-bottom: 16px;"><hr class="border-none bg-[#e0dfdd] h-[1px]" style="height: 1px; border-style: none; background-color: #e0dfdd;"></td> </tr> </tbody> </table> <table role="presentation" valign="top" border="0" cellspacing="0" cellpadding="0" width="100%" class="text-xs" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 12px;"> <tbody> <tr> <td class="pb-1 m-0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0px; padding-bottom: 8px;"> This email was intended for Tsering Dhondup (Aspiring full-stack developer | Software Engineering student at BrainStation | JavaScript | SASS | React.JS | Node.JS | Express.JS | SQL | Knex.JS | HTML | CSS) </td> </tr> <tr> <td class="pb-1 m-0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0px; padding-bottom: 8px;"> <a href="https://www.linkedin.com/help/linkedin/answer/4788?lang=en&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-SecurityHelp-0-footerglimmer&amp;trkEmail=eml-email_job_alert_digest_01-SecurityHelp-0-footerglimmer-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">Learn why we included this.</a> </td> </tr> <tr> <td class="pb-1 m-0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0px; padding-bottom: 8px;">You are receiving Job Alert emails.</td> </tr> <tr> <td class="pb-1 m-0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0px; padding-bottom: 8px;"> <a href="https://www.linkedin.com/comm/jobs/alerts?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-null-0-null&amp;trkEmail=eml-email_job_alert_digest_01-null-0-null-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" trackingmodule="footer" trackingsuffix="manage_alert_mercado" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> Manage job alerts </a>   ·   <a href="https://www.linkedin.com/comm/jobs/alerts?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-unsubscribe-0-footerGlimmer&amp;trkEmail=eml-email_job_alert_digest_01-unsubscribe-0-footerGlimmer-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;loid=AQEi-RVs4XXXHQAAAYzH2BFD8RRGBwB6y2vBMASTu_WeoTsEZc5CntvfGiZKZDL5c59bMIszwI2fyxInYgS5ScZFfeqRn7mT0cVLVOTI_LVFYtrMSjzBW_AC7Kql" target="_blank" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">Unsubscribe</a>   ·   <a href="https://www.linkedin.com/help/linkedin/answer/67?lang=en&amp;lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-help-0-footerglimmer&amp;trkEmail=eml-email_job_alert_digest_01-help-0-footerglimmer-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">Help</a> </td> </tr> <tr> <td class="pb-1" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 8px;"> <a href="https://www.linkedin.com/comm/feed/?lipi=urn%3Ali%3Apage%3Aemail_email_job_alert_digest_01%3BNxy%2FpltAQYmJJKGWd8sebg%3D%3D&amp;midToken=AQHe7TET1XQSEA&amp;midSig=38tl8PEO7EoX41&amp;trk=eml-email_job_alert_digest_01-footer-0-logoGlimmer&amp;trkEmail=eml-email_job_alert_digest_01-footer-0-logoGlimmer-null-apvpek~lqvosdnv~hm-null-null&amp;eid=apvpek-lqvosdnv-hm&amp;otpToken=MTQwMTE2ZTExMTJmY2RjNmI0MjQwNGVkNDYxYWU2YjE4NmM2ZDc0NDlkYWY4ZDYxNzdjMDAxNmQ0ZDVkNTVmMWYyZDJkZjg5NjZiN2VkY2I0YzlkZmVkOWE1ZTdiZDE3MDczZjM5MjAyZGQ0NDkxZDM2MzhhOSwxLDE%3D" target="_blank" style="color: #0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <img src="https://static.licdn.com/aero-v1/sc/h/9ehe6n39fa07dc5edzv0rla4e" alt="LinkedIn" class="block h-[14px] w-[56px] image-rendering-crisp" style="outline: none; text-decoration: none; image-rendering: -moz-crisp-edges; image-rendering: -o-crisp-edges; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; display: block; height: 14px; width: 56px;" width="56" height="14"> </a> </td> </tr> <tr> <td data-test-copyright-text style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> © 2024 LinkedIn Corporation, 1&zwnj;000 West Maude Avenue, Sunnyvale, CA 94085. <span data-test-trademarks-text> LinkedIn and the LinkedIn logo are registered trademarks of LinkedIn. </span> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> <img alt role="presentation" src="https://www.linkedin.com/emimp/ip_WVhCMmNHVnJMV3h4ZG05elpHNTJMV2h0OlpXMWhhV3hmYW05aVgyRnNaWEowWDJScFoyVnpkRjh3TVE9PTo=.gif" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: 1px; height: 1px;" width="1" height="1"> </body> </html>
+@media only screen and (max-width: 480px) {
+	.email_actions__cta, .email_actions__cta table {
+		display: none;
+	}
+
+	.email_actions__cta_mobile {
+		display: table !important;
+		border-collapse: separate;
+		border-spacing: 0;
+	}
+}</style></head><body><!--[if mso]><style type="text/css">.background_main, table, table td, p, div, h1, h2, h3, h4, h5, h6 {
+								font-family: Arial, sans-serif !important;
+							}</style><![endif]--><table style="background-color: #ffffff; padding-top: 20px;color: #434245;width: 100%;-webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;   border: 0; text-align: center; border-collapse: collapse;" class="background_main"><tr><td style="vertical-align: top; padding: 0"><center><table id="body" class="card" style="border: 0; border-collapse: collapse; margin: 0 auto; background: white; border-radius: 8px; margin-bottom: 16px;"><tr><td style="width: 546px; vertical-align: top; padding-top: 32px"><div style="max-width: 600px; margin: 0 auto;"><!--[if mso]>
+<table cellpadding="0" cellspacing="0" border="0" style="padding: 0; margin: 0; width: 100%;">
+    <tr>
+        <td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px;" height="20">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="padding: 0; margin: 0;">&nbsp;</td>
+        <td style="padding: 0; margin: 0;" width="540">
+<![endif]--><table class="digest_email__card_wrapper" style="background-color: #F2F2F2; width: 100%; margin-top: -32px;"><tr style="height: 44px;"></tr><tr><td><table style="width: 100%;"><tr><td class="digest_email__logo_spacer"></td><td><div style="margin-top: 18px;"><img width="120" height="36" style="margin-top: 0; margin-right: 0; margin-bottom: 32px; margin-left: 0px;" src="https://a.slack-edge.com/80588/img/slack_logo_240_vogue.png" alt="slack logo"></div></td><td class="digest_email__logo_spacer"></td></tr></table></td></tr><tr><td><table style="width: 100%;"><tr><td class="digest_email__card_spacer"></td><td class="digest_email__card_header" style="background-color: #4A154B; color: #FFFFFF; border-radius: 8px 8px 0px 0px"><table><tr><td class="email_actions__icon" style="vertical-align: middle; padding-right: 30px; width: 58px; min-width: 58px; max-width: 58px;"><a class="plaintext_ignore" href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/team" style="display: block;"><img alt="" src="https://avatars.slack-edge.com/2022-09-21/4100557250695_67b83d57da88a599da55_88.png" style="height: 58px; width: 58px; min-width: 58px; border-radius: 4px; color: #FFFFFF; font-size: 18px; line-height: 58px; mso-line-height-rule: exactly; mso-text-raise: 10px; border-radius: 4px;"></a></td><td style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><table><tr><td class="email_actions__text digest_email__card_header_text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><h3 style="font-size: 18px; font-weight: 700; line-height: 24px;">BrainStation Slack: June 19 - Feb 17</h3></td></tr><tr><td class="email_actions__text digest_email__card_header_text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><p style="font-size: 16px; line-height: 23px; margin-bottom: 0;">64 members</p></td></tr></table></td></tr></table></td><td class="digest_email__card_spacer"></td></tr></table></td></tr></table><table class="digest_email__card_wrapper" style="width: 100%; margin-bottom: 45px;"><tr><td class="digest_email__card_spacer"></td><td><table style="background-color: #f8f8f8; border-collapse: separate; border-spacing: 0; width: 100%; border-radius: 0px 0px 8px 8px; border: 1px solid #DBDADB; border-top: none"><tr><td class="digest_email__card_footer"><table style="width: 100%;"><tr><td class="digest_email__card_footer_spacer"><p class="digest_email__card_item" style="margin: 0; padding-bottom: 0;"><span style="margin-right: 8px;">🔥</span>Your team has sent 112 messages recently</p></td></tr><tr><td class="digest_email__item_spacer_last"></td></tr><tr><td class="digest_email__card_footer_spacer" style="text-align: center;"><a href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/team" class="digest_email__card_launch_cta" style="text-decoration: none !important; color: #4A154B; background-color: #FFFFFF; display: block; text-align: center; text-transform: uppercase; border: 1px solid #BBBBBB; border-radius: 3px; font-weight: 900; letter-spacing: 0.8px;">Open Slack</a></td></tr></table></td></tr></table></td><td class="digest_email__card_spacer"></td></tr></table><div style="margin-left: 50px; margin-right: 50px; margin-bottom: 72px; margin: 0;" class="lg_margin_left_right xl_margin_bottom"><div class="digest_email__message_sections"><div class="digest_email__padding"><div class="digest_email__section_heading"><h2>New messages in #se-class</h2></div><table><tr><td class="digest_email__section digest_email__section_spacing"><table style="padding: 0; font-size: 16px;"><tr><td style="padding: 0 10px 0 0; width: 36px;"><img alt="" class="single_email_digest__avatar" height="36" width="36" src="https://avatars.slack-edge.com/2023-06-19/5449301723283_1c9c31d096b290c007f2_72.jpg" style="display: block; border-radius: 4px; width: 36px; height: 36px; min-width: 36px;"></td><td style="padding: 0; padding-bottom: 20px;"><table><tr><td style="padding: 0;"><table><tr><td style="padding: 0; font-size: 16px; line-height: 18px;"><span class="single_email_digest__sender" style="font-weight: bold; color: #1264a3; text-decoration: none; font-size: 16px; text-decoration: none; font-weight: 900; color: #1D1C1D; margin-right: 8px;">Arvin Josol</span><span class="single_email_digest__timestamp" style="font-weight: normal; font-size: 12px; color: #717274; text-decoration: none;">January 11th at 4:21 PM</span></td></tr></table></td></tr><tr><td class="single_email_digest__message_text" style="color: #1D1C1D; padding: 0; font-size: 16px;"><div class="tsf_output emoji_replace_on_load">I tried starting my react app with vite. It definitely feels faster.</div></td></tr></table></td></tr></table><table style="padding: 0; font-size: 16px;"><tr><td style="padding: 0 10px 0 0; width: 36px;"><img alt="" class="single_email_digest__avatar" height="36" width="36" src="https://avatars.slack-edge.com/2023-06-15/5457859426800_27011ca3348deb1a74ee_72.png" style="display: block; border-radius: 4px; width: 36px; height: 36px; min-width: 36px;"></td><td style="padding: 0; padding-bottom: 20px;"><table><tr><td style="padding: 0;"><table><tr><td style="padding: 0; font-size: 16px; line-height: 18px;"><span class="single_email_digest__sender" style="font-weight: bold; color: #1264a3; text-decoration: none; font-size: 16px; text-decoration: none; font-weight: 900; color: #1D1C1D; margin-right: 8px;">Xochil Hurtado</span><span class="single_email_digest__timestamp" style="font-weight: normal; font-size: 12px; color: #717274; text-decoration: none;">January 11th at 4:47 PM</span></td></tr></table></td></tr><tr><td class="single_email_digest__message_text" style="color: #1D1C1D; padding: 0; font-size: 16px;"><div class="tsf_output emoji_replace_on_load">Hey team! @here if anyone is down to join a groupchat for the cohort outside of the classroom one, we made one on whatsapp so we all stay in touch, here's the link <img src="https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-large/1f60a.png" class="emoji" title=":blush:" width="20" height="20"/> <a href="https://chat.whatsapp.com/G8HzOjZqfD5Ip6qy5Ec1Lx">https://chat.whatsapp.com/G8HzOjZqfD5Ip6qy5Ec1Lx</a></div></td></tr><tr><td style="padding: 0;"><span style="white-space: nowrap; display: inline-block; padding-top: 4px;"><span style="background-color: #F2F2F2; border-radius: 20px; display: inline-block; white-space: nowrap; padding: 5px 7px; line-height: 13px;"><img style="display: inline-block; vertical-align: middle; min-width: 13px;" src="https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-large/1f525.png" alt="fire" width="13" height="13"><span style="font-size: 11px; padding: 0 1px 0 3px;">3</span></span></span><span style="white-space: nowrap; display: inline-block; width: 4px;"> </span><span style="white-space: nowrap; display: inline-block; padding-top: 4px;"><span style="background-color: #F2F2F2; border-radius: 20px; display: inline-block; white-space: nowrap; padding: 5px 7px; line-height: 13px;"><img style="display: inline-block; vertical-align: middle; min-width: 13px;" src="https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-large/1f389.png" alt="tada" width="13" height="13"><span style="font-size: 11px; padding: 0 1px 0 3px;">1</span></span></span></td></tr></table></td></tr></table></td></tr></table><table style="width: 100%; " class="sm_table"><tr style="width: 100%;"><td style="width: 100%;"><span style="display: inline-block; position:relative; border-radius:4px; background-color:#611f69; " class="button_link_wrapper plum"><a class="button_link sm_full_width sm_border_box plum restyle_button" href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/archives/C05DAUN02HJ/p1705020461414579?c=4&amp;o=1&amp;d=1" style="border-top:13px solid; border-bottom:13px solid; border-right:24px solid; border-left:24px solid; border-color:#611f69; border-radius:4px; background-color:#611f69; color:#ffffff; font-size:16px; line-height:18px; word-break:break-word;  font-weight: bold; font-size: 14px; border-top:20px solid; border-bottom:20px solid; border-color:#611f69; line-height: 14px; letter-spacing: 0.8px; text-transform: uppercase; box-sizing: border-box; display: inline-block; text-align: center; font-weight: 900; text-decoration: none !important;"> Open in Slack </a></span></td></tr></table></div><div class="digest_email__divider" style="border-top: 1px solid #E1E1E4;"></div></div><div class="digest_email__message_sections"><div class="digest_email__padding"><div class="digest_email__section_heading"><h2>New messages in #se-demos-cda</h2></div><table><tr><td class="digest_email__section digest_email__section_spacing"><table style="padding: 0; font-size: 16px;"><tr><td style="padding: 0 10px 0 0; width: 36px;"><img alt="" class="single_email_digest__avatar" height="36" width="36" src="https://avatars.slack-edge.com/2023-07-15/5570909799607_04971f6d61386d1c0e57_72.png" style="display: block; border-radius: 4px; width: 36px; height: 36px; min-width: 36px;"></td><td style="padding: 0; padding-bottom: 20px;"><table><tr><td style="padding: 0;"><table><tr><td style="padding: 0; font-size: 16px; line-height: 18px;"><span class="single_email_digest__sender" style="font-weight: bold; color: #1264a3; text-decoration: none; font-size: 16px; text-decoration: none; font-weight: 900; color: #1D1C1D; margin-right: 8px;">Zoey Song</span><span class="single_email_digest__timestamp" style="font-weight: normal; font-size: 12px; color: #717274; text-decoration: none;">January 11th at 7:58 PM</span></td></tr></table></td></tr><tr><td class="single_email_digest__message_text" style="color: #1D1C1D; padding: 0; font-size: 16px;"><div class="tsf_output emoji_replace_on_load">Hey <a href="https://bstn-ptbootcamp4.slack.com/team/U043AC02V3R">@Paulo Ribeiro</a> could you share the code for the demo and lab? thanks!</div></td></tr></table></td></tr></table><table style="padding: 0; font-size: 16px;"><tr><td style="padding: 0 10px 0 0; width: 36px;"><img alt="" class="single_email_digest__avatar" height="36" width="36" src="https://avatars.slack-edge.com/2022-10-01/4174005961953_1e1d08294eca6f98b30e_72.png" style="display: block; border-radius: 4px; width: 36px; height: 36px; min-width: 36px;"></td><td style="padding: 0; padding-bottom: 20px;"><table><tr><td style="padding: 0;"><table><tr><td style="padding: 0; font-size: 16px; line-height: 18px;"><span class="single_email_digest__sender" style="font-weight: bold; color: #1264a3; text-decoration: none; font-size: 16px; text-decoration: none; font-weight: 900; color: #1D1C1D; margin-right: 8px;">Paulo Ribeiro</span><span class="single_email_digest__timestamp" style="font-weight: normal; font-size: 12px; color: #717274; text-decoration: none;">January 12th at 7:22 AM</span></td></tr></table></td></tr><tr><td class="single_email_digest__message_text" style="color: #1D1C1D; padding: 0; font-size: 16px;"><div class="tsf_output emoji_replace_on_load">Of course! give me one second</div></td></tr></table></td></tr></table><table style="padding: 0; font-size: 16px;"><tr><td style="padding: 0 10px 0 0; width: 36px;"><img alt="" class="single_email_digest__avatar" height="36" width="36" src="https://avatars.slack-edge.com/2022-10-01/4174005961953_1e1d08294eca6f98b30e_72.png" style="display: block; border-radius: 4px; width: 36px; height: 36px; min-width: 36px;"></td><td style="padding: 0; padding-bottom: 20px;"><table><tr><td style="padding: 0;"><table><tr><td style="padding: 0; font-size: 16px; line-height: 18px;"><span class="single_email_digest__sender" style="font-weight: bold; color: #1264a3; text-decoration: none; font-size: 16px; text-decoration: none; font-weight: 900; color: #1D1C1D; margin-right: 8px;">Paulo Ribeiro</span><span class="single_email_digest__timestamp" style="font-weight: normal; font-size: 12px; color: #717274; text-decoration: none;">January 12th at 7:24 AM</span></td></tr></table></td></tr><tr><td class="single_email_digest__message_text" style="color: #1D1C1D; padding: 0; font-size: 16px;"><div class="tsf_output emoji_replace_on_load">Here's an archive of both code bases for client side auth!</div></td></tr><tr><td style="font-weight: normal; font-size: 12px; color: #717274; word-break: break-all; padding-top: 10px;"><span>Archive.zip</span><img style="padding: 0 0 2px 5px;" src="https://a.slack-edge.com/f86c151/marketing/img/icons/icon_arrow_down.png" width="8" height="5" alt=""></td></tr><tr><td style="padding: 0;"><table style="table-layout: fixed; border-collapse: separate; width: 220px;"><tr><td style="border: 1px solid #DDDDDD; border-radius: 5px; padding: 11px 14px;"><table><tr><td style="padding: 0; color: #717274; line-height: 21px; font-size: 13px;">Preview available in Slack</td></tr><tr><td style="padding: 0;"><a href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/archives/C05EE46LVMJ/p1705073059027849" style="line-height: 21px; font-weight: 700; font-size: 13px;">Show preview</a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table><table style="width: 100%; " class="sm_table"><tr style="width: 100%;"><td style="width: 100%;"><span style="display: inline-block; position:relative; border-radius:4px; background-color:#611f69; " class="button_link_wrapper plum"><a class="button_link sm_full_width sm_border_box plum restyle_button" href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/archives/C05EE46LVMJ/p1705073059027849?c=4&amp;o=2&amp;d=1" style="border-top:13px solid; border-bottom:13px solid; border-right:24px solid; border-left:24px solid; border-color:#611f69; border-radius:4px; background-color:#611f69; color:#ffffff; font-size:16px; line-height:18px; word-break:break-word;  font-weight: bold; font-size: 14px; border-top:20px solid; border-bottom:20px solid; border-color:#611f69; line-height: 14px; letter-spacing: 0.8px; text-transform: uppercase; box-sizing: border-box; display: inline-block; text-align: center; font-weight: 900; text-decoration: none !important;"> Open in Slack </a></span></td></tr></table></div></div></div><div class="email_actions__wrapper" style="padding-left: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px; border-top: 1px solid #E1E1E4"><table><tr><td class="email_actions__icon email_actions__icon_height_auto" style="vertical-align: middle; padding-right: 30px; width: 58px; min-width: 58px; max-width: 58px;">							<!--[if mso]>
+								<img src="https://a.slack-edge.com/86b79a8/img/email/notifications_bell@2x.png" width="58" alt="" />
+							<![endif]-->
+
+							<!--[if !mso]> <!---->
+								<img src="https://a.slack-edge.com/86b79a8/img/email/notifications_bell@2x.png" style="vertical-align: middle; width: 58px; max-width: none; width: 45px !important; height: 59px; padding-left: 5px" alt="" />
+							<!-- <![endif]--></td><td style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><table><tr><td class="email_actions__text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><h3 style="font-size: 18px; font-weight: 700; line-height: 24px;">Manage email settings</h3></td></tr><tr><td class="email_actions__text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><p style="font-size: 16px; line-height: 23px; margin-bottom: 0;">You can
+						<a href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/unsub/U05D4910GF3-b478136a52c1a61f8ab7f43aacafbffbf39c71d282e9e5a09b5fa64f739ade69-notify-mute-7d" style=font-weight:bold;>snooze notifications this week</a>
+						or
+						<a href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/unsub/U05D4910GF3-44aceace9b01b7e6875f7bdad102a8cb362f9a612f5f8fe18b0868293fb5d9a1-digest" style=font-weight:bold;>unsubscribe</a>.</p></td></tr></table></td></tr></table><div style="padding-top: 20px; padding-bottom: 20px;"></div><table><tr><td class="email_actions__icon email_actions__icon_height_auto" style="vertical-align: middle; padding-right: 30px; width: 58px; min-width: 58px; max-width: 58px;">							<!--[if mso]>
+								<img src="https://a.slack-edge.com/e6dd342/img/email/slack_app@2x.png" width="58" alt="" />
+							<![endif]-->
+
+							<!--[if !mso]> <!---->
+								<img src="https://a.slack-edge.com/e6dd342/img/email/slack_app@2x.png" style="vertical-align: middle; width: 58px; max-width: none; width: 58px !important;" alt="" />
+							<!-- <![endif]--></td><td style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><table><tr><td class="email_actions__text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><h3 style="font-size: 18px; font-weight: 700; line-height: 24px;">See notifications instantly</h3></td></tr><tr><td class="email_actions__text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><p style="font-size: 16px; line-height: 23px; margin-bottom: 0;">The Slack app is the best way to manageyour notifications and stay up to date.</p></td></tr></table></td><td class="email_actions__cta" style="vertical-align: middle;text-align: right;white-space: nowrap; min-width: 120px;"><table style="width: 100%; " class="sm_table"><tr style="width: 100%;"><td style="width: 100%;"><span style="display: inline-block; position:relative; border-radius:4px; background-color:#611f69; " class="button_link_wrapper plum"><a class="button_link sm_full_width sm_border_box plum restyle_button" href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/downloads?t=download_app" style="border-top:13px solid; border-bottom:13px solid; border-right:24px solid; border-left:24px solid; border-color:#611f69; border-radius:4px; background-color:#611f69; color:#ffffff; font-size:16px; line-height:18px; word-break:break-word;  font-weight: bold; font-size: 14px; border-top:20px solid; border-bottom:20px solid; border-color:#611f69; line-height: 14px; letter-spacing: 0.8px; text-transform: uppercase; box-sizing: border-box; display: inline-block; text-align: center; font-weight: 900; text-decoration: none !important;">Get</a></span></td></tr></table></td></tr></table><table style="display: none;" class="email_actions__cta_mobile"><tr><td class="email_actions__cta_mobile" style="vertical-align: middle;text-align: left; padding-top: 10px; border-left: 75px transparent solid; white-space: nowrap; min-width: 120px;"><table style="width: 100%; mso-hide: all; " class="sm_table"><tr style="width: 100%;"><td style="width: 100%;"><span style="display: inline-block; position:relative; border-radius:4px; background-color:#611f69; " class="button_link_wrapper plum"><a class="button_link sm_full_width sm_border_box plum restyle_button" href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/downloads?t=download_app" style="border-top:13px solid; border-bottom:13px solid; border-right:24px solid; border-left:24px solid; border-color:#611f69; border-radius:4px; background-color:#611f69; color:#ffffff; font-size:16px; line-height:18px; word-break:break-word;  font-weight: bold; font-size: 14px; border-top:20px solid; border-bottom:20px solid; border-color:#611f69; line-height: 14px; letter-spacing: 0.8px; text-transform: uppercase; box-sizing: border-box; display: inline-block; text-align: center; font-weight: 900; text-decoration: none !important;">Get</a></span></td></tr></table></td></tr></table></div><!--[if mso]>
+		</td>
+		<td style="padding: 0; margin: 0; font-size: 20px; height: 20px;">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px; height: 20px;">&nbsp;</td>
+	</tr>
+</table>
+<![endif]--></div></td></tr></table></center></td></tr><tr><td class="email_footer" style="font-size: 15px;color: #717274;text-align: center;width: 100%;"><!--[if mso]>
+<table cellpadding="0" cellspacing="0" border="0" style="padding: 0; margin: 0; width: 100%;">
+    <tr>
+        <td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px;" height="20">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="padding: 0; margin: 0;">&nbsp;</td>
+        <td style="padding: 0; margin: 0;" width="540">
+<![endif]--><center><table style="margin: 20px auto 0; background-color: white; border: 0; text-align: center; border-collapse: collapse;"><tr><td style="width: 546px; vertical-align: top; padding: 0px;"><div style="max-width: 600px; margin: 0 auto;"><div class="footer_padding"><table><tr><td class="slack_logo_small_icon" style="vertical-align: top; text-align: left;"><img width="120" height="36" style="margin-top: 0; margin-right: 0; margin-bottom: 32px; margin-left: 0px;" src="https://a.slack-edge.com/80588/img/slack_logo_240_vogue.png" alt="slack logo"></td><td style="vertical-align: top; text-align: right;"><a href="https://twitter.com/slackhq" data-qa="twitter_link" class="social_icon_margin" style="margin-left: 20px;"><img class="small_icon" src="https://a.slack-edge.com/b8be608/marketing/img/icons/icon_colored_twitter.png" width="32" height="32" title="Twitter"></a><a href="https://facebook.com/slackhq" data-qa="fb_link" class="social_icon_margin" style="margin-left: 20px;"><img class="small_icon" src="https://a.slack-edge.com/b8be608/marketing/img/icons/icon_colored_facebook.png" width="32" height="32" title="Facebook"></a><a href="https://www.linkedin.com/company/tiny-spec-inc/" data-qa="linkedin_link" class="social_icon_margin" style="margin-left: 20px;"><img class="small_icon" src="https://a.slack-edge.com/b8be608/marketing/img/icons/icon_colored_linkedin.png" width="32" height="32" title="LinkedIn"></a></td></tr></table><div style="font-size:12px; opacity:0.5; color:#696969; text-align:left; line-height:15px; margin-bottom:50px; text-align: left;"><a class="footer_link" href="https://slackhq.com" data-qa="slack_blog" style="color: #696969 !important;">Our Blog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a class="footer_link" href="https://slack.com/legal" data-qa="slack_legal" style="color: #696969 !important;">Policies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://slack.com/help" class="footer_link" data-qa="slack_help" style="color: #696969 !important;">Help Center</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://slack.com/community" class="footer_link" data-qa="slack_commmunity" style="color: #696969 !important;">Slack Community</a><br><br><div>&copy;2024 Slack Technologies, LLC, a Salesforce company.<br>415 Mission Street, San Francisco, CA 94105</div><br>All rights reserved.</div></div></div></td></tr></table></center><!--[if mso]>
+		</td>
+		<td style="padding: 0; margin: 0; font-size: 20px; height: 20px;">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px; height: 20px;">&nbsp;</td>
+	</tr>
+</table>
+<![endif]--></td></tr></table></body></html>
