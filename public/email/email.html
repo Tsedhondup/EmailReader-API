@@ -1,834 +1,420 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet"><title>You've got 5 unread messages</title><style type="text/css">/* Global Resets */
-	body, .background_main, p, table, td, div { font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-
-	img {
-		border: none;
-		-ms-interpolation-mode: bicubic;
-		max-width: 100%;
-	}
-
-	p {padding-bottom: 2px;}
-
-	body {
-		background: #fff;
-		font-size: 17px;
-		line-height: 24px;
-		margin: 0;
-		padding: 0;
-		-ms-text-size-adjust: 100%;
-		-webkit-text-size-adjust: 100%;
-	}
-
-	table {
-		border-collapse: collapse;
-		mso-table-lspace: 0pt;
-		mso-table-rspace: 0pt;
-		width: 100%;
-	}
-
-	td {
-		font-size: 17px;
-		line-height: 24px;
-		vertical-align: top;
-	}
-
-	/* Footer */
-	.email_footer td, .email_footer p, .email_footer span {
-		font-size: 15px;
-		text-align: center;
-		color: #1d1c1d;
-	}
-
-	.email_footer a {
-		text-decoration: underline;
-	}
-
-	.email_footer td {padding-top: 20px;}
-
-	.footer_logo {
-		width: 40px;
-		height: 40px;
-		padding-bottom: 20px;
-	}
-
-	.footer_title {
-		font-weight: 900;
-	}
-
-	.preheader {
-		display: none;
-		mso-hide: all;
-	}
-
-	/* Typography */
-	h1, h2, h3, h4 {
-		color: #1d1c1d;
-		font-weight: 700;
-		margin: 0;
-		margin-bottom: 12px;
-	}
-
-	h1 {
-		font-size: 36px;
-		line-height: 42px;
-		letter-spacing: -.25px;
-		margin-bottom: 28px;
-		text-align: left;
-		word-break: break-word;
-	}
-
-	h2 {
-		font-size: 24px;
-		line-height: 32px;
-		letter-spacing: -0.75px;
-		margin-bottom: 28px;
-		text-align: left;
-	}
-
-	h3 {
-		font-size: 18px;
-		line-height: 24px;
-		letter-spacing: 0px;
-		margin-bottom: 0px;
-	}
-
-	p, ul, ol {
-		font-size: 17px;
-		line-height: 24px;
-		font-weight: normal;
-		margin: 0;
-		margin-bottom: 15px;
-	}
-
-	ul, ol {
-		padding-left: 40px;
-	}
-
-	p li, ul li, ol li {
-		list-style-position: outside;
-		margin-left: 5px;
-	}
-
-	p {
-		font-size: 16px;
-		letter-spacing: -0.2px;
-	}
-
-	a {
-		color: #1264a3;
-		text-decoration: underline!important;
-	}
-
-	a:hover {text-decoration: underline;}
-
-	.button_link::after {
-		position: absolute;
-		content: '';
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		border-radius: 4px;
-	}
-
-	.button_link:hover::after {
-		box-shadow: inset 0 -2px #237c4a;
-	}
-
-	.button_link.is_secondary:hover::after {
-		box-shadow: none;
-	}
-
-	.button_link.plum:hover {
-		background-color: #4a154b !important;
-		border-color: #4a154b !important;
-	}
-
-	.button_link_wrapper.plum:hover {
-		background-color: #4a154b !important;
-	}
-
-	.button_link.plum:hover::after {
-		box-shadow: none;
-	}
-
-	.preview_text {
-		color: transparent;
-		display: none;
-		height: 0;
-		max-height: 0;
-		max-width: 0;
-		opacity: 0;
-		overflow: hidden;
-		mso-hide: all;
-		visibility: hidden;
-		width: 0;
-		font-size: 1px;
-		line-height:1px;
-	}
-
-	.preview_text a {
-		color: #3AA3E3 !important;
-		font-weight: bold;
-	}
-
-	.sm_visible {
-		display: none;
-	}
-
-	.footer_padding {
-		padding: 0 50px;
-	}
-
-	table[class="background_main"] .social_icon_margin {
-		margin-left: 32px !important;
-	}
-
-	/* Responsive and Mobile Friendly Styles */
-	/* Yahoo Mail has a history of rendering all media query styles with class selectors unless class is used as an attribute */
-	@media only screen and (max-width: 600px) {
-		table[class="background_main"] .sm_full_width {
-			width: 100% !important;
-		}
-
-		table[class="background_main"] .sm_90_percent_width {
-			width: 90% !important;
-			padding: 16px !important;
-			text-align: center !important;
-			float: none !important;
-		}
-
-		table[class="background_main"] .sm_side_padding {
-			padding-right: 8px !important;
-			padding-left: 8px !important;
-			float: none !important;
-		}
-
-		table[class="background_main"] .sm_small_top_padding {
-			padding-top: 8px !important;
-		}
-
-		table[class="background_main"] .sm_top_padding {
-			padding-top: 16px !important;
-		}
-
-		table[class="background_main"] .sm_auto_width {
-			width: auto !important;
-		}
-
-		table[class="background_main"] .sm_auto_height {
-			height: auto !important;
-		}
-
-		table[class="background_main"] .sm_border_box {
-			box-sizing: border-box !important;
-		}
-
-		table[class="background_main"] .sm_block {
-			display: block !important;
-		}
-
-		table[class="background_main"] .sm_inline_block {
-			display: inline-block !important;
-		}
-
-		table[class="background_main"] .sm_table {
-			display: table !important;
-		}
-
-		table[class="background_main"] .sm_no_side_padding {
-			padding-right: 0 !important;
-			padding-left: 0 !important;
-		}
-
-		table[class="background_main"] .sm_no_border_radius {
-			border-radius: 0 !important;
-		}
-
-		table[class="background_main"] .sm_no_padding {
-			padding-right: 0 !important;
-			padding-left: 0 !important;
-		}
-
-		table[class="background_main"] .sm_os_icons_height {
-			/* this is to make the parent element the same height as the inline-block img inside */
-			height: 44px;
-		}
-
-		table[class="background_main"] .small_icon {
-			width: 20px !important;
-			height: 20px !important;
-		}
-
-		table[class="background_main"] .social_icon_margin {
-			margin-left: 20px !important;
-		}
-
-		table[class="background_main"] .slack_logo_small_icon {
-			width: 80px !important;
-		}
-
-		table[class="background_main"] .slack_logo_small_icon img {
-			 height: 24px !important;
-		}
-
-		.social_img_bottom_margin {
-			/*this class is for social_user_outreach email only*/
-			margin-bottom: 20px !important;
-		}
-
-		.social_p_bottom_margin {
-			/*this class is for social_user_outreach email only*/
-			margin-bottom: 40px !important;
-		}
-
-		/* Common responsive styles for new email design templates #feat-activation-email-audit */
-		.sm_hidden {
-			display: none!important;
-		}
-
-		.sm_visible {
-			display: inline-block!important;
-		}
-		h1 {
-			font-size: 24px!important;
-			line-height: 30px!important;
-			margin-bottom: 20px!important;
-			word-break: break-word;
-		}
-		h2 {
-			font-size: 16px!important;
-			line-height: 23px!important;
-			margin-bottom: 10px!important;
-		}
-		h3 {
-			font-size: 14px!important;
-			line-height: 20px!important;
-		}
-
-		.hero_paragraph, .bulleted_list {
-			font-size: 14px!important;
-			line-height: 19px!important;
-			margin-bottom: 20px!important;
-			word-break: break-word;
-		}
-
-		.status_paragraph {
-			font-size: 14px!important;
-			line-height: 19px!important;
-			word-break: break-word;
-		}
-		.content_paragraph {
-			font-size: 12px!important;
-			line-height: 18px!important;
-			margin-bottom: 10px!important;
-		}
-		.list_paragraph {
-			font-size: 12px!important;
-			line-height: 18px!important;
-		}
-
-		.restyle_button {
-			font-size: 12px!important;
-			border-top: 10px solid!important;
-			border-bottom: 10px solid!important;
-			border-color: #611f69!important;
-			line-height: 12px!important;
-		}
-
-		.margin_top {
-			margin-top: 20px!important;
-		}
-
-		.lg_margin_left_right {
-			margin-left: 26px!important;
-			margin-right: 26px!important;
-		}
-
-		.xl_margin_bottom {
-			margin-bottom: 30px!important;
-		}
-
-		.xl_margin_top {
-			margin-top: 30px!important;
-		}
-		.hero_block_container {
-			margin-left: 26px!important;
-		}
-
-		.hero_block_left {
-			width: 50%!important;
-		}
-
-		.slack_logo_style {
-			margin-top: -6px!important;
-			margin-bottom: -12px!important;
-		}
-
-		.larger_bottom_margin {
-			margin-bottom: 30px!important;
-		}
-
-		.list_header {
-			font-size: 16px!important;
-		}
-
-		.list_icon_wrapper {
-			width: 55px!important;
-		}
-
-		.list_icon_style {
-			width: 40px!important;
-			height: 40px!important;
-		}
-
-		.list_icon_style_large {
-			width: auto!important;
-			height: 50px!important;
-		}
-
-		.line_height_24 {
-			line-height: 24px!important;
-		}
-
-		.brand_logo_wrapper {
-			width: 78px!important;
-		}
-
-		.brand_logo_style {
-			width: 68px!important;
-			height: 68px!important;
-		}
-
-		.brand_heading {
-			font-size: 14px!important;
-			line-height: 20px!important;
-		}
-
-		.brand_link {
-			font-size: 13px!important;
-			line-height: 18px!important;
-		}
-
-		.grey_box_container {
-			padding: 20px 9px!important;
-		}
-
-		.account_info_wrapper {
-			margin-bottom: 18px!important;
-		}
-
-		.account_info_item {
-			padding: 0px 5px!important;
-		}
-
-		.account_info_avatar {
-			width: 55px!important;
-			height: 55px!important;
-			margin-bottom: 5px!important;
-		}
-		table[class="background_main"] .footer_padding {
-			padding: 0 26px!important;
-		}
-		.footer_padding {
-			padding: 0 26px !important;
-		}
-		.small_font {
-			font-size: 14px!important;
-		}
-
-	}
-
-	/* More client-specific styles */
-	@media all {
-		.ExternalClass {
-			width: 100%;
-		}
-
-		.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
-			line-height: 100%;
-		}
-
-		.footer_link {
-			color: #1d1c1d !important;
-			font-family: inherit !important;
-			font-size: inherit !important;
-			font-weight: inherit !important;
-			line-height: inherit !important;
-		}
-	}
-	a:hover {
-		text-decoration: underline !important;
-	}
-
-	pre, code {
-		--saf-0: rgba(var(--sk_foreground_low, 29, 28, 29), 0.13);
-		border: 1px solid var(--saf-0);
-		background: rgba(var(--sk_foreground_min, 29, 28, 29), 0.04);
-		font-family: 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace !important;
-		font-size: 12px;
-		line-height: 1.50001;
-		font-variant-ligatures: none;
-		white-space: pre;
-		white-space: pre-wrap;
-		word-wrap: break-word;
-		word-break: normal;
-		-webkit-tab-size: 4;
-		-moz-tab-size: 4;
-		-o-tab-size: 4;
-		tab-size: 4;
-	}
-
-	code {
-		color: #e01e5a;
-		padding: 2px 3px 1px;
-		border-radius: 3px;
-	}
-
-	pre {
-		margin-bottom: 16px;
-		padding: 8px;
-		border-radius: 4px;
-	}
-
-	blockquote {
-		position: relative;
-		margin-bottom: 16px;
-		padding-left: 16px;
-		border-left: rgba(var(--sk_foreground_low_solid, 221, 221, 221), 1);
-		border-left-width: 4px;
-		border-left-style: solid;
-	}
-</style><style type="text/css">/* Recap Email Styles */
-body * {
-	font-family: Helvetica, 'Helvetica Neue', 'Lato', Arial, sans-serif;
-}
-
-h1 {
-	margin-bottom: 45px;
-}
-
-span.para_break {
-	display: block;
-	height: 8px;
-}
-
-
-.digest_email__heading_wrapper {
-	padding: 0 50px;
-}
-
-table.digest_email__card_wrapper {
-	border-collapse: collapse;
-}
-
-table.digest_email__card_wrapper td {
-	padding: 0;
-	margin: 0;
-}
-
-.digest_email__card_header {
-	padding: 20px !important;
-}
-
-.digest_email__card_header h3 {
-	color: #FFFFFF;
-}
-
-.digest_email__card_header .email_actions__icon {
-	padding-right: 16px !important;
-}
-
-.digest_email__card_header .email_actions__icon a {
-	height: 58px;
-}
-
-.digest_email__card_footer {
-	padding-top: 20px !important;
-	padding-bottom: 20px !important;
-}
-
-.digest_email__card_footer_spacer {
-	padding-right: 20px !important;
-	padding-left: 20px !important;
-}
-
-.digest_email__logo_spacer {
-	width: 50px;
-}
-
-.digest_email__card_spacer {
-	width: 94px;
-}
-
-.digest_email__card_header_text {
-	color: #FFFFFF !important;
-}
-
-.digest_email__card_header_text p {
-	font-size: 15px !important;
-}
-
-.digest_email__card_launch_cta {
-	font-size: 14px;
-	line-height: 14px;
-	padding: 19px 11px;
-}
-
-.digest_email__card_item {
-	font-size: 15px;
-}
-
-.digest_email__item_spacer {
-	height: 8px;
-}
-
-.digest_email__item_spacer_last {
-	height: 20px;
-}
-
-.digest_email__border_spacer {
-	height: 20px;
-}
-
-.digest_email__divider {
-	margin: 40px 0;
-}
-
-.digest_email__message_sections {
-	margin-bottom: 40px;
-}
-
-.digest_email__padding {
-	padding-left: 50px;
-	padding-right: 50px;
-}
-
-.digest_email__section_spacing {
-	padding-bottom: 16px;
-}
-
-.digest_email__section_heading {
-	padding-bottom: 36px;
-}
-
-.digest_email__section_heading h2, h6 {
-	margin-bottom: 0 !important;
-	margin-top: 0 !important;
-}
-
-.digest_email__section a {
-	text-decoration: none !important;
-}
-
-.digest_email__section .tsf_output.emoji_replace_on_load .emoji {
-	vertical-align: bottom;
-}
-
-.digest_email__section .tsf_output {
-	line-height: 22px;
-}
-
-.digest_email__section .tsf_output .private_channel_replace_on_load {
-	background-color: #DDDDDD;
-	padding: 2px;
-	border-radius: 3px;
-}
-
-@media only screen and (max-width: 600px) {
-	h1 {
-		margin-bottom: 30px !important;
-	}
-
-	h3 {
-		font-size: 13px !important;
-	}
-
-	.email_actions__wrapper {
-		padding: 30px 25px !important;
-		padding-bottom: 0px !important;
-	}
-	.email_actions__icon {
-		width: 45px !important;
-		height: 45px !important;
-		min-width: 45px !important;
-		max-width: 45px !important;
-		line-height: 45px !important;
-	}
-
-	.email_actions__icon a, .email_actions__icon img {
-		width: inherit !important;
-		height: inherit !important;
-		min-width: inherit !important;
-		line-height: inherit !important;
-	}
-	.email_actions__icon_height_auto img {
-		height: auto !important;
-	}
-	.email_actions__text h3 {
-		font-size: 13px !important;
-	}
-	.email_actions__text p {
-		font-size: 12px !important;
-		line-height: 18px !important;
-	}
-
-	.digest_email__divider {
-		margin: 30px -26px;
-	}
-
-	.digest_email__message_sections {
-		margin-bottom: 30px;
-	}
-
-	.digest_email__message_sections .single_email_digest__sender,
-	.digest_email__message_sections .single_email_digest__message_text {
-		font-size: 13px !important;
-	}
-
-	.digest_email__message_sections .single_email_digest__timestamp {
-		font-size: 11px !important;
-	}
-
-	.digest_email__message_sections .single_email_digest__avatar {
-		margin-top: 3px;
-	}
-
-	.digest_email__padding {
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-
-	.digest_email__section_heading {
-		padding-bottom: 30px !important;
-	}
-
-	.digest_email__section_heading h2 {
-		font-size: 20px !important;
-	}
-
-	.digest_email__section_spacing {
-		padding-bottom: 10px;
-	}
-
-	.digest_email__section .tsf_output {
-		line-height: 20px;
-	}
-
-	.digest_email__card_header {
-		padding: 16px !important;
-	}
-
-	.digest_email__logo_spacer {
-		width: 25px;
-	}
-
-	.digest_email__card_spacer {
-		width: 25px;
-	}
-
-	.digest_email__heading_wrapper {
-		padding: 0 25px;
-	}
-
-	.digest_email__card_footer {
-		padding-top: 16px !important;
-		padding-bottom: 16px !important;
-	}
-
-	.digest_email__card_footer_spacer {
-		padding-right: 16px !important;
-		padding-left: 16px !important;
-	}
-
-	.digest_email__card_header_text h3 {
-		font-size: 15px !important;
-	}
-
-	.digest_email__card_header_text p {
-		font-size: 13px !important;
-	}
-
-	.digest_email__card_launch_cta {
-		font-size: 12px;
-		line-height: 12px;
-		padding: 9px 11px;
-	}
-
-	.digest_email__card_item {
-		font-size: 13px;
-	}
-
-	.digest_email__item_spacer {
-		height: 6px;
-	}
-
-	.digest_email__item_spacer_last {
-		height: 16px;
-	}
-
-	.digest_email__border_spacer {
-		height: 16px;
-	}
-}
-
-@media only screen and (max-width: 480px) {
-	.email_actions__cta, .email_actions__cta table {
-		display: none;
-	}
-
-	.email_actions__cta_mobile {
-		display: table !important;
-		border-collapse: separate;
-		border-spacing: 0;
-	}
-}</style></head><body><!--[if mso]><style type="text/css">.background_main, table, table td, p, div, h1, h2, h3, h4, h5, h6 {
-								font-family: Arial, sans-serif !important;
-							}</style><![endif]--><table style="background-color: #ffffff; padding-top: 20px;color: #434245;width: 100%;-webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;   border: 0; text-align: center; border-collapse: collapse;" class="background_main"><tr><td style="vertical-align: top; padding: 0"><center><table id="body" class="card" style="border: 0; border-collapse: collapse; margin: 0 auto; background: white; border-radius: 8px; margin-bottom: 16px;"><tr><td style="width: 546px; vertical-align: top; padding-top: 32px"><div style="max-width: 600px; margin: 0 auto;"><!--[if mso]>
-<table cellpadding="0" cellspacing="0" border="0" style="padding: 0; margin: 0; width: 100%;">
-    <tr>
-        <td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px;" height="20">&nbsp;</td>
-    </tr>
-    <tr>
-        <td style="padding: 0; margin: 0;">&nbsp;</td>
-        <td style="padding: 0; margin: 0;" width="540">
-<![endif]--><table class="digest_email__card_wrapper" style="background-color: #F2F2F2; width: 100%; margin-top: -32px;"><tr style="height: 44px;"></tr><tr><td><table style="width: 100%;"><tr><td class="digest_email__logo_spacer"></td><td><div style="margin-top: 18px;"><img width="120" height="36" style="margin-top: 0; margin-right: 0; margin-bottom: 32px; margin-left: 0px;" src="https://a.slack-edge.com/80588/img/slack_logo_240_vogue.png" alt="slack logo"></div></td><td class="digest_email__logo_spacer"></td></tr></table></td></tr><tr><td><table style="width: 100%;"><tr><td class="digest_email__card_spacer"></td><td class="digest_email__card_header" style="background-color: #4A154B; color: #FFFFFF; border-radius: 8px 8px 0px 0px"><table><tr><td class="email_actions__icon" style="vertical-align: middle; padding-right: 30px; width: 58px; min-width: 58px; max-width: 58px;"><a class="plaintext_ignore" href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/team" style="display: block;"><img alt="" src="https://avatars.slack-edge.com/2022-09-21/4100557250695_67b83d57da88a599da55_88.png" style="height: 58px; width: 58px; min-width: 58px; border-radius: 4px; color: #FFFFFF; font-size: 18px; line-height: 58px; mso-line-height-rule: exactly; mso-text-raise: 10px; border-radius: 4px;"></a></td><td style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><table><tr><td class="email_actions__text digest_email__card_header_text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><h3 style="font-size: 18px; font-weight: 700; line-height: 24px;">BrainStation Slack: June 19 - Feb 17</h3></td></tr><tr><td class="email_actions__text digest_email__card_header_text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><p style="font-size: 16px; line-height: 23px; margin-bottom: 0;">64 members</p></td></tr></table></td></tr></table></td><td class="digest_email__card_spacer"></td></tr></table></td></tr></table><table class="digest_email__card_wrapper" style="width: 100%; margin-bottom: 45px;"><tr><td class="digest_email__card_spacer"></td><td><table style="background-color: #f8f8f8; border-collapse: separate; border-spacing: 0; width: 100%; border-radius: 0px 0px 8px 8px; border: 1px solid #DBDADB; border-top: none"><tr><td class="digest_email__card_footer"><table style="width: 100%;"><tr><td class="digest_email__card_footer_spacer"><p class="digest_email__card_item" style="margin: 0; padding-bottom: 0;"><span style="margin-right: 8px;">🔥</span>Your team has sent 112 messages recently</p></td></tr><tr><td class="digest_email__item_spacer_last"></td></tr><tr><td class="digest_email__card_footer_spacer" style="text-align: center;"><a href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/team" class="digest_email__card_launch_cta" style="text-decoration: none !important; color: #4A154B; background-color: #FFFFFF; display: block; text-align: center; text-transform: uppercase; border: 1px solid #BBBBBB; border-radius: 3px; font-weight: 900; letter-spacing: 0.8px;">Open Slack</a></td></tr></table></td></tr></table></td><td class="digest_email__card_spacer"></td></tr></table><div style="margin-left: 50px; margin-right: 50px; margin-bottom: 72px; margin: 0;" class="lg_margin_left_right xl_margin_bottom"><div class="digest_email__message_sections"><div class="digest_email__padding"><div class="digest_email__section_heading"><h2>New messages in #se-class</h2></div><table><tr><td class="digest_email__section digest_email__section_spacing"><table style="padding: 0; font-size: 16px;"><tr><td style="padding: 0 10px 0 0; width: 36px;"><img alt="" class="single_email_digest__avatar" height="36" width="36" src="https://avatars.slack-edge.com/2023-06-19/5449301723283_1c9c31d096b290c007f2_72.jpg" style="display: block; border-radius: 4px; width: 36px; height: 36px; min-width: 36px;"></td><td style="padding: 0; padding-bottom: 20px;"><table><tr><td style="padding: 0;"><table><tr><td style="padding: 0; font-size: 16px; line-height: 18px;"><span class="single_email_digest__sender" style="font-weight: bold; color: #1264a3; text-decoration: none; font-size: 16px; text-decoration: none; font-weight: 900; color: #1D1C1D; margin-right: 8px;">Arvin Josol</span><span class="single_email_digest__timestamp" style="font-weight: normal; font-size: 12px; color: #717274; text-decoration: none;">January 11th at 4:21 PM</span></td></tr></table></td></tr><tr><td class="single_email_digest__message_text" style="color: #1D1C1D; padding: 0; font-size: 16px;"><div class="tsf_output emoji_replace_on_load">I tried starting my react app with vite. It definitely feels faster.</div></td></tr></table></td></tr></table><table style="padding: 0; font-size: 16px;"><tr><td style="padding: 0 10px 0 0; width: 36px;"><img alt="" class="single_email_digest__avatar" height="36" width="36" src="https://avatars.slack-edge.com/2023-06-15/5457859426800_27011ca3348deb1a74ee_72.png" style="display: block; border-radius: 4px; width: 36px; height: 36px; min-width: 36px;"></td><td style="padding: 0; padding-bottom: 20px;"><table><tr><td style="padding: 0;"><table><tr><td style="padding: 0; font-size: 16px; line-height: 18px;"><span class="single_email_digest__sender" style="font-weight: bold; color: #1264a3; text-decoration: none; font-size: 16px; text-decoration: none; font-weight: 900; color: #1D1C1D; margin-right: 8px;">Xochil Hurtado</span><span class="single_email_digest__timestamp" style="font-weight: normal; font-size: 12px; color: #717274; text-decoration: none;">January 11th at 4:47 PM</span></td></tr></table></td></tr><tr><td class="single_email_digest__message_text" style="color: #1D1C1D; padding: 0; font-size: 16px;"><div class="tsf_output emoji_replace_on_load">Hey team! @here if anyone is down to join a groupchat for the cohort outside of the classroom one, we made one on whatsapp so we all stay in touch, here's the link <img src="https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-large/1f60a.png" class="emoji" title=":blush:" width="20" height="20"/> <a href="https://chat.whatsapp.com/G8HzOjZqfD5Ip6qy5Ec1Lx">https://chat.whatsapp.com/G8HzOjZqfD5Ip6qy5Ec1Lx</a></div></td></tr><tr><td style="padding: 0;"><span style="white-space: nowrap; display: inline-block; padding-top: 4px;"><span style="background-color: #F2F2F2; border-radius: 20px; display: inline-block; white-space: nowrap; padding: 5px 7px; line-height: 13px;"><img style="display: inline-block; vertical-align: middle; min-width: 13px;" src="https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-large/1f525.png" alt="fire" width="13" height="13"><span style="font-size: 11px; padding: 0 1px 0 3px;">3</span></span></span><span style="white-space: nowrap; display: inline-block; width: 4px;"> </span><span style="white-space: nowrap; display: inline-block; padding-top: 4px;"><span style="background-color: #F2F2F2; border-radius: 20px; display: inline-block; white-space: nowrap; padding: 5px 7px; line-height: 13px;"><img style="display: inline-block; vertical-align: middle; min-width: 13px;" src="https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-large/1f389.png" alt="tada" width="13" height="13"><span style="font-size: 11px; padding: 0 1px 0 3px;">1</span></span></span></td></tr></table></td></tr></table></td></tr></table><table style="width: 100%; " class="sm_table"><tr style="width: 100%;"><td style="width: 100%;"><span style="display: inline-block; position:relative; border-radius:4px; background-color:#611f69; " class="button_link_wrapper plum"><a class="button_link sm_full_width sm_border_box plum restyle_button" href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/archives/C05DAUN02HJ/p1705020461414579?c=4&amp;o=1&amp;d=1" style="border-top:13px solid; border-bottom:13px solid; border-right:24px solid; border-left:24px solid; border-color:#611f69; border-radius:4px; background-color:#611f69; color:#ffffff; font-size:16px; line-height:18px; word-break:break-word;  font-weight: bold; font-size: 14px; border-top:20px solid; border-bottom:20px solid; border-color:#611f69; line-height: 14px; letter-spacing: 0.8px; text-transform: uppercase; box-sizing: border-box; display: inline-block; text-align: center; font-weight: 900; text-decoration: none !important;"> Open in Slack </a></span></td></tr></table></div><div class="digest_email__divider" style="border-top: 1px solid #E1E1E4;"></div></div><div class="digest_email__message_sections"><div class="digest_email__padding"><div class="digest_email__section_heading"><h2>New messages in #se-demos-cda</h2></div><table><tr><td class="digest_email__section digest_email__section_spacing"><table style="padding: 0; font-size: 16px;"><tr><td style="padding: 0 10px 0 0; width: 36px;"><img alt="" class="single_email_digest__avatar" height="36" width="36" src="https://avatars.slack-edge.com/2023-07-15/5570909799607_04971f6d61386d1c0e57_72.png" style="display: block; border-radius: 4px; width: 36px; height: 36px; min-width: 36px;"></td><td style="padding: 0; padding-bottom: 20px;"><table><tr><td style="padding: 0;"><table><tr><td style="padding: 0; font-size: 16px; line-height: 18px;"><span class="single_email_digest__sender" style="font-weight: bold; color: #1264a3; text-decoration: none; font-size: 16px; text-decoration: none; font-weight: 900; color: #1D1C1D; margin-right: 8px;">Zoey Song</span><span class="single_email_digest__timestamp" style="font-weight: normal; font-size: 12px; color: #717274; text-decoration: none;">January 11th at 7:58 PM</span></td></tr></table></td></tr><tr><td class="single_email_digest__message_text" style="color: #1D1C1D; padding: 0; font-size: 16px;"><div class="tsf_output emoji_replace_on_load">Hey <a href="https://bstn-ptbootcamp4.slack.com/team/U043AC02V3R">@Paulo Ribeiro</a> could you share the code for the demo and lab? thanks!</div></td></tr></table></td></tr></table><table style="padding: 0; font-size: 16px;"><tr><td style="padding: 0 10px 0 0; width: 36px;"><img alt="" class="single_email_digest__avatar" height="36" width="36" src="https://avatars.slack-edge.com/2022-10-01/4174005961953_1e1d08294eca6f98b30e_72.png" style="display: block; border-radius: 4px; width: 36px; height: 36px; min-width: 36px;"></td><td style="padding: 0; padding-bottom: 20px;"><table><tr><td style="padding: 0;"><table><tr><td style="padding: 0; font-size: 16px; line-height: 18px;"><span class="single_email_digest__sender" style="font-weight: bold; color: #1264a3; text-decoration: none; font-size: 16px; text-decoration: none; font-weight: 900; color: #1D1C1D; margin-right: 8px;">Paulo Ribeiro</span><span class="single_email_digest__timestamp" style="font-weight: normal; font-size: 12px; color: #717274; text-decoration: none;">January 12th at 7:22 AM</span></td></tr></table></td></tr><tr><td class="single_email_digest__message_text" style="color: #1D1C1D; padding: 0; font-size: 16px;"><div class="tsf_output emoji_replace_on_load">Of course! give me one second</div></td></tr></table></td></tr></table><table style="padding: 0; font-size: 16px;"><tr><td style="padding: 0 10px 0 0; width: 36px;"><img alt="" class="single_email_digest__avatar" height="36" width="36" src="https://avatars.slack-edge.com/2022-10-01/4174005961953_1e1d08294eca6f98b30e_72.png" style="display: block; border-radius: 4px; width: 36px; height: 36px; min-width: 36px;"></td><td style="padding: 0; padding-bottom: 20px;"><table><tr><td style="padding: 0;"><table><tr><td style="padding: 0; font-size: 16px; line-height: 18px;"><span class="single_email_digest__sender" style="font-weight: bold; color: #1264a3; text-decoration: none; font-size: 16px; text-decoration: none; font-weight: 900; color: #1D1C1D; margin-right: 8px;">Paulo Ribeiro</span><span class="single_email_digest__timestamp" style="font-weight: normal; font-size: 12px; color: #717274; text-decoration: none;">January 12th at 7:24 AM</span></td></tr></table></td></tr><tr><td class="single_email_digest__message_text" style="color: #1D1C1D; padding: 0; font-size: 16px;"><div class="tsf_output emoji_replace_on_load">Here's an archive of both code bases for client side auth!</div></td></tr><tr><td style="font-weight: normal; font-size: 12px; color: #717274; word-break: break-all; padding-top: 10px;"><span>Archive.zip</span><img style="padding: 0 0 2px 5px;" src="https://a.slack-edge.com/f86c151/marketing/img/icons/icon_arrow_down.png" width="8" height="5" alt=""></td></tr><tr><td style="padding: 0;"><table style="table-layout: fixed; border-collapse: separate; width: 220px;"><tr><td style="border: 1px solid #DDDDDD; border-radius: 5px; padding: 11px 14px;"><table><tr><td style="padding: 0; color: #717274; line-height: 21px; font-size: 13px;">Preview available in Slack</td></tr><tr><td style="padding: 0;"><a href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/archives/C05EE46LVMJ/p1705073059027849" style="line-height: 21px; font-weight: 700; font-size: 13px;">Show preview</a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table><table style="width: 100%; " class="sm_table"><tr style="width: 100%;"><td style="width: 100%;"><span style="display: inline-block; position:relative; border-radius:4px; background-color:#611f69; " class="button_link_wrapper plum"><a class="button_link sm_full_width sm_border_box plum restyle_button" href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/archives/C05EE46LVMJ/p1705073059027849?c=4&amp;o=2&amp;d=1" style="border-top:13px solid; border-bottom:13px solid; border-right:24px solid; border-left:24px solid; border-color:#611f69; border-radius:4px; background-color:#611f69; color:#ffffff; font-size:16px; line-height:18px; word-break:break-word;  font-weight: bold; font-size: 14px; border-top:20px solid; border-bottom:20px solid; border-color:#611f69; line-height: 14px; letter-spacing: 0.8px; text-transform: uppercase; box-sizing: border-box; display: inline-block; text-align: center; font-weight: 900; text-decoration: none !important;"> Open in Slack </a></span></td></tr></table></div></div></div><div class="email_actions__wrapper" style="padding-left: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px; border-top: 1px solid #E1E1E4"><table><tr><td class="email_actions__icon email_actions__icon_height_auto" style="vertical-align: middle; padding-right: 30px; width: 58px; min-width: 58px; max-width: 58px;">							<!--[if mso]>
-								<img src="https://a.slack-edge.com/86b79a8/img/email/notifications_bell@2x.png" width="58" alt="" />
-							<![endif]-->
-
-							<!--[if !mso]> <!---->
-								<img src="https://a.slack-edge.com/86b79a8/img/email/notifications_bell@2x.png" style="vertical-align: middle; width: 58px; max-width: none; width: 45px !important; height: 59px; padding-left: 5px" alt="" />
-							<!-- <![endif]--></td><td style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><table><tr><td class="email_actions__text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><h3 style="font-size: 18px; font-weight: 700; line-height: 24px;">Manage email settings</h3></td></tr><tr><td class="email_actions__text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><p style="font-size: 16px; line-height: 23px; margin-bottom: 0;">You can
-						<a href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/unsub/U05D4910GF3-b478136a52c1a61f8ab7f43aacafbffbf39c71d282e9e5a09b5fa64f739ade69-notify-mute-7d" style=font-weight:bold;>snooze notifications this week</a>
-						or
-						<a href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/unsub/U05D4910GF3-44aceace9b01b7e6875f7bdad102a8cb362f9a612f5f8fe18b0868293fb5d9a1-digest" style=font-weight:bold;>unsubscribe</a>.</p></td></tr></table></td></tr></table><div style="padding-top: 20px; padding-bottom: 20px;"></div><table><tr><td class="email_actions__icon email_actions__icon_height_auto" style="vertical-align: middle; padding-right: 30px; width: 58px; min-width: 58px; max-width: 58px;">							<!--[if mso]>
-								<img src="https://a.slack-edge.com/e6dd342/img/email/slack_app@2x.png" width="58" alt="" />
-							<![endif]-->
-
-							<!--[if !mso]> <!---->
-								<img src="https://a.slack-edge.com/e6dd342/img/email/slack_app@2x.png" style="vertical-align: middle; width: 58px; max-width: none; width: 58px !important;" alt="" />
-							<!-- <![endif]--></td><td style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><table><tr><td class="email_actions__text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><h3 style="font-size: 18px; font-weight: 700; line-height: 24px;">See notifications instantly</h3></td></tr><tr><td class="email_actions__text" style="word-break: break-word; vertical-align: middle; text-align: left; width: 100%;"><p style="font-size: 16px; line-height: 23px; margin-bottom: 0;">The Slack app is the best way to manageyour notifications and stay up to date.</p></td></tr></table></td><td class="email_actions__cta" style="vertical-align: middle;text-align: right;white-space: nowrap; min-width: 120px;"><table style="width: 100%; " class="sm_table"><tr style="width: 100%;"><td style="width: 100%;"><span style="display: inline-block; position:relative; border-radius:4px; background-color:#611f69; " class="button_link_wrapper plum"><a class="button_link sm_full_width sm_border_box plum restyle_button" href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/downloads?t=download_app" style="border-top:13px solid; border-bottom:13px solid; border-right:24px solid; border-left:24px solid; border-color:#611f69; border-radius:4px; background-color:#611f69; color:#ffffff; font-size:16px; line-height:18px; word-break:break-word;  font-weight: bold; font-size: 14px; border-top:20px solid; border-bottom:20px solid; border-color:#611f69; line-height: 14px; letter-spacing: 0.8px; text-transform: uppercase; box-sizing: border-box; display: inline-block; text-align: center; font-weight: 900; text-decoration: none !important;">Get</a></span></td></tr></table></td></tr></table><table style="display: none;" class="email_actions__cta_mobile"><tr><td class="email_actions__cta_mobile" style="vertical-align: middle;text-align: left; padding-top: 10px; border-left: 75px transparent solid; white-space: nowrap; min-width: 120px;"><table style="width: 100%; mso-hide: all; " class="sm_table"><tr style="width: 100%;"><td style="width: 100%;"><span style="display: inline-block; position:relative; border-radius:4px; background-color:#611f69; " class="button_link_wrapper plum"><a class="button_link sm_full_width sm_border_box plum restyle_button" href="https://bstn-ptbootcamp4.slack.com/x-p4115087140066-5446307016513-6468678233812/downloads?t=download_app" style="border-top:13px solid; border-bottom:13px solid; border-right:24px solid; border-left:24px solid; border-color:#611f69; border-radius:4px; background-color:#611f69; color:#ffffff; font-size:16px; line-height:18px; word-break:break-word;  font-weight: bold; font-size: 14px; border-top:20px solid; border-bottom:20px solid; border-color:#611f69; line-height: 14px; letter-spacing: 0.8px; text-transform: uppercase; box-sizing: border-box; display: inline-block; text-align: center; font-weight: 900; text-decoration: none !important;">Get</a></span></td></tr></table></td></tr></table></div><!--[if mso]>
-		</td>
-		<td style="padding: 0; margin: 0; font-size: 20px; height: 20px;">&nbsp;</td>
-	</tr>
-	<tr>
-		<td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px; height: 20px;">&nbsp;</td>
-	</tr>
+<!DOCTYPE html><html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="format-detection" content="telephone=no, date=no, email=no, address=no"><meta name="x-apple-disable-message-reformatting"><!--[if (mso 16)]><style type="text/css"> a { text-decoration: none; } </style><![endif]--><!--[if gte mso 9]><style> sup { font-size: 100% !important; } </style><![endif]--><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG></o:AllowPNG><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--><!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![endif]--><!--[if !mso]><!-- --><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet"><!--<![endif]--><link type="text/css" rel="stylesheet"
+id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style type="text/css">#outlook a {	padding:0;}.es-button {	mso-style-priority:100!important;	text-decoration:none!important;}a[x-apple-data-detectors] {	color:inherit!important;	text-decoration:none!important;	font-size:inherit!important;	font-family:inherit!important;	font-weight:inherit!important;	line-height:inherit!important;}.es-desk-hidden {	display:none;	float:left;	overflow:hidden;	width:0;	max-height:0;	line-height:0;	mso-hide:all;}@media only screen and (max-width:600px) {p, ul li, ol li, a { line-height:150%!important } h1, h2, h3, h1 a, h2 a, h3 a { line-height:120%!important } h1 { font-size:22px!important; text-align:inherit } h2 { font-size:18px!important; text-align:inherit } h3 { font-size:14px!important; text-align:inherit } .es-header-body h1 a, .es-content-body h1 a, .es-footer-body h1 a { font-size:22px!important } .es-header-body h2 a,
+.es-content-body h2 a, .es-footer-body h2 a { font-size:18px!important } .es-header-body h3 a, .es-content-body h3 a, .es-footer-body h3 a { font-size:14px!important } .es-menu td a { font-size:13px!important } .es-header-body p, .es-header-body ul li, .es-header-body ol li, .es-header-body a { font-size:16px!important } .es-content-body p, .es-content-body ul li, .es-content-body ol li, .es-content-body a { font-size:14px!important } .es-footer-body p, .es-footer-body ul li, .es-footer-body ol li, .es-footer-body a { font-size:13px!important } .es-infoblock p, .es-infoblock ul li, .es-infoblock ol li, .es-infoblock a { font-size:12px!important } *[class="gmail-fix"] { display:none!important } .es-m-txt-c, .es-m-txt-c h1, .es-m-txt-c h2, .es-m-txt-c h3 { text-align:center!important } .es-m-txt-r, .es-m-txt-r h1, .es-m-txt-r h2, .es-m-txt-r h3 { text-align:right!important } .es-m-txt-l, .es-m-txt-l h1, .es-m-txt-l h2, .es-m-txt-l h3 { text-align:left!important }
+.es-m-txt-r img, .es-m-txt-c img, .es-m-txt-l img { display:inline!important } .es-button-border { display:inline-block!important } a.es-button, button.es-button { display:inline-block!important; font-size:11px!important } .es-adaptive table, .es-left, .es-right { width:100%!important } .ac-footer, .es-content table, .es-header table, .es-footer table, .es-content, .es-footer, .es-header { width:100%!important; max-width:600px!important } .ac-footer td, .ac-footer p, .es-adapt-td { display:block!important; width:100%!important } .adapt-img { width:100%!important; height:auto!important } .es-m-p0 { padding:0!important } .es-m-p0r { padding-right:0!important } .es-m-p0l { padding-left:0!important } .es-m-p0t { padding-top:0!important } .es-m-p0b { padding-bottom:0!important } .es-m-p20b { padding-bottom:20px!important } .es-mobile-hidden, .es-hidden { display:none!important } tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden { width:auto!important;
+overflow:visible!important; float:none!important; max-height:inherit!important; line-height:inherit!important } tr.es-desk-hidden { display:table-row!important } table.es-desk-hidden { display:table!important } td.es-desk-menu-hidden { display:table-cell!important } .es-menu td { width:1%!important } table.es-table-not-adapt, .esd-block-html table { width:auto!important } table.es-social { display:inline-block!important } table.es-social td { display:inline-block!important } .es-m-p5 { padding:5px!important } .es-m-p5t { padding-top:5px!important } .es-m-p5b { padding-bottom:5px!important } .es-m-p5r { padding-right:5px!important } .es-m-p5l { padding-left:5px!important } .es-m-p10 { padding:10px!important } .es-m-p10t { padding-top:10px!important } .es-m-p10b { padding-bottom:10px!important } .es-m-p10r { padding-right:10px!important } .es-m-p10l { padding-left:10px!important } .es-m-p15 { padding:15px!important } .es-m-p15t { padding-top:15px!important }
+.es-m-p15b { padding-bottom:15px!important } .es-m-p15r { padding-right:15px!important } .es-m-p15l { padding-left:15px!important } .es-m-p20 { padding:20px!important } .es-m-p20t { padding-top:20px!important } .es-m-p20r { padding-right:20px!important } .es-m-p20l { padding-left:20px!important } .es-m-p25 { padding:25px!important } .es-m-p25t { padding-top:25px!important } .es-m-p25b { padding-bottom:25px!important } .es-m-p25r { padding-right:25px!important } .es-m-p25l { padding-left:25px!important } .es-m-p30 { padding:30px!important } .es-m-p30t { padding-top:30px!important } .es-m-p30b { padding-bottom:30px!important } .es-m-p30r { padding-right:30px!important } .es-m-p30l { padding-left:30px!important } .es-m-p35 { padding:35px!important } .es-m-p35t { padding-top:35px!important } .es-m-p35b { padding-bottom:35px!important } .es-m-p35r { padding-right:35px!important } .es-m-p35l { padding-left:35px!important } .es-m-p40 { padding:40px!important } .es-m-p40t {
+padding-top:40px!important } .es-m-p40b { padding-bottom:40px!important } .es-m-p40r { padding-right:40px!important } .es-m-p40l { padding-left:40px!important } .es-desk-hidden { display:table-row!important; width:auto!important; overflow:visible!important; max-height:inherit!important } .h-auto { height:auto!important } .es-m-margin { padding-left:10px!important; padding-right:10px!important; padding-top:10px!important; padding-bottom:10px!important } }</style></head><body class="es-wrapper-color" data-new-gr-c-s-loaded="8.909.0" lang="und" style="font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;width:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0;background-color:#EBF2FD">		<div style="display: none !important; padding: 0; height: 1px; font-size: 1px; background-color: inherit !important; opacity: 0; color: transparent; mso-line-height-rule: exactly; line-height:1px; mso-hide:all;">
+			Express Entry’s most in-demand jobs in Canada
+			<div style="display: none; max-height: 0px; overflow: hidden;">
+				&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌
+			</div>
+
+		</div>
+<table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;background-repeat:repeat;background-position:center top;height:100%;background-color:#EBF2FD"><tr><td class="es-m-margin" valign="top" style="padding:0;Margin:0"><table class="es-content" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%"><tr><td style="padding:0;Margin:0;background-color:#ebf2fd" bgcolor="#EBF2FD" align="center"><table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#f2f2f2;width:690px" cellspacing="0" cellpadding="0" bgcolor="#F2F2F2" align="center" role="none"><tr class="es-mobile-hidden"><td align="left"
+style="padding:0;Margin:0;padding-left:40px;background-color:#3f5ec8;border-radius:10px 10px 0px 0px" bgcolor="#3F5EC8"><!--[if mso]><table style="width:650px" cellpadding="0" cellspacing="0"><tr><td style="width:88px" valign="top"><![endif]--><table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr><td class="es-m-p0r es-m-p20b" align="center" style="padding:0;Margin:0;width:78px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="left" style="padding:0;Margin:0;padding-top:15px;padding-bottom:15px;font-size:0px"><a target="_blank"
+href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=AMde3N7wQZaviHqXXrwDiNfjAyGbQtqYTA5CQBnrB4J2&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40133" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img src="https://storage.googleapis.com/newsletter-public-static/newsletter/cicnews-logo-header.png" alt width="77" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a></td>
+</tr>
 </table>
-<![endif]--></div></td></tr></table></center></td></tr><tr><td class="email_footer" style="font-size: 15px;color: #717274;text-align: center;width: 100%;"><!--[if mso]>
-<table cellpadding="0" cellspacing="0" border="0" style="padding: 0; margin: 0; width: 100%;">
-    <tr>
-        <td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px;" height="20">&nbsp;</td>
-    </tr>
-    <tr>
-        <td style="padding: 0; margin: 0;">&nbsp;</td>
-        <td style="padding: 0; margin: 0;" width="540">
-<![endif]--><center><table style="margin: 20px auto 0; background-color: white; border: 0; text-align: center; border-collapse: collapse;"><tr><td style="width: 546px; vertical-align: top; padding: 0px;"><div style="max-width: 600px; margin: 0 auto;"><div class="footer_padding"><table><tr><td class="slack_logo_small_icon" style="vertical-align: top; text-align: left;"><img width="120" height="36" style="margin-top: 0; margin-right: 0; margin-bottom: 32px; margin-left: 0px;" src="https://a.slack-edge.com/80588/img/slack_logo_240_vogue.png" alt="slack logo"></td><td style="vertical-align: top; text-align: right;"><a href="https://twitter.com/slackhq" data-qa="twitter_link" class="social_icon_margin" style="margin-left: 20px;"><img class="small_icon" src="https://a.slack-edge.com/b8be608/marketing/img/icons/icon_colored_twitter.png" width="32" height="32" title="Twitter"></a><a href="https://facebook.com/slackhq" data-qa="fb_link" class="social_icon_margin" style="margin-left: 20px;"><img class="small_icon" src="https://a.slack-edge.com/b8be608/marketing/img/icons/icon_colored_facebook.png" width="32" height="32" title="Facebook"></a><a href="https://www.linkedin.com/company/tiny-spec-inc/" data-qa="linkedin_link" class="social_icon_margin" style="margin-left: 20px;"><img class="small_icon" src="https://a.slack-edge.com/b8be608/marketing/img/icons/icon_colored_linkedin.png" width="32" height="32" title="LinkedIn"></a></td></tr></table><div style="font-size:12px; opacity:0.5; color:#696969; text-align:left; line-height:15px; margin-bottom:50px; text-align: left;"><a class="footer_link" href="https://slackhq.com" data-qa="slack_blog" style="color: #696969 !important;">Our Blog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a class="footer_link" href="https://slack.com/legal" data-qa="slack_legal" style="color: #696969 !important;">Policies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://slack.com/help" class="footer_link" data-qa="slack_help" style="color: #696969 !important;">Help Center</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://slack.com/community" class="footer_link" data-qa="slack_commmunity" style="color: #696969 !important;">Slack Community</a><br><br><div>&copy;2024 Slack Technologies, LLC, a Salesforce company.<br>415 Mission Street, San Francisco, CA 94105</div><br>All rights reserved.</div></div></div></td></tr></table></center><!--[if mso]>
-		</td>
-		<td style="padding: 0; margin: 0; font-size: 20px; height: 20px;">&nbsp;</td>
-	</tr>
-	<tr>
-		<td colspan="3" style="padding: 0; margin: 0; font-size: 20px; height: 20px; height: 20px;">&nbsp;</td>
-	</tr>
+</td>
+<td class="es-hidden" style="padding:0;Margin:0;width:10px"></td>
+</tr>
 </table>
-<![endif]--></td></tr></table></body></html>
+<!--[if mso]></td>
+<td style="width:341px" valign="top"><![endif]--><table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr><td class="es-m-p20b" align="center" style="padding:0;Margin:0;width:341px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="left" style="padding:0;Margin:0;padding-top:15px;padding-bottom:15px;padding-right:15px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:18px;color:#ffffff;font-size:12px">|  TOP CANADIAN IMMIGRATION DEVELOPMENTS</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if mso]></td>
+<td style="width:10px"></td>
+<td style="width:211px" valign="top"><![endif]--><table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right"><tr><td align="center" style="padding:0;Margin:0;width:211px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" style="padding:0;Margin:0;font-size:0px"><img src="https://storage.googleapis.com/newsletter-public-static/newsletter/cicnews-bg.png" alt width="211" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if mso]></td>
+</tr>
+</table>
+<![endif]--></td>
+</tr>
+<!--[if !mso]><!-- --><tr class="es-desk-hidden" style="display:none;float:left;overflow:hidden;width:0;max-height:0;line-height:0;mso-hide:all"><td class="es-m-p10t es-m-p10b es-m-p20l" align="left" style="padding:0;Margin:0;padding-left:40px;background-color:#3f5ec8;border-radius:10px 10px 0px 0px" bgcolor="#3F5EC8"><table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td class="es-m-p0r" align="center" style="padding:0;Margin:0;width:650px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px;font-size:0px"><a target="_blank"
+href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=AMde3N7wQZaviHqXXrwDiNfjAyGbQtqYTA5CQBnrB4J2&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40133" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img src="https://storage.googleapis.com/newsletter-public-static/newsletter/cicnews-logo-header.png" alt width="80" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a></td>
+</tr>
+<tr><td align="left" style="padding:0;Margin:0"><h5 style="Margin:0;line-height:12px;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;color:#ffffff;font-size:10px">TOP CANADIAN IMMIGRATION DEVELOPMENTS</h5></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--<![endif]--></table>
+</td>
+</tr>
+</table>
+<table class="es-content" cellspacing="0" cellpadding="0" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%"><tr><td style="padding:0;Margin:0;background-color:#ebf2fd" bgcolor="#EBF2FD" align="center"><table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#ffffff;width:690px" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" role="none"><tr><td style="padding:0;Margin:0;background-color:#ffffff" bgcolor="#ffffff" align="left"><table width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td valign="top" align="center" style="padding:0;Margin:0;width:690px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"
+style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td class="es-m-p15t es-m-p15b" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;font-size:0" align="center"><table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style="padding:0;Margin:0;border-bottom:1px solid #e6e6e6;background:unset;height:1px;width:100%;margin:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="esdev-adapt-off es-m-p20r es-m-p20l" style="padding:0;Margin:0;padding-left:40px;padding-right:40px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:610px"><tr><td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr><td align="left" style="padding:0;Margin:0;width:494px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td bgcolor="#ffffff" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><h3
+style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333"><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZleHByZXNzLWVudHJ5cy1tb3N0LWluLWRlbWFuZC1qb2JzLWluLWNhbmFkYS0wMTQyNDE4Lmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=8AZucD6iGUqkK3GEhFkGuLLJCrpY3Z9x7DmGT9SynRJD&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40134" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px" target="_blank">Express Entry’s most in-demand jobs in Canada</a><br type="_moz"></h3></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding:0;Margin:0;width:20px"></td>
+<td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right"><tr><td align="left" style="padding:0;Margin:0;width:96px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="right" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZleHByZXNzLWVudHJ5cy1tb3N0LWluLWRlbWFuZC1qb2JzLWluLWNhbmFkYS0wMTQyNDE4Lmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=8AZucD6iGUqkK3GEhFkGuLLJCrpY3Z9x7DmGT9SynRJD&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40134"
+style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img class="adapt-img" src="https://storage.googleapis.com/newsletter-public-static/2024/newsletter0115/In-demand-job-according-to-IRCC.jpg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="62"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td style="padding:0;Margin:0;padding-left:20px;padding-right:20px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td valign="top" align="center" style="padding:0;Margin:0;width:650px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td class="es-m-p10t es-m-p10b" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;font-size:0" align="center"><table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style="padding:0;Margin:0;border-bottom:1px solid #e6e6e6;background:unset;height:1px;width:100%;margin:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="esdev-adapt-off es-m-p20r es-m-p20l" style="padding:0;Margin:0;padding-left:40px;padding-right:40px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:610px"><tr><td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr><td align="left" style="padding:0;Margin:0;width:494px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td bgcolor="#ffffff" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><h3
+style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333"><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZjYW5hZGFzLWltbWlncmF0aW9uLW1pbmlzdGVyLWNhbGxzLW9uLXByb3ZpbmNlcy10by1yZWlnbi1pbi1udW1iZXItb2YtaW50ZXJuYXRpb25hbC1zdHVkZW50cy0wMTQyNDAwLmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=7THu1SV9dwAcjW5mcAh8WRJk14E41qSZ95cNDqsXHHgq&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40135" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px" target="_blank">Canada's immigration minister calls on provinces to “rein in” number of international students</a></h3></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding:0;Margin:0;width:20px"></td>
+<td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right"><tr><td align="left" style="padding:0;Margin:0;width:96px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="right" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZjYW5hZGFzLWltbWlncmF0aW9uLW1pbmlzdGVyLWNhbGxzLW9uLXByb3ZpbmNlcy10by1yZWlnbi1pbi1udW1iZXItb2YtaW50ZXJuYXRpb25hbC1zdHVkZW50cy0wMTQyNDAwLmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=7THu1SV9dwAcjW5mcAh8WRJk14E41qSZ95cNDqsXHHgq&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40135"
+style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img class="adapt-img" src="https://storage.googleapis.com/newsletter-public-static/2024/newsletter0115/MarcMillerProvFinal.jpg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="62"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td style="padding:0;Margin:0;padding-left:20px;padding-right:20px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td valign="top" align="center" style="padding:0;Margin:0;width:650px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td class="es-m-p10t es-m-p10b" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;font-size:0" align="center"><table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style="padding:0;Margin:0;border-bottom:1px solid #e6e6e6;background:unset;height:1px;width:100%;margin:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="esdev-adapt-off es-m-p20r es-m-p20l" style="padding:0;Margin:0;padding-left:40px;padding-right:40px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:610px"><tr><td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr><td align="left" style="padding:0;Margin:0;width:494px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td bgcolor="#ffffff" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><h3
+style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333"><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZzdGFydC15b3VyLW5ld2NvbWVyLXBhdGh3YXktdG8tc3VjY2Vzcy13aXRoLWNhcmVlcmF0bGFzLWFuLWlubm92YXRpdmUtYWktdG9vbC0wMTQyMzExLmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=HiQQwQCKX3YwBkXGeRjYZd3hGiaNLw43ZcoRbTPvz76M&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40136" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px" target="_blank">Start your newcomer pathway to success with CareerAtlas, an innovative AI tool</a></h3></td>
+</tr>
+<tr><td align="left" bgcolor="#ffffff" style="padding:0;Margin:0"><!--[if mso]><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZzdGFydC15b3VyLW5ld2NvbWVyLXBhdGh3YXktdG8tc3VjY2Vzcy13aXRoLWNhcmVlcmF0bGFzLWFuLWlubm92YXRpdmUtYWktdG9vbC0wMTQyMzExLmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=HiQQwQCKX3YwBkXGeRjYZd3hGiaNLw43ZcoRbTPvz76M&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40136" target="_blank" hidden>
+	<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZzdGFydC15b3VyLW5ld2NvbWVyLXBhdGh3YXktdG8tc3VjY2Vzcy13aXRoLWNhcmVlcmF0bGFzLWFuLWlubm92YXRpdmUtYWktdG9vbC0wMTQyMzExLmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=HiQQwQCKX3YwBkXGeRjYZd3hGiaNLw43ZcoRbTPvz76M&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40136" 
+                style="height:24px; v-text-anchor:middle; width:135px" arcsize="50%" stroke="f"  fillcolor="#e0d7e2">
+		<w:anchorlock></w:anchorlock>
+		<center style='color:#41006d; font-family:helvetica, "helvetica neue", arial, verdana, sans-serif; font-size:8px; font-weight:400; line-height:8px;  mso-text-raise:1px'>Sponsor Content</center>
+	</v:roundrect></a>
+<![endif]--><!--[if !mso]><!-- --><div class="msohide es-button-border" style="border-style:solid;border-color:#808080;background:#e0d7e2;border-width:0px;display:inline-block;border-radius:19px;width:auto;mso-hide:all"><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZzdGFydC15b3VyLW5ld2NvbWVyLXBhdGh3YXktdG8tc3VjY2Vzcy13aXRoLWNhcmVlcmF0bGFzLWFuLWlubm92YXRpdmUtYWktdG9vbC0wMTQyMzExLmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=HiQQwQCKX3YwBkXGeRjYZd3hGiaNLw43ZcoRbTPvz76M&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40136" class="es-button es-button-1705334573479" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#41006d;font-size:12px;display:inline-block;background:#e0d7e2;border-radius:19px;font-family:helvetica, 'helvetica neue', arial, verdana,
+sans-serif;font-weight:normal;font-style:normal;line-height:14px;width:auto;text-align:center;padding:5px 10px;mso-padding-alt:0;mso-border-alt:10px solid #e0d7e2">Sponsor Content</a><!--<![endif]--><span class="msohide " style="mso-hide:all;display:inline-block;vertical-align:middle;border-width:0px;border-radius:50%;background:#ffffff"></span></div>
+<!--<![endif]--><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:18px;color:#000000;font-size:12px"></p>
+<!--<![endif]--></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding:0;Margin:0;width:20px"></td>
+<td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right"><tr><td align="left" style="padding:0;Margin:0;width:96px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="right" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZzdGFydC15b3VyLW5ld2NvbWVyLXBhdGh3YXktdG8tc3VjY2Vzcy13aXRoLWNhcmVlcmF0bGFzLWFuLWlubm92YXRpdmUtYWktdG9vbC0wMTQyMzExLmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=HiQQwQCKX3YwBkXGeRjYZd3hGiaNLw43ZcoRbTPvz76M&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40136"
+style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img class="adapt-img" src="https://storage.googleapis.com/newsletter-public-static/2024/newsletter0115/otec-cicnews-article-1.jpg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="62"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td style="padding:0;Margin:0;padding-left:20px;padding-right:20px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td valign="top" align="center" style="padding:0;Margin:0;width:650px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td class="es-m-p10t es-m-p10b" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;font-size:0" align="center"><table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style="padding:0;Margin:0;border-bottom:1px solid #e6e6e6;background:unset;height:1px;width:100%;margin:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="esdev-adapt-off es-m-p20r es-m-p20l" style="padding:0;Margin:0;padding-left:40px;padding-right:40px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:610px"><tr><td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr><td align="left" style="padding:0;Margin:0;width:494px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td bgcolor="#ffffff" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><h3
+style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333"><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZob3ctY2FuLWktY29udGFjdC1pcmNjLWRpcmVjdGx5LWFib3V0LWRlbGF5cy1vci1uZXctaW5mb3JtYXRpb24taW4tbXktYXBwbGljYXRpb24tMDE0MjMwNi5odG1sJTNGdXRtX3NvdXJjZSUzRG5ld3NsZXR0ZXIlMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY2FtcGFpZ24lM0RuZXdzbGV0dGVyLTIwMjQwMTE3&sig=BXXPQ8VYsE577UzSXCFRgGNrMuymyUd2bVGWxQnVqdV&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40137" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px" target="_blank">How can I contact IRCC directly about delays or new information in my application?</a></h3></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding:0;Margin:0;width:20px"></td>
+<td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right"><tr><td align="left" style="padding:0;Margin:0;width:96px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="right" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZob3ctY2FuLWktY29udGFjdC1pcmNjLWRpcmVjdGx5LWFib3V0LWRlbGF5cy1vci1uZXctaW5mb3JtYXRpb24taW4tbXktYXBwbGljYXRpb24tMDE0MjMwNi5odG1sJTNGdXRtX3NvdXJjZSUzRG5ld3NsZXR0ZXIlMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY2FtcGFpZ24lM0RuZXdzbGV0dGVyLTIwMjQwMTE3&sig=BXXPQ8VYsE577UzSXCFRgGNrMuymyUd2bVGWxQnVqdV&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40137"
+style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img class="adapt-img" src="https://storage.googleapis.com/newsletter-public-static/2024/newsletter0115/Contacting-IRCC.jpg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="62"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td style="padding:0;Margin:0;padding-left:20px;padding-right:20px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td valign="top" align="center" style="padding:0;Margin:0;width:650px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td class="es-m-p10t es-m-p10b" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;font-size:0" align="center"><table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style="padding:0;Margin:0;border-bottom:1px solid #e6e6e6;background:unset;height:1px;width:100%;margin:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="esdev-adapt-off es-m-p20r es-m-p20l" style="padding:0;Margin:0;padding-left:40px;padding-right:40px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:610px"><tr><td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr><td align="left" style="padding:0;Margin:0;width:494px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td bgcolor="#ffffff" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><h3
+style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333"><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZvdmVyLTMwMDAwMC1wZW9wbGUtYmVjYW1lLWNhbmFkaWFuLWNpdGl6ZW5zLWluLTIwMjMtMDE0MjE3Ni5odG1sJTNGdXRtX3NvdXJjZSUzRG5ld3NsZXR0ZXIlMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY2FtcGFpZ24lM0RuZXdzbGV0dGVyLTIwMjQwMTE3&sig=8hCBucm2F39c1bHBuNZKMLGWqvhJtau67x67urNvfRjR&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40138" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px" target="_blank">Over 300,000 people became Canadian citizens in 2023</a></h3></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding:0;Margin:0;width:20px"></td>
+<td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right"><tr><td align="left" style="padding:0;Margin:0;width:96px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="right" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZvdmVyLTMwMDAwMC1wZW9wbGUtYmVjYW1lLWNhbmFkaWFuLWNpdGl6ZW5zLWluLTIwMjMtMDE0MjE3Ni5odG1sJTNGdXRtX3NvdXJjZSUzRG5ld3NsZXR0ZXIlMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY2FtcGFpZ24lM0RuZXdzbGV0dGVyLTIwMjQwMTE3&sig=8hCBucm2F39c1bHBuNZKMLGWqvhJtau67x67urNvfRjR&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40138"
+style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img class="adapt-img" src="https://storage.googleapis.com/newsletter-public-static/2024/newsletter0115/20240105citizenship2023.jpg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="62"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td style="padding:0;Margin:0;padding-left:20px;padding-right:20px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td valign="top" align="center" style="padding:0;Margin:0;width:650px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td class="es-m-p10t es-m-p10b" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;font-size:0" align="center"><table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style="padding:0;Margin:0;border-bottom:1px solid #e6e6e6;background:unset;height:1px;width:100%;margin:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="esdev-adapt-off es-m-p20b es-m-p20r es-m-p20l" style="padding:0;Margin:0;padding-left:40px;padding-right:40px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table class="esdev-mso-table" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:610px"><tr><td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr><td align="left" style="padding:0;Margin:0;width:494px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td bgcolor="#ffffff" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><h3
+style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333"><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZicmVha2luZy1jYW5hZGlhbi1nb3Zlcm5tZW50LW9wZW5zLW5ldy10ZW1wb3JhcnktcmVzaWRlbnQtcGF0aHdheS1mb3ItcGFsZXN0aW5pYW5zLWluLWdhemEtd2l0aC1mYW1pbHktaW4tY2FuYWRhLTAxNDIyNTguaHRtbCUzRnV0bV9zb3VyY2UlM0RuZXdzbGV0dGVyJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NhbXBhaWduJTNEbmV3c2xldHRlci0yMDI0MDExNw==&sig=7BAvoHhYckEBW5gThdjT9Dd3fTM5fPzGrPGndNiXegCA&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40139" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px" target="_blank">Canadian Government opens new temporary resident pathway for Palestinians in Gaza with family in Canada</a></h3></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding:0;Margin:0;width:20px"></td>
+<td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right"><tr><td align="left" style="padding:0;Margin:0;width:96px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="right" style="padding:0;Margin:0;font-size:0px"><a target="_blank"
+href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZicmVha2luZy1jYW5hZGlhbi1nb3Zlcm5tZW50LW9wZW5zLW5ldy10ZW1wb3JhcnktcmVzaWRlbnQtcGF0aHdheS1mb3ItcGFsZXN0aW5pYW5zLWluLWdhemEtd2l0aC1mYW1pbHktaW4tY2FuYWRhLTAxNDIyNTguaHRtbCUzRnV0bV9zb3VyY2UlM0RuZXdzbGV0dGVyJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NhbXBhaWduJTNEbmV3c2xldHRlci0yMDI0MDExNw==&sig=7BAvoHhYckEBW5gThdjT9Dd3fTM5fPzGrPGndNiXegCA&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40139" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img class="adapt-img" src="https://storage.googleapis.com/newsletter-public-static/2024/newsletter0115/20240109gaza.jpg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="62"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td style="padding:0;Margin:0;padding-left:20px;padding-right:20px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td valign="top" align="center" style="padding:0;Margin:0;width:650px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td class="es-m-p10t es-m-p10b" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;font-size:0" align="center"><table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style="padding:0;Margin:0;border-bottom:1px solid #e6e6e6;background:unset;height:1px;width:100%;margin:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="esdev-adapt-off es-m-p20b es-m-p20r es-m-p20l" style="padding:0;Margin:0;padding-left:40px;padding-right:40px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table class="esdev-mso-table" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:610px"><tr><td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr><td align="left" style="padding:0;Margin:0;width:494px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td bgcolor="#ffffff" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><h3
+style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333"><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZ0aHJlZS1jYW5hZGlhbi1wcm92aW5jZXMtaXNzdWUtaW52aXRhdGlvbnMtaW4tZmlyc3QtcG5wLXJlc3VsdHMtb2YtMjAyNC0wMTQyMzUwLmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=EoDPMRm3ojXKfx5iUJqRZaQaS7CggkF41jpLs7DaQGES&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40140" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px" target="_blank">Three Canadian provinces issue invitations in first PNP results of 2024</a></h3></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding:0;Margin:0;width:20px"></td>
+<td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right"><tr><td align="left" style="padding:0;Margin:0;width:96px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="right" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZ0aHJlZS1jYW5hZGlhbi1wcm92aW5jZXMtaXNzdWUtaW52aXRhdGlvbnMtaW4tZmlyc3QtcG5wLXJlc3VsdHMtb2YtMjAyNC0wMTQyMzUwLmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=EoDPMRm3ojXKfx5iUJqRZaQaS7CggkF41jpLs7DaQGES&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40140"
+style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img class="adapt-img" src="https://storage.googleapis.com/newsletter-public-static/2024/newsletter0115/20240113PNP.jpg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="62"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td style="padding:0;Margin:0;padding-left:20px;padding-right:20px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td valign="top" align="center" style="padding:0;Margin:0;width:650px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td class="es-m-p10t es-m-p10b" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px;font-size:0" align="center"><table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style="padding:0;Margin:0;border-bottom:1px solid #e6e6e6;background:unset;height:1px;width:100%;margin:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="esdev-adapt-off es-m-p20b es-m-p20r es-m-p20l" style="padding:0;Margin:0;padding-bottom:40px;padding-left:40px;padding-right:40px;background-color:#ffffff" bgcolor="#ffffff" align="left"><table class="esdev-mso-table" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:610px"><tr><td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-left" cellspacing="0" cellpadding="0" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr><td align="left" style="padding:0;Margin:0;width:494px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td bgcolor="#ffffff" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><h3
+style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#333333"><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZob3ctdG8tYXZvaWQtbWlzcmVwcmVzZW50YXRpb24taW4teW91ci1jYW5hZGlhbi1pbW1pZ3JhdGlvbi1hcHBsaWNhdGlvbi0wMTM5MTE4Lmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=9yyqQsh8dSmQPyaqxnpa3Gsz4zFAD7fmLPmjGHAzvBGq&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40141" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#333333;font-size:20px" target="_blank">Avoiding misrepresentation in your Canadian immigration application</a></h3></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style="padding:0;Margin:0;width:20px"></td>
+<td class="esdev-mso-td" valign="top" style="padding:0;Margin:0"><table class="es-right" cellspacing="0" cellpadding="0" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right"><tr><td align="left" style="padding:0;Margin:0;width:96px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="right" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkYyMDI0JTJGMDElMkZob3ctdG8tYXZvaWQtbWlzcmVwcmVzZW50YXRpb24taW4teW91ci1jYW5hZGlhbi1pbW1pZ3JhdGlvbi1hcHBsaWNhdGlvbi0wMTM5MTE4Lmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=9yyqQsh8dSmQPyaqxnpa3Gsz4zFAD7fmLPmjGHAzvBGq&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40141"
+style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img class="adapt-img" src="https://storage.googleapis.com/newsletter-public-static/2024/newsletter0115/avoid-misrepresentation-in-your-immigration-application.jpg" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="62"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="es-m-p20t" align="left" style="padding:0;Margin:0;padding-left:20px;padding-right:20px;padding-top:40px;background-color:#fafafa" bgcolor="#FAFAFA"><table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" valign="top" style="padding:0;Margin:0;width:650px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" style="padding:0;Margin:0;font-size:0px"><a target="_blank"
+href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2FuYWRhdmlzYS5jb20lMkZhc3Nlc3MlMkZjYW5hZGEtaW1taWdyYXRpb24tYXNzZXNzbWVudC1mb3JtLmh0bSUzRnV0bV9zb3VyY2UlM0RuZXdzbGV0dGVyJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NhbXBhaWduJTNEbmV3c2xldHRlci0yMDI0MDExNw==&sig=2vuCdjPsbR9QEBdSfEyyEXgqE7PeGj46rhe2ZnJjR5q7&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40142" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img src="https://storage.googleapis.com/newsletter-public-static/newsletter/maple-leaf.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="30"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td align="left" style="padding:0;Margin:0;padding-top:10px;padding-left:20px;padding-right:20px;background-color:#fafafa" bgcolor="#FAFAFA"><table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" valign="top" style="padding:0;Margin:0;width:650px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" style="padding:0;Margin:0"><h2 style="Margin:0;line-height:29px;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:24px;font-style:normal;font-weight:normal;color:#333333">Discover your options for Canadian immigration</h2></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="es-m-p20b" align="left" style="Margin:0;padding-top:10px;padding-left:20px;padding-right:20px;padding-bottom:40px;background-color:#fafafa" bgcolor="#FAFAFA"><table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" valign="top" style="padding:0;Margin:0;width:650px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" style="padding:0;Margin:0"><!--[if mso]><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2FuYWRhdmlzYS5jb20lMkZhc3Nlc3MlMkZjYW5hZGEtaW1taWdyYXRpb24tYXNzZXNzbWVudC1mb3JtLmh0bSUzRnV0bV9zb3VyY2UlM0RuZXdzbGV0dGVyJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NhbXBhaWduJTNEbmV3c2xldHRlci0yMDI0MDExNw==&sig=2vuCdjPsbR9QEBdSfEyyEXgqE7PeGj46rhe2ZnJjR5q7&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40142"
+target="_blank" hidden>
+	<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2FuYWRhdmlzYS5jb20lMkZhc3Nlc3MlMkZjYW5hZGEtaW1taWdyYXRpb24tYXNzZXNzbWVudC1mb3JtLmh0bSUzRnV0bV9zb3VyY2UlM0RuZXdzbGV0dGVyJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NhbXBhaWduJTNEbmV3c2xldHRlci0yMDI0MDExNw==&sig=2vuCdjPsbR9QEBdSfEyyEXgqE7PeGj46rhe2ZnJjR5q7&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40142" 
+                style="height:36px; v-text-anchor:middle; width:129px" arcsize="50%" stroke="f"  fillcolor="#3f5ec8">
+		<w:anchorlock></w:anchorlock>
+		<center style='color:#ffffff; font-family:helvetica, "helvetica neue", arial, verdana, sans-serif; font-size:12px; font-weight:400; line-height:12px;  mso-text-raise:1px'>Get started</center>
+	</v:roundrect></a>
+<![endif]--><!--[if !mso]><!-- --><span class="msohide es-button-border" style="border-style:solid;border-color:#808080;background:#3f5ec8;border-width:0px;display:inline-block;border-radius:40px;width:auto;mso-hide:all"><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2FuYWRhdmlzYS5jb20lMkZhc3Nlc3MlMkZjYW5hZGEtaW1taWdyYXRpb24tYXNzZXNzbWVudC1mb3JtLmh0bSUzRnV0bV9zb3VyY2UlM0RuZXdzbGV0dGVyJTI2dXRtX21lZGl1bSUzRGVtYWlsJTI2dXRtX2NhbXBhaWduJTNEbmV3c2xldHRlci0yMDI0MDExNw==&sig=2vuCdjPsbR9QEBdSfEyyEXgqE7PeGj46rhe2ZnJjR5q7&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40142" class="es-button es-button-1698151566947" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#ffffff;font-size:14px;display:inline-block;background:#3f5ec8;border-radius:40px;font-family:helvetica, 'helvetica neue', arial, verdana,
+sans-serif;font-weight:normal;font-style:normal;line-height:17px;width:auto;text-align:center;padding:10px 20px;mso-padding-alt:0;mso-border-alt:10px solid #F0F0F0">Get started</a></span><!--<![endif]--></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="es-m-p20t es-m-p20l" align="left" style="padding:0;Margin:0;padding-right:20px;padding-top:40px;padding-left:40px;background-color:#1c2e6c" bgcolor="#1C2E6C"><table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" valign="top" style="padding:0;Margin:0;width:630px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="left" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=AMde3N7wQZaviHqXXrwDiNfjAyGbQtqYTA5CQBnrB4J2&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40133"
+style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#555555;font-size:12px"><img src="https://storage.googleapis.com/newsletter-public-static/newsletter/cicnews-logo-footer.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" height="25"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:5px;padding-right:20px;padding-left:40px;background-color:#1c2e6c" bgcolor="#1C2E6C"><table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" valign="top" style="padding:0;Margin:0;width:630px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:18px;color:#ffffff;font-size:12px">The voice of Canadian immigration</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:5px;padding-right:20px;padding-left:40px;background-color:#1c2e6c" bgcolor="#1C2E6C"><table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" valign="top" style="padding:0;Margin:0;width:630px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px;font-size:0"><table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style="padding:0;Margin:0;border-bottom:1px solid #33437b;background:unset;height:1px;width:100%;margin:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:21px;color:#ffffff;font-size:14px;text-decoration:none">Sent by CanadaVisa, 1303 Greene Ave. Suite 200, Westmount, Quebec H3Z 2A7, Canada</p>
+</td>
+</tr>
+<tr><td align="left" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:21px;color:#ffffff;font-size:14px"><u><a href="mailto:newsletter@canadavisa.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#ffffff;font-size:14px" target="_blank">Ask your immigration questions</a></u>  ·  <u><a href="https://ac.canadavisa.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZ3d3cuY2ljbmV3cy5jb20lMkZwcml2YWN5Lmh0bWwlM0Z1dG1fc291cmNlJTNEbmV3c2xldHRlciUyNnV0bV9tZWRpdW0lM0RlbWFpbCUyNnV0bV9jYW1wYWlnbiUzRG5ld3NsZXR0ZXItMjAyNDAxMTc=&sig=3FfvaibuPDRdFpGU48jPttfiYmn7r6Rw3xQrXpwsQ8z4&iat=1705526196&a=%7C%7C66590322%7C%7C&account=canadavisa%2Eactivehosted%2Ecom&email=1%2Bl0JBXg%2Bsek3Sslpl3ef6KXtlDldDZuZqDHSnkJyvy1IUm%2B67o%3D%3AXos%2BoSh0f0RAsMO%2FgpzReg7wBU9xX0M0&s=e0eb3d9d8fe7b7eef21e4317b5530084&i=1506A1665A4A40143"
+style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#ffffff;font-size:14px" target="_blank">Privacy</a></u> </p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td class="es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:40px;padding-right:40px;background-color:#1c2e6c" bgcolor="#1C2E6C"><table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" valign="top" style="padding:0;Margin:0;width:610px"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px;font-size:0"><table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td style="padding:0;Margin:0;border-bottom:1px solid
+#33437b;background:unset;height:1px;width:100%;margin:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td align="left" style="padding:0;Margin:0;padding-bottom:40px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:18px;color:#ffffff;font-size:12px"><u><a style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#ffffff;font-size:12px" href="https://ac.canadavisa.com/proc.php?nl=4&c=1506&m=1665&s=e0eb3d9d8fe7b7eef21e4317b5530084&act=unsub" target="_blank">Unsubscribe</a></u> from this email</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<img src="https://ac.canadavisa.com/Prod/link-tracker?nl=4&c=1506&m=1665&s=e0eb3d9d8fe7b7eef21e4317b5530084&l=open&account=canadavisa.activehosted.com&a=66590322" border="0" width="1" height="1" style="display:block;width:1px!important;min-width:1px!important;max-width:1px!important;height:1px!important;border:0;overflow:hidden;" /><br /><br clear="all" /></body>
+</html>
