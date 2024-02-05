@@ -52,7 +52,6 @@ I'm a full stack developer...
 
 ## Tech Stack
 
-**Client:** React, SASS
 
 **Server:** Node, Express, Knex
 
@@ -62,10 +61,10 @@ I'm a full stack developer...
 
 ## Installation
 
-Install my-project with npm
+Install job-application-tracker-api with npm
 
 ```bash
-  cd job-application-tracker
+  cd job-application-tracker-api
 ```
 Install dependencies with npm
 ```bash
