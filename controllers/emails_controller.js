@@ -16,11 +16,20 @@ const addEmails = async (emailObject) => {
     });
 };
 
-const fetchEmails = async (companyEmail, applicationId) => {
+const fetchEmails = async (req, res, companyEmail, applicationId) => {
+  let email;
+  let password;
+  await fs.readFile("./session/session.json", (err, data) => {
+    const parsedData = JSON.parse(data);
+    email = parsedData.email;
+    password = parsedData.password;
+  });
   // config IMAP
   const imap = new Imap({
-    user: process.env.USER_EMAIL,
-    password: process.env.APP_PASSWORD, // my app
+    // user: process.env.USER_EMAIL,
+    // password: process.env.APP_PASSWORD, // my app
+    user: email,
+    password: password, // my app
     host: "imap.gmail.com",
     port: 993,
     authTimeout: 10000,
@@ -130,9 +139,18 @@ const getAllEmails = (req, res) => {
 };
 
 const fetchEmailDetail = async (req, res, emailInfo) => {
+  let email;
+  let password;
+  await fs.readFile("./session/session.json", (err, data) => {
+    const parsedData = JSON.parse(data);
+    email = parsedData.email;
+    password = parsedData.password;
+  });
   const imap = new Imap({
-    user: process.env.USER_EMAIL,
-    password: process.env.APP_PASSWORD, // my app
+    // user: process.env.USER_EMAIL,
+    // password: process.env.APP_PASSWORD, // my app
+    user: email,
+    password: password, // my app
     host: "imap.gmail.com",
     port: 993,
     authTimeout: 150000,
@@ -203,7 +221,7 @@ const fetchEmailDetail = async (req, res, emailInfo) => {
                   .where({ id: emailInfo.application_id })
                   .then((applicationData) => {
                     const emailObject = {
-                      application_id : applicationData[0].id,
+                      application_id: applicationData[0].id,
                       company_name: applicationData[0].company_name,
                       position: applicationData[0].position,
                       subject: emailInfo.subject,

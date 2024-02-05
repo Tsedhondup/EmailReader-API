@@ -11,14 +11,13 @@ const addApplication = (req, res) => {
     .then((newApplication) => {
       // invoke addEmails function
       emailController.fetchEmails(
+        req,
+        res,
         newApplication[0].company_email,
         newApplication[0].id
       );
-      return newApplication;
-    })
-    .then((newApplication) => {
-      // get and send newAdded company
-      res.status(201).send(newApplication);
+      // return newApplication;  // get and send newAdded company
+      res.status(201).json(newApplication);
     })
     .catch((err) => {
       res.status(500).json({ message: "Cannot add job application!" });
@@ -47,7 +46,7 @@ const getApplicationDetails = (req, res) => {
         // O email is valid data for client request*****
         console.log(`Cannot find emails with application Id: ${req.params.id}`);
       }
-      // store email lists
+      // store email lists 
       emails = foundEmails;
     })
     .then(() => {

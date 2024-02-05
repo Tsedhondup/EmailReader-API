@@ -5,7 +5,7 @@ const getProfile = (_req, res) => {
     .then((data) => {
       res.status(200).json(data);
     })
-    .catch((err) => res.status(400).send(`Error retrieving Profile: ${err}`));
+    .catch((err) => res.status(400).json(`Error retrieving Profile: ${err}`));
 };
 
 const createProfile = (req, res) => {
