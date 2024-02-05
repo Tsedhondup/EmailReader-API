@@ -7,7 +7,6 @@ const signUp = (req, res, next) => {
       return knex("profiles").where({ id: result[0] });
     })
     .then( async() => {
-      // CREATE SESSION ID
       // CREATE SESSION DATA
       const sessionId = {
         id: uuidv4(),
