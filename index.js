@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const fs = require("fs");
 const app = express();
 // 'dotenv'
 require("dotenv").config();
@@ -18,7 +18,25 @@ const profileRoute = require("./routes/profiles_routes");
 const applicationRoute = require("./routes/application_routes");
 const emailRoute = require("./routes/emails_routes");
 const interviewRoute = require("./routes/interviews_routes");
+const loginRoute = require("./routes/login_route");
+const signUpRoute = require("./routes/sign_up_routes");
+const logOutRoute = require("./routes/log_out_routes");
 
+// THIS ROUTE DOES NOT AUTHENTICATION
+app.post("/login", loginRoute);
+app.post("/signUp", signUpRoute);
+app.post("./logOut", logOutRoute);
+
+// AUTHENTICATING MIDDLEWARE
+app.use(async (req, res, next) => {
+  await fs.readFile("./session/session.json", async (err, data) => {
+    const parsedData = JSON.parse(data);
+    if (parsedData.id !== req.headers.session_id) {
+      res.status(500).json({ message: "Authentication error" });
+    }
+    next();
+  });
+});
 app.get("/profile", profileRoute);
 app.get("/getAllApplications", applicationRoute);
 app.get("/getApplicationDetails/:id", applicationRoute);
