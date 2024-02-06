@@ -37,11 +37,11 @@ app.use(async (req, res, next) => {
     next();
   });
 });
-app.get("/profile", profileRoute);
-app.get("/getAllApplications", applicationRoute);
+app.get("/profile/:id", profileRoute);
+app.get("/getAllApplications/:id", applicationRoute);
 app.get("/getApplicationDetails/:id", applicationRoute);
 app.get("/allEmails/:applicationId", emailRoute);
-app.get("/allInterviews", interviewRoute);
+app.get("/allInterviews/:id", interviewRoute);
 app.get("/emailDetail/:emailId", emailRoute);
 
 app.post("/profile", profileRoute);

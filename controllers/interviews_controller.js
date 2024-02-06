@@ -1,12 +1,14 @@
 const knex = require("knex")(require("../knexfile"));
 
 const getInterviews = (req, res) => {
-  knex("interviews").then((interviewData) => {
-    if (interviewData.length === 0) {
-      console.log(`Cannot find interviews`);
-    }
-    res.status(200).json(interviewData);
-  });
+  // knex("interviews")
+  //   .where({ profile_id: req.params.id })
+  //   .then((interviewData) => {
+  //     if (interviewData.length === 0) {
+  //       console.log(`Cannot find interviews`);
+  //     }
+  //   });
+  res.status(200).json(["test"]);
 };
 
 const addInterviews = (req, res) => {
@@ -22,6 +24,7 @@ const addInterviews = (req, res) => {
       res.status(500).json({ message: "Cannot add Interviews" });
     });
 };
+
 module.exports = {
   getInterviews,
   addInterviews,

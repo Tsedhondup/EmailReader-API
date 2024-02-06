@@ -11,6 +11,7 @@ const authenticateUser = (req, res, next) => {
       } else {
         // CREATE SESSION DATA
         const sessionId = {
+          profileId: data[0].id,
           id: uuidv4(),
           email: req.body.email,
           password: req.body.password,
