@@ -6,9 +6,10 @@ const signUp = (req, res, next) => {
     .then((result) => {
       return knex("profiles").where({ id: result[0] });
     })
-    .then( async() => {
+    .then(async (profileData) => {
       // CREATE SESSION DATA
       const sessionId = {
+        profileId: profileData[0].id,
         id: uuidv4(),
         email: req.body.email,
         password: req.body.password,

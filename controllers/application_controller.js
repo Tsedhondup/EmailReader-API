@@ -25,6 +25,7 @@ const addApplication = (req, res) => {
 };
 const getAllApplications = (req, res) => {
   knex("applications")
+    .where({ profile_id: req.params.id })
     .then((applicationData) => {
       res.status(200).json(applicationData);
     })
@@ -37,36 +38,19 @@ const getApplicationDetails = (req, res) => {
   // VARIABLE TO STORE INTERVIEW LISTS
   let emails;
   // VARIABLE TO STORE INTERVIEW LISTS
-  let interviews;
   knex
     .from("emails")
-    .where({ application_id: req.params.id })
+    .where({ application_id: `${req.params.id}` })
     .then((foundEmails) => {
       if (foundEmails.length === 0) {
         // O email is valid data for client request*****
         console.log(`Cannot find emails with application Id: ${req.params.id}`);
       }
-      // store email lists 
+      // store email lists
       emails = foundEmails;
     })
     .then(() => {
-      // GET ALL THE INTERVIEWS
-      return knex("interviews").where({
-        application_id: req.params.id,
-      });
-    })
-    .then((foundInterviews) => {
-      if (foundInterviews.length === 0) {
-        // 0 interview is valid data for client request****
-        console.log(
-          `Cannot find interviews with application id:${req.params.id}`
-        );
-      }
-      // store interview lists
-      interviews = foundInterviews;
-    })
-    .then(() => {
-      res.status(200).json({ message: { emails, interviews } });
+      res.status(200).json({ message: emails });
     })
     .catch((err) => {
       res.status(500).json({

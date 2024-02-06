@@ -1,7 +1,10 @@
 const knex = require("knex")(require("../knexfile"));
 
-const getProfile = (_req, res) => {
+const getProfile = (req, res) => {
   knex("profiles")
+    .where({
+      id: req.params.id,
+    })
     .then((data) => {
       res.status(200).json(data);
     })
