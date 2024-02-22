@@ -277,6 +277,7 @@ const getEmailDetail = (req, res) => {
       });
     });
 };
+const getNewEmails = (req, res) => {};
 module.exports = {
   fetchEmails,
   getAllEmails,
