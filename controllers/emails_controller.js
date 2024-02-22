@@ -277,9 +277,42 @@ const getEmailDetail = (req, res) => {
       });
     });
 };
-const getNewEmails = (req, res) => {};
+const getNewEmails = async (req, res) => {
+  await fetchEmails(
+    req,
+    res,
+    req.headers.companyemail,
+    req.headers.application_id
+  );
+  console.log(req.headers);
+  // VARIABLE TO STORE INTERVIEW LISTS
+  let emails;
+  // VARIABLE TO STORE INTERVIEW LISTS
+  knex
+    .from("emails")
+    .where({ application_id: `${req.headers.application_id}` })
+    .then((foundEmails) => {
+      if (foundEmails.length === 0) {
+        // O email is valid data for client request*****
+        console.log(
+          `Cannot find emails with application Id: ${req.headers.id}`
+        );
+      }
+      // store email lists
+      emails = foundEmails;
+    })
+    .then(() => {
+      res.status(200).json({ message: emails });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: `Cannot retrieve email with application id:${req.headers.id}`,
+      });
+    });
+};
 module.exports = {
   fetchEmails,
   getAllEmails,
   getEmailDetail,
+  getNewEmails,
 };
