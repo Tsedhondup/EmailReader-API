@@ -284,7 +284,6 @@ const getNewEmails = async (req, res) => {
     req.headers.companyemail,
     req.headers.application_id
   );
-  console.log(req.headers);
   // VARIABLE TO STORE INTERVIEW LISTS
   let emails;
   // VARIABLE TO STORE INTERVIEW LISTS
