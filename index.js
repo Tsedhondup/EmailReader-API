@@ -43,6 +43,7 @@ app.get("/getApplicationDetails/:id", applicationRoute);
 app.get("/allEmails/:applicationId", emailRoute);
 app.get("/allInterviews/:id", interviewRoute);
 app.get("/emailDetail/:emailId", emailRoute);
+app.get("/getNewEmails", emailRoute);
 
 app.post("/profile", profileRoute);
 app.post("/addApplication", applicationRoute);
