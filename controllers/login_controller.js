@@ -1,6 +1,8 @@
 const knex = require("knex")(require("../knexfile"));
 const { v4: uuidv4 } = require("uuid");
+const jwt = require("jsonwebtoken");
 const fs = require("fs");
+require("dotenv").config();
 
 const authenticateUser = (req, res, next) => {
   knex("profiles")
@@ -35,6 +37,58 @@ const authenticateUser = (req, res, next) => {
       console.log(err);
     });
 };
+const logIn = (req, res) => {
+  knex("profiles")
+    .where({ email: req.body.email })
+    .then((data) => {
+      if (data.length === 0) {
+        res.status(500).json({
+          message: "Invalid password or email",
+          error_type: "authentication error",
+        });
+      } else {
+        if (
+          req.body.email !== data[0].email ||
+          req.body.password !== data[0].password
+        ) {
+          console.log(data[0]);
+          res.status(500).json({
+            message: "Invalid password or email",
+            error_type: "authentication error",
+          });
+        } else {
+          // CREATE SESSION DATA
+          const sessionId = {
+            profileId: data[0].id,
+            id: uuidv4(),
+            email: req.body.email,
+            password: req.body.password,
+          };
+          fs.writeFile(
+            "./session/session.json",
+            JSON.stringify(sessionId),
+            (err) => {
+              console.log("done");
+              if (err) {
+                console.log(err);
+              }
+            }
+          );
+
+          // CREATE JWT TOKEN
+          const jwtKey = process.env.JWT_KEY;
+          res.status(200).json({
+            token: jwt.sign({ usename: data[0].full_name }, jwtKey),
+            message: "login successful",
+          });
+        }
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 module.exports = {
   authenticateUser,
+  logIn,
 };
