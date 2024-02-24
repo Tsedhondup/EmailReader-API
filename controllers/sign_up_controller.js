@@ -25,7 +25,6 @@ const signUp = (req, res, next) => {
                 // CREATE SESSION DATA
                 const sessionId = {
                   profileId: data[0].id,
-                  id: uuidv4(),
                   email: req.body.email,
                   password: req.body.password,
                 };
