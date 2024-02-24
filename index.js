@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 const app = express();
+const jwt = require("jsonwebtoken");
+
 // 'dotenv'
 require("dotenv").config();
 // JSON PARSER
@@ -21,21 +23,38 @@ const interviewRoute = require("./routes/interviews_routes");
 const loginRoute = require("./routes/login_route");
 const signUpRoute = require("./routes/sign_up_routes");
 const logOutRoute = require("./routes/log_out_routes");
+const { error } = require("console");
 
 // THIS ROUTE DOES NOT AUTHENTICATION
 app.post("/login", loginRoute);
 app.post("/signUp", signUpRoute);
-app.post("./logOut", logOutRoute);
+app.post("/logOut", logOutRoute);
 
-// AUTHENTICATING MIDDLEWARE
-app.use(async (req, res, next) => {
-  await fs.readFile("./session/session.json", async (err, data) => {
-    const parsedData = JSON.parse(data);
-    if (parsedData.id !== req.headers.session_id) {
-      res.status(500).json({ message: "Authentication error" });
-    }
+// AUTHORIZATION MIDDLEWARE
+app.use((req, res, next) => {
+  // PUBLIC URL THAT DO NOT REQUIRE A TOKEN
+  if (req.url === "/signup" || req.url === "/login" || req.url === "/logOut") {
     next();
-  });
+  } else {
+    let token;
+    if (req.headers.authorization) {
+      token = req.headers.authorization.split(" ")[1]; // GET TOKEN
+    }
+    // IF NO TOKEN IS PROVIDED
+    if (!token) {
+      res.status(500).json({ error: "No token. Unauthorized." });
+    }
+    // IF TOKEN IS PROVIDED
+    const jwtKey = process.env.JWT_KEY; // JWT_KEY
+    jwt.verify(token, jwtKey, (error, decoded) => {
+      if (error) {
+        console.log(error);
+        res.status(500).json({ message: "Not Authorized.", success: "false" });
+      } else {
+        next();
+      }
+    });
+  }
 });
 app.get("/profile/:id", profileRoute);
 app.get("/getAllApplications/:id", applicationRoute);
