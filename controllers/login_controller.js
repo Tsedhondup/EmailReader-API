@@ -78,7 +78,7 @@ const logIn = (req, res) => {
           // CREATE JWT TOKEN
           const jwtKey = process.env.JWT_KEY;
           res.status(200).json({
-            token: jwt.sign({ usename: data[0].full_name }, jwtKey),
+            token: jwt.sign({ username: data[0].full_name }, jwtKey),
             message: "login successful",
           });
         }
