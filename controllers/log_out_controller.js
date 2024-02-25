@@ -6,7 +6,7 @@ const logOut = async (req, res) => {
       console.log(err);
     }
   });
-  res.status(200).json({ message: "Sign up completed" });
+  res.status(200).json({ message: "sign out success" });
 };
 module.exports = {
   logOut,
