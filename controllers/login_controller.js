@@ -79,6 +79,7 @@ const logIn = (req, res) => {
           res.status(200).json({
             token: jwt.sign({ username: data[0].full_name }, jwtKey),
             message: "login successful",
+            profile_id: data[0].id,
           });
         }
       }
