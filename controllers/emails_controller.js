@@ -194,6 +194,7 @@ const fetchEmailDetail = async (req, res, emailInfo) => {
                 if (
                   parsed.headers.get("message-id") === `${emailInfo.message_id}`
                 ) {
+                  console.log(parsed.attachments);
                   const htmldata = await parsed.html; // get html data
                   // update email.html file
                   await fs.writeFile(

@@ -1,14 +1,15 @@
 const knex = require("knex")(require("../knexfile"));
 
 const getInterviews = (req, res) => {
-  // knex("interviews")
-  //   .where({ profile_id: req.params.id })
-  //   .then((interviewData) => {
-  //     if (interviewData.length === 0) {
-  //       console.log(`Cannot find interviews`);
-  //     }
-  //   });
-  res.status(200).json(["test"]);
+  knex("interviews")
+    .where({ profile_id: req.params.id })
+    .then((interviewData) => {
+      if (interviewData.length === 0) {
+        res.status(200).json({ interview: "no schedule interview" });
+      } else {
+        res.status(200).json({ interviewData });
+      }
+    });
 };
 
 const addInterviews = (req, res) => {

@@ -67,6 +67,8 @@ app.get("/getNewEmails", emailRoute);
 app.post("/profile", profileRoute);
 app.post("/addApplication", applicationRoute);
 app.post("/addInterviews", interviewRoute);
+app.patch("/updateInterview/:id", interviewRoute);
+
 // start Express server
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
