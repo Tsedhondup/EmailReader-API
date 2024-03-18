@@ -8,6 +8,7 @@ const profiles = require("../seed_data/profile");
 const applications = require("../seed_data/applications");
 const emails = require("../seed_data/emails");
 const interviews = require("../seed_data/interviews");
+const company_info = require("../seed_data/company_info");
 
 // exports.seed = async function (knex) {
 //   // Deletes ALL existing entries
@@ -27,6 +28,10 @@ exports.seed = function (knex) {
         .del();
     })
     .then(() => {
+      return knex("company_info") // delete emails table
+        .del();
+    })
+    .then(() => {
       return knex("applications") // delete emails table
         .del();
     })
@@ -39,6 +44,9 @@ exports.seed = function (knex) {
     })
     .then(() => {
       return knex("applications").insert(applications);
+    })
+    .then(() => {
+      return knex("company_info").insert(company_info);
     })
     .then(() => {
       return knex("emails").insert(emails);
