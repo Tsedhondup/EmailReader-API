@@ -6,7 +6,7 @@ exports.up = function (knex) {
   return knex.schema.createTable("interviews", (table) => {
     table.increments("id").primary();
     table
-      .integer("appliction_id")
+      .integer("application_id")
       .unsigned()
       .references("applications.id")
       .onUpdate("CASCADE")
