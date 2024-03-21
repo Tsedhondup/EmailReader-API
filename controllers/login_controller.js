@@ -21,7 +21,6 @@ const authenticateUser = (req, res, next) => {
           "./session/session.json",
           JSON.stringify(sessionId),
           (err) => {
-            console.log("done");
             if (err) {
               console.log(err);
             }
@@ -66,7 +65,6 @@ const logIn = (req, res) => {
             "./session/session.json",
             JSON.stringify(sessionId),
             (err) => {
-              console.log("done");
               if (err) {
                 console.log(err);
               }
