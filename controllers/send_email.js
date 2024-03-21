@@ -21,6 +21,15 @@ const sendEmail = (req, res) => {
     text: "Thanks for replying.",
     html: "<b>Thanks for replying.</b>",
   };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error("Error sending email: ", error);
+    } else {
+      console.log("Email sent: ", info);
+      res.status(200).json({ messge: "email sent successfully" });
+    }
+  });
 };
 module.exports = {
   sendEmail,
