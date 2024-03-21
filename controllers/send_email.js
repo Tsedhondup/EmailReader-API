@@ -18,8 +18,8 @@ const sendEmail = (req, res) => {
     to: "tdhondup2022@gmail.com",
     subject: "Hello from Nodemailer",
     inReplyTo: "<b73246a7-301e-6b23-660b-bd2f8555d702@gmail.com>",
-    text: "Thanks for replying.",
-    html: "<b>Thanks for replying.</b>",
+    text: `${req.body.message}`,
+    html: `<b>${req.body.message}</b>`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
