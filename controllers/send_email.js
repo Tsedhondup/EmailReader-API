@@ -13,6 +13,14 @@ const sendEmail = (req, res) => {
       pass: process.env.MY_PS,
     },
   });
+  const mailOptions = {
+    from: '"Tsering 👻" <tyddhondup88@gmail.com>',
+    to: "tdhondup2022@gmail.com",
+    subject: "Hello from Nodemailer",
+    inReplyTo: "<b73246a7-301e-6b23-660b-bd2f8555d702@gmail.com>",
+    text: "Thanks for replying.",
+    html: "<b>Thanks for replying.</b>",
+  };
 };
 module.exports = {
   sendEmail,
