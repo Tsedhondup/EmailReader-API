@@ -8,23 +8,20 @@ require("dotenv").config();
 const sendEmail = async (req, res) => {
   await fs.readFile("./session/session.json", (err, data) => {
     const parsedData = JSON.parse(data);
-    console.log(parsedData);
-    console.log(req.body);
     const transporter = nodemailer.createTransport({
       service: "Gmail",
       host: "smtp.gmail.com",
       port: 465,
       secure: true, // Use `true` for port 465, `false` for all other ports
       auth: {
-        user: process.env.MY_EMAIL,
-        pass: process.env.MY_PS,
-        // user: parsedData.email,
-        // password: parsedData.password,
+        // user: process.env.MY_EMAIL,
+        // pass: process.env.MY_PS,
+        user: parsedData.email,
+        pass: parsedData.password,
       },
     });
 
     const mailOptions = {
-      // from: '"Tsering 👻" <tyddhondup88@gmail.com>',
       from: `${parsedData.email}`,
       to: req.body.to_email,
       subject: req.body.subject ? req.body.subject : "follow up",
@@ -52,17 +49,19 @@ const sendEmail = async (req, res) => {
         };
 
         // INSERT INTO DATA BASE
-        res.status(500).json({ email_object });
-        // knex("sent_emails")
-        //   .insert(email_object)
-        //   .then((sent_email) => {
-        //     res.status(201).json(sent_email);
-        //   })
-        //   .catch(() => {
-        //     res
-        //       .status(500)
-        //       .json({ message: "unable to insert email into database" });
-        //   });
+        knex("sent_emails")
+          .insert(email_object)
+          .then((result) => {
+            return knex("sent_emails").where({ id: result[0] });
+          })
+          .then((sentEmail) => {
+            res.status(201).json(sentEmail);
+          })
+          .catch(() => {
+            res
+              .status(500)
+              .json({ message: "unable to insert email into database" });
+          });
       }
     });
   });
