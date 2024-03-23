@@ -5,37 +5,62 @@ const Imap = require("imap");
 const fs = require("fs");
 require("dotenv").config();
 
-const sendEmail = (req, res) => {
-  // const transporter = nodemailer.createTransport({
-  //   service: "Gmail",
-  //   host: "smtp.gmail.com",
-  //   port: 465,
-  //   secure: true, // Use `true` for port 465, `false` for all other ports
-  //   auth: {
-  //     user: process.env.MY_EMAIL,
-  //     pass: process.env.MY_PS,
-  //   },
-  // });
-  // const mailOptions = {
-  //   from: '"Tsering 👻" <tyddhondup88@gmail.com>',
-  //   to: "tdhondup2022@gmail.com",
-  //   subject: "Hello from Nodemailer",
-  //   inReplyTo: "<b73246a7-301e-6b23-660b-bd2f8555d702@gmail.com>",
-  //   text: `${req.body.message}`,
-  //   html: `<b>${req.body.message}</b>`,
-  // };
+const sendEmail = async (req, res) => {
+  await fs.readFile("./session/session.json", (err, data) => {
+    const parsedData = JSON.parse(data);
 
-  // transporter.sendMail(mailOptions, (error, info) => {
-  //   if (error) {
-  //     console.error("Error sending email: ", error);
-  //   } else {
-  //     console.log("Email sent: ", info);
-  //     res.status(200).json({ messge: "email sent successfully" });
-  //   }
-  // });
-  getSentEmails(req, res);
-  const success = "OK";
-  res.status(200).json({ success });
+    const transporter = nodemailer.createTransport({
+      service: "Gmail",
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, // Use `true` for port 465, `false` for all other ports
+      auth: {
+        user: process.env.MY_EMAIL,
+        pass: process.env.MY_PS,
+        // user: parsedData.email,
+        // password: parsedData.password,
+      },
+    });
+
+    const mailOptions = {
+      from: '"Tsering 👻" <tyddhondup88@gmail.com>',
+      // from: `${parsedData.email}`
+      to: "tdhondup2022@gmail.com",
+      subject: "Hello from Nodemailer",
+      inReplyTo: "<b73246a7-301e-6b23-660b-bd2f8555d702@gmail.com>",
+      text: `${req.body.message}`,
+      html: `<b>${req.body.message}</b>`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error("Error sending email: ", error);
+      } else {
+        console.log("Email sent: ", info);
+        // CREATE EMAIL OBJECT
+        const email_object = {
+          application_id: req.body.application_id,
+          from: parsedData.email,
+          to: req.body.to_email,
+          reply: req.body.to_email ? req.body.to_email : "no follow up",
+          subject: req.body.subject ? req.body.subject : "follow up",
+          message_id: info.messageId,
+          email_date: info.date,
+          email_body_style: "style", // to be change later
+          email_body_html: req.body.email_body, // to be change later
+        };
+        // ADD INTO DATA BASE
+        knex("sent_emails")
+          .insert(email_object)
+          .then((sent_email) => {
+            res.status(201).json(sent_email);
+          })
+          .catch(() => {
+            res.status(500).json({ message: "unable to create new profile" });
+          });
+      }
+    });
+  });
 };
 const getSentEmails = async (req, res) => {
   await fs.readFile("./session/session.json", (err, data) => {
@@ -69,7 +94,7 @@ const getSentEmails = async (req, res) => {
           function (err, results) {
             if (err) throw err;
 
-            // STORE MESSAGE BODY IN VARIABLE 'f' 
+            // STORE MESSAGE BODY IN VARIABLE 'f'
             let f;
             // IF NO EMAIL IS RECIEVE THE ABORT THE CONNECTION AND EXIT FUNCTIONS
             try {
