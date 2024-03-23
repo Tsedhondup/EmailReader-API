@@ -69,7 +69,7 @@ const getSentEmails = async (req, res) => {
           function (err, results) {
             if (err) throw err;
 
-            // STORE MESSAGE BODY IN VARIABLE 'f'
+            // STORE MESSAGE BODY IN VARIABLE 'f' 
             let f;
             // IF NO EMAIL IS RECIEVE THE ABORT THE CONNECTION AND EXIT FUNCTIONS
             try {
