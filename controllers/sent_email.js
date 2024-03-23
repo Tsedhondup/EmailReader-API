@@ -8,17 +8,18 @@ require("dotenv").config();
 const sendEmail = async (req, res) => {
   await fs.readFile("./session/session.json", (err, data) => {
     const parsedData = JSON.parse(data);
-
+    console.log(parsedData);
+    console.log(req.body);
     const transporter = nodemailer.createTransport({
       service: "Gmail",
       host: "smtp.gmail.com",
       port: 465,
       secure: true, // Use `true` for port 465, `false` for all other ports
       auth: {
-        // user: process.env.MY_EMAIL,
-        // pass: process.env.MY_PS,
-        user: parsedData.email,
-        password: parsedData.password,
+        user: process.env.MY_EMAIL,
+        pass: process.env.MY_PS,
+        // user: parsedData.email,
+        // password: parsedData.password,
       },
     });
 
@@ -45,12 +46,13 @@ const sendEmail = async (req, res) => {
           reply_to: req.body.to_email ? req.body.to_email : "no follow up",
           subject: req.body.subject ? req.body.subject : "follow up",
           message_id: info.messageId,
-          email_date: info.date,
+          email_date: info.messageTime,
           email_body_style: "style", // to be change later
           email_body_html: req.body.email_html, // to be change later
         };
+
         // INSERT INTO DATA BASE
-        res.status(500).json({ message: "hey" });
+        res.status(500).json({ email_object });
         // knex("sent_emails")
         //   .insert(email_object)
         //   .then((sent_email) => {
