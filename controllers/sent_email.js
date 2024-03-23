@@ -43,7 +43,7 @@ const sendEmail = async (req, res) => {
           application_id: req.body.application_id,
           from: parsedData.email,
           to: req.body.to_email,
-          reply_to: req.body.to_email ? req.body.to_email : "no follow up",
+          reply_to: req.body.reply_to ? req.body.to_email : "no follow up",
           subject: req.body.subject ? req.body.subject : "follow up",
           message_id: info.messageId,
           email_date: info.messageTime,
