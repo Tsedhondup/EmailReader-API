@@ -42,7 +42,7 @@ const signUp = (req, res, next) => {
                 const jwtKey = process.env.JWT_KEY;
                 res.status(200).json({
                   token: jwt.sign({ username: data[0].full_name }, jwtKey),
-                  message: "login successful",
+                  message: "Account created",
                 });
               });
           })

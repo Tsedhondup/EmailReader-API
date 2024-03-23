@@ -34,7 +34,6 @@ const sendEmail = async (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        console.error("Error sending email: ", error);
         res.status(500).json({ message: "Cannot send email" });
       } else {
         console.log("Email sent: ", info);
@@ -51,16 +50,17 @@ const sendEmail = async (req, res) => {
           email_body_html: req.body.email_html, // to be change later
         };
         // INSERT INTO DATA BASE
-        knex("sent_emails")
-          .insert(email_object)
-          .then((sent_email) => {
-            res.status(201).json(sent_email);
-          })
-          .catch(() => {
-            res
-              .status(500)
-              .json({ message: "unable to insert email into database" });
-          });
+        res.status(500).json({ message: "hey" });
+        // knex("sent_emails")
+        //   .insert(email_object)
+        //   .then((sent_email) => {
+        //     res.status(201).json(sent_email);
+        //   })
+        //   .catch(() => {
+        //     res
+        //       .status(500)
+        //       .json({ message: "unable to insert email into database" });
+        //   });
       }
     });
   });
