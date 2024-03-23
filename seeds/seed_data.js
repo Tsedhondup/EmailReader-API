@@ -33,7 +33,7 @@ exports.seed = function (knex) {
         .del();
     })
     .then(() => {
-      return knex("sent_email") // delete sent_mail table
+      return knex("sent_emails") // delete sent_mail table
         .del();
     })
     .then(() => {
@@ -51,7 +51,7 @@ exports.seed = function (knex) {
       return knex("applications").insert(applications);
     })
     .then(() => {
-      return knex("sent_email").insert(sent_email);
+      return knex("sent_emails").insert(sent_emails);
     })
     .then(() => {
       return knex("company_info").insert(company_info);

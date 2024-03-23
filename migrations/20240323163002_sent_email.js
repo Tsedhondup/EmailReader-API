@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable("sent_mail", (table) => {
+  return knex.schema.createTable("sent_emails", (table) => {
     table.increments("id").primary();
     table
       .integer("application_id")
@@ -31,5 +31,5 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.dropTable("sent_mail");
+  return knex.schema.dropTable("sent_emails");
 };
