@@ -14,8 +14,7 @@ const sendEmail = async (req, res) => {
       port: 465,
       secure: true, // Use `true` for port 465, `false` for all other ports
       auth: {
-        // user: process.env.MY_EMAIL,
-        // pass: process.env.MY_PS,
+    
         user: parsedData.email,
         pass: parsedData.password,
       },
@@ -34,7 +33,7 @@ const sendEmail = async (req, res) => {
       if (error) {
         res.status(500).json({ message: "Cannot send email" });
       } else {
-        console.log("Email sent: ", info);
+        // console.log("Email sent: ", info);
         // CREATE EMAIL OBJECT
         const email_object = {
           application_id: req.body.application_id,
