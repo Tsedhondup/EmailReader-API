@@ -15,9 +15,10 @@ exports.up = function (knex) {
     table.string("to").notNullable();
     table.string("reply_to").notNullable();
     table.string("subject").notNullable;
+    table.string("message_id").notNullable;
     table.string("email_date").notNullable();
-    table.string("email_html_style").notNullable();
-    table.string("email_html_style").notNullable();
+    table.string("email_body_style").notNullable();
+    table.string("email_body_html").notNullable();
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table
       .timestamp("updated_at")
