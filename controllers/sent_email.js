@@ -15,26 +15,27 @@ const sendEmail = async (req, res) => {
       port: 465,
       secure: true, // Use `true` for port 465, `false` for all other ports
       auth: {
-        user: process.env.MY_EMAIL,
-        pass: process.env.MY_PS,
-        // user: parsedData.email,
-        // password: parsedData.password,
+        // user: process.env.MY_EMAIL,
+        // pass: process.env.MY_PS,
+        user: parsedData.email,
+        password: parsedData.password,
       },
     });
 
     const mailOptions = {
-      from: '"Tsering 👻" <tyddhondup88@gmail.com>',
-      // from: `${parsedData.email}`
-      to: "tdhondup2022@gmail.com",
-      subject: "Hello from Nodemailer",
-      inReplyTo: "<b73246a7-301e-6b23-660b-bd2f8555d702@gmail.com>",
-      text: `${req.body.message}`,
-      html: `<b>${req.body.message}</b>`,
+      // from: '"Tsering 👻" <tyddhondup88@gmail.com>',
+      from: `${parsedData.email}`,
+      to: req.body.to_email,
+      subject: req.body.subject ? req.body.subject : "follow up",
+      inReplyTo: req.body.reply_to ? req.body.to_email : "",
+      text: `${req.body.email_text}`,
+      html: `<b>${req.body.email_html}</b>`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.error("Error sending email: ", error);
+        res.status(500).json({ message: "Cannot send email" });
       } else {
         console.log("Email sent: ", info);
         // CREATE EMAIL OBJECT
@@ -42,21 +43,23 @@ const sendEmail = async (req, res) => {
           application_id: req.body.application_id,
           from: parsedData.email,
           to: req.body.to_email,
-          reply: req.body.to_email ? req.body.to_email : "no follow up",
+          reply_to: req.body.to_email ? req.body.to_email : "no follow up",
           subject: req.body.subject ? req.body.subject : "follow up",
           message_id: info.messageId,
           email_date: info.date,
           email_body_style: "style", // to be change later
-          email_body_html: req.body.email_body, // to be change later
+          email_body_html: req.body.email_html, // to be change later
         };
-        // ADD INTO DATA BASE
+        // INSERT INTO DATA BASE
         knex("sent_emails")
           .insert(email_object)
           .then((sent_email) => {
             res.status(201).json(sent_email);
           })
           .catch(() => {
-            res.status(500).json({ message: "unable to create new profile" });
+            res
+              .status(500)
+              .json({ message: "unable to insert email into database" });
           });
       }
     });
