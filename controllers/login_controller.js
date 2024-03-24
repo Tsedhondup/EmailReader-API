@@ -21,7 +21,6 @@ const authenticateUser = (req, res, next) => {
           "./session/session.json",
           JSON.stringify(sessionId),
           (err) => {
-            console.log("done");
             if (err) {
               console.log(err);
             }
@@ -50,7 +49,6 @@ const logIn = (req, res) => {
           req.body.email !== data[0].email ||
           req.body.password !== data[0].password
         ) {
-          console.log(data[0]);
           res.status(500).json({
             message: "Invalid password or email",
             error_type: "authentication error",
@@ -67,7 +65,6 @@ const logIn = (req, res) => {
             "./session/session.json",
             JSON.stringify(sessionId),
             (err) => {
-              console.log("done");
               if (err) {
                 console.log(err);
               }

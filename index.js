@@ -23,6 +23,7 @@ const interviewRoute = require("./routes/interviews_routes");
 const loginRoute = require("./routes/login_route");
 const signUpRoute = require("./routes/sign_up_routes");
 const logOutRoute = require("./routes/log_out_routes");
+const sendEmail = require("./routes/send_email_routes");
 const { error } = require("console");
 
 // THIS ROUTE DOES NOT AUTHENTICATION
@@ -63,10 +64,12 @@ app.get("/allEmails/:applicationId", emailRoute);
 app.get("/allInterviews/:id", interviewRoute);
 app.get("/emailDetail/:emailId", emailRoute);
 app.get("/getNewEmails", emailRoute);
+app.get("/getSendEmails", sendEmail);
 
 app.post("/profile", profileRoute);
 app.post("/addApplication", applicationRoute);
 app.post("/addInterviews", interviewRoute);
+app.post("/sendEmail", sendEmail);
 app.patch("/updateInterview/:id", interviewRoute);
 
 // start Express server
