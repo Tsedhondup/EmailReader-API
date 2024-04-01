@@ -58,9 +58,27 @@ const getApplicationDetails = (req, res) => {
       });
     });
 };
-
+const updateApplication = () => {
+  knex("applications")
+    .where({ id: req.params.id })
+    .update(req.body)
+    .then(() => {
+      return knex("applications").where({
+        id: req.params.id,
+      });
+    })
+    .then((updatedApplication) => {
+      res.json(updatedApplication[0]);
+    })
+    .catch(() => {
+      res.status(500).json({
+        message: `Unable to update application with ID: ${req.params.id}`,
+      });
+    });
+};
 module.exports = {
   addApplication,
   getAllApplications,
   getApplicationDetails,
+  updateApplication,
 };
