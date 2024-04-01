@@ -58,7 +58,7 @@ const getApplicationDetails = (req, res) => {
       });
     });
 };
-const updateApplication = () => {
+const updateApplication = (req, res) => {
   knex("applications")
     .where({ id: req.params.id })
     .update(req.body)
