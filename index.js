@@ -70,6 +70,8 @@ app.post("/profile", profileRoute);
 app.post("/addApplication", applicationRoute);
 app.post("/addInterviews", interviewRoute);
 app.post("/sendEmail", sendEmail);
+
+app.patch("/updateApplication/:id", applicationRoute);
 app.patch("/updateInterview/:id", interviewRoute);
 
 // start Express server
