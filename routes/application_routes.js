@@ -9,4 +9,7 @@ router
   .route("/getApplicationDetails/:id")
   .get(applicationController.getApplicationDetails);
 
+router
+  .route("/updateApplication/:id")
+  .patch(applicationController.updateApplication);
 module.exports = router;
