@@ -66,5 +66,6 @@ const updateAll = () => {
 module.exports = {
   getInterviews,
   addInterviews,
-  updateInterviews,
+  updateSome,
+  updateAll,
 };
