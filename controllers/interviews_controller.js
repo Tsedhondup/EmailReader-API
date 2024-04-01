@@ -25,7 +25,26 @@ const addInterviews = (req, res) => {
       res.status(500).json({ message: "Cannot add Interviews" });
     });
 };
-const updateInterviews = (req, res) => {
+const updateSome = (req, res) => {
+  knex("interviews")
+    .where({ id: req.params.id })
+    .update(req.body)
+    .then(() => {
+      return knex("interviews").where({
+        id: req.params.id,
+      });
+    })
+    .then((updatedInterviews) => {
+      res.json(updatedInterviews[0]);
+    })
+    .catch(() => {
+      res.status(500).json({
+        message: `Unable to update interviews with ID: ${req.params.id}`,
+      });
+    });
+};
+
+const updateAll = () => {
   knex("interviews")
     .where({ id: req.params.id })
     .update(req.body)
