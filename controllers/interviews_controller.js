@@ -4,11 +4,7 @@ const getInterviews = (req, res) => {
   knex("interviews")
     .where({ profile_id: req.params.id })
     .then((interviewData) => {
-      if (interviewData.length === 0) {
-        res.status(200).json({ interview: "no schedule interview" });
-      } else {
-        res.status(200).json({ interviewData });
-      }
+      res.status(200).json({ interviewData });
     });
 };
 
@@ -69,4 +65,3 @@ module.exports = {
   updateSome,
   updateAll,
 };
-  
