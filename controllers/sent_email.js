@@ -32,6 +32,8 @@ const sendEmail = async (req, res) => {
       if (error) {
         res.status(500).json({ message: "Cannot send email" });
       } else {
+        res.status(201).json({ message: "Email successfully sent!" });
+
         // console.log("Email sent: ", info);
         // CREATE EMAIL OBJECT
         const email_object = {
