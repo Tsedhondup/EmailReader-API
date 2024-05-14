@@ -4,12 +4,35 @@
   "description": "\"\"\u001b[",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "npx knex migrate:latest",
+    "migrate:down": "npx knex migrate:down",
+    "migrate:rollback": "npx knex migrate:rollback",
+    "seed": "npx knex seed:run"
   },
   "repository": {
     "type": "git",
     "url": "job-application-tracker-api"
   },
   "author": "Tsering Dhondup",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.2",
+    "express": "^4.18.2",
+    "express-session": "^1.18.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "imap": "^0.8.19",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "mailparser": "^3.6.6",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.12",
+    "nodemon": "^3.0.3",
+    "routes": "^2.1.0",
+    "uuid": "^9.0.1"
+  }
 }
