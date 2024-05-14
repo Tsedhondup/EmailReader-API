@@ -5,7 +5,7 @@ const Imap = require("imap");
 const fs = require("fs");
 require("dotenv").config();
 
-const sendEmail = async (req, res) => {
+const sendEmail = async (req, res) => { 
   await fs.readFile("./session/session.json", (err, data) => {
     const parsedData = JSON.parse(data);
     const transporter = nodemailer.createTransport({
@@ -25,7 +25,7 @@ const sendEmail = async (req, res) => {
       subject: req.body.subject ? req.body.subject : "follow up",
       inReplyTo: req.body.reply_to ? req.body.to_email : "",
       text: `${req.body.email_text}`,
-      html: `<b>${req.body.email_html}</b>`,
+      html: `${req.body.email_html}`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
