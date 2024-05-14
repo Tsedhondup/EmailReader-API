@@ -64,7 +64,7 @@ app.get("/allEmails/:applicationId", emailRoute);
 app.get("/allInterviews/:id", interviewRoute);
 app.get("/emailDetail/:emailId", emailRoute);
 app.get("/getNewEmails", emailRoute);
-app.get("/getSendEmails", sendEmail);
+// app.get("/getSendEmails", sendEmail);
 
 app.post("/profile", profileRoute);
 app.post("/addApplication", applicationRoute);
