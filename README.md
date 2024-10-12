@@ -83,7 +83,7 @@ npm install
 ```
     
 ## Usage
-Navigate into the project directory
+**Server:** Navigate into the project directory
 
 ```bash
 cd EmailRead-API
@@ -92,7 +92,7 @@ Start Express Server with nodemon:
 ```bash
 npx nodemon index.js
 ```
-Navigate into the project directory
+**Client:** Navigate into the project directory
 
 ```bash
 cd EmailReader
