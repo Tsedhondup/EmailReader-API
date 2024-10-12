@@ -1,5 +1,5 @@
 
-# [Email Reader](https://tseringdhondup.netlify.app/) 
+# [Email Reader](https://github.com/Tsedhondup/EmailReader) 
 
 
 Simple and easy-to-use web application for reading mails from your email client. (Currently support Gmail ONLY!). 
